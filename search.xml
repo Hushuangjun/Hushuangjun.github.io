@@ -6,7 +6,7 @@
     <content><![CDATA[<h1 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h1><ol>
 <li>可以运行各种代码，作为一个非专业人士看来真的很高级；</li>
 <li>想法是以后可以通过这个来写我的博客，顺便锻炼一下我的markdown语法；</li>
-<li>更深一步想法是转码之路，但还在考虑之中；</li>
+<li>更深一步想法是转码之路，但还在考虑之中；<span id="more"></span></li>
 </ol>
 <h1 id="markdown-基本语法学习"><a href="#markdown-基本语法学习" class="headerlink" title="markdown 基本语法学习"></a>markdown 基本语法学习</h1><h2 id="强调符号"><a href="#强调符号" class="headerlink" title="强调符号"></a>强调符号</h2><ol>
 <li>两个星号(**)<ol>
