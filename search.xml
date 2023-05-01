@@ -5,21 +5,21 @@
     <url>/2023/05/01/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><ol>
 <li>Git<blockquote>
-<p>在其<a href="https://git-scm.com/download/win">官网</a>上进行下载即可，代替windows自带的cmd。</p>
+<p>在其 <strong><a href="https://git-scm.com/download/win">官网</a></strong> 上进行下载即可，代替windows自带的cmd。</p>
 </blockquote>
 </li>
 <li>Node.js<blockquote>
-<p>在其<a href="https://nodejs.org/en">官网</a>进行下载即可。</p>
+<p>在其 <strong><a href="https://nodejs.org/en">官网</a></strong> 进行下载即可。</p>
 </blockquote>
 </li>
 <li>安装hexo<br>先创建一个文件夹，用于存放hexo，这也是以后博客存放资料和修改的地方，例如下面我创建了<code>D:\blog\myblog</code>的文件夹，<br>然后再右键，git bash here，(此处和cmd，再cd到此文件夹效果相同)，运行如下命令：<blockquote>
-<p>  <code>npm install hexo-cli -g</code></p>
+<p>npm install hexo-cli -g</p>
 </blockquote>
 然后可以用如下命令检查是否安装成功<blockquote>
-<p>  <code>npm -v</code><br>  <code>node -v</code><br>  <code>hexo -v</code></p>
+<p>npm -v<br>node -v<br>hexo -v</p>
 </blockquote>
 若发现myblog下 <strong>node_modules</strong> 文件夹丢失，可运行如下命令重生成：<blockquote>
-<p>  <code>npm install hexo-cli</code></p>
+<p>npm install hexo-cli</p>
 </blockquote>
 </li>
 </ol>
