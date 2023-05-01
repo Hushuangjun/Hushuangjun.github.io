@@ -1,120 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>钢结构思考题</title>
-    <url>/2023/04/18/%E3%80%90%E9%92%A2%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E3%80%91%E2%80%94%E6%80%9D%E8%80%83/</url>
-    <content><![CDATA[<h1 id="这是我第一篇文章哈"><a href="#这是我第一篇文章哈" class="headerlink" title="这是我第一篇文章哈"></a>这是我第一篇文章哈</h1>]]></content>
-      <tags>
-        <tag>钢结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VScode使用体验</title>
-    <url>/2023/05/01/VScode%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</url>
-    <content><![CDATA[<h1 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h1><ol>
-<li>可以运行各种代码，作为一个非专业人士看来真的很高级；</li>
-<li>想法是以后可以通过这个来写我的博客，顺便锻炼一下我的markdown语法；</li>
-<li>更深一步想法是转码之路，但还在考虑之中；<span id="more"></span></li>
-</ol>
-<h1 id="markdown-基本语法学习"><a href="#markdown-基本语法学习" class="headerlink" title="markdown 基本语法学习"></a>markdown 基本语法学习</h1><h2 id="强调符号"><a href="#强调符号" class="headerlink" title="强调符号"></a>强调符号</h2><ol>
-<li>两个星号(**)<ol>
-<li>i just like <strong>bold text</strong>.</li>
-<li>不知道为啥<strong>中文</strong>行不通呀。</li>
-</ol>
-</li>
-<li>两个下划线(_ _)<ol>
-<li>python is a <strong>magic</strong> tool</li>
-</ol>
-</li>
-</ol>
-<h2 id="斜体符号"><a href="#斜体符号" class="headerlink" title="斜体符号"></a>斜体符号</h2><ol>
-<li>一个(*)或者(_)<ol>
-<li>我很久没”<em><strong>学习</strong></em>“啦</li>
-<li>所以我感觉这个更适合用来记录英语吧</li>
-<li><em>斜体</em>是一个。</li>
-<li>斜体加粗体，是 <em><strong>这样</strong></em> ,或者 <em><strong>那样</strong></em> ;</li>
-<li></li>
-</ol>
-</li>
-</ol>
-<h2 id="引用符号"><a href="#引用符号" class="headerlink" title="引用符号"></a>引用符号</h2><p>例如我想引用下面这句话</p>
-<blockquote>
-<p>i am ambitous, i want to win in the end;</p>
+    <title>搭建个人博客心得</title>
+    <url>/2023/05/01/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/</url>
+    <content><![CDATA[<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><ol>
+<li>Git<blockquote>
+<p>在其<a href="https://git-scm.com/download/win">官网</a>上进行下载即可，代替windows自带的cmd。</p>
 </blockquote>
-<p>soga, use this method can cancel queote;</p>
-<blockquote>
-<p>我想要在预览中再次预览</p>
-<p>两行预览原来可以这样<br>但我直接也可以呀</p>
-<blockquote>
-<p>预览中预览</p>
+</li>
+<li>Node.js<blockquote>
+<p>在其<a href="https://nodejs.org/en">官网</a>进行下载即可。</p>
 </blockquote>
+</li>
+<li>安装hexo<br>先创建一个文件夹，用于存放hexo，这也是以后博客存放资料和修改的地方，例如下面我创建了<code>D:\blog\myblog</code>的文件夹，<br>然后再右键，git bash here，(此处和cmd，再cd到此文件夹效果相同)，运行如下命令：<blockquote>
+<p>  <code>npm install hexo-cli -g</code></p>
 </blockquote>
-<p>over la<br>下面我引用代码块</p>
-<p>print code above</p>
-<ol>
-<li><p>Open the file.</p>
-</li>
-<li><p>Find the following code block on line 21:</p>
-<pre><code>&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Test&lt;/title&gt;
-  &lt;/head&gt;
-</code></pre>
-</li>
-<li><p>Update the title to match the name of your website.</p>
-</li>
-<li><p>原来这样就可以了阿门</p>
+然后可以用如下命令检查是否安装成功<blockquote>
+<p>  <code>npm -v</code><br>  <code>node -v</code><br>  <code>hexo -v</code></p>
+</blockquote>
+若发现myblog下 <strong>node_modules</strong> 文件夹丢失，可运行如下命令重生成：<blockquote>
+<p>  <code>npm install hexo-cli</code></p>
+</blockquote>
 </li>
 </ol>
-<p>点击放 <strong><a href="hushuangjun.github.io">我的博客</a></strong>.<br>如果要重新加载<code>node_modules</code>,可以使用<code>npm install hexo-cli</code>.不要带<code>-g</code>.</p>
-<p>我再来试试</p>
-<ol>
-<li><p>尝试</p>
-</li>
-<li><p>还有呢</p>
-<pre><code> &lt;html&gt;
-   &lt;head&gt;
-     &lt;title&gt;Test&lt;/title&gt;
-   &lt;/head&gt;
-</code></pre>
-</li>
-<li><p>有序列表</p>
-</li>
-<li></li>
-</ol>
-<p>下面是一个玩偶哈<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Zhang_Jie%2C_Nov_2016_-_Sound_of_my_heart_%28cropped%29.jpg/800px-Zhang_Jie%2C_Nov_2016_-_Sound_of_my_heart_%28cropped%29.jpg" alt="doy"></p>
-<p>这个服务器咋反应不过来呢延迟很低<br>看来还不错，继续加油。</p>
-<h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><p>使用markdown很重要一点就是公式</p>
-<p>例如框架结构，抗震设计时，柱端弯矩需满足：$\sum{M_c}$ &#x3D; $\eta_c$ $\sum{M_b}$</p>
-<p>可以使用<br>this is a code recognized by matjpix:</p>
-<blockquote>
-<p>$$\frac{N}{A_{\mathrm{n}}} \pm \frac{M_{\mathrm{x}}+N e}{\gamma_{\mathrm{x}} W_{\text {nx }}} \leqslant f$$</p>
-</blockquote>
-<p>this is code recognized by the bing:</p>
-<blockquote>
-<p>$$\frac { N } { A _ { n } } + \frac { M _ { x } + N e } { \gamma _ { x } W _ { nx } } \leq f$$</p>
-</blockquote>
-<p>this is a code written by mathtype in word:</p>
-
-$$\frac{N}{{{\varphi }_{x}}fA}+\frac{{{\beta }_{mx}}{{M}_{x}}}{{{\gamma }_{x}}{{W}_{1x}}\left( 1-\frac{0.8N}{N_{Ex}^{'}} \right)f}\le 1.0 $$
-
-
-屡试不爽:
-
-> $$\sqrt{{{\left( \frac{\sigma _{A}^{M}+{{\sigma }_{A}}^{T}}{{{\beta }_{f}}} \right)}^{2}}+{{\left( \tau _{A}^{T} \right)}^{2}}}\le f_{f}^{w}$$
-  
-
-
-
-
-
-
 ]]></content>
       <categories>
-        <category>结构设计</category>
+        <category>编程学习</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
+        <tag>搭建网站</tag>
       </tags>
   </entry>
 </search>
