@@ -12,7 +12,7 @@
 <p>在其 <strong><a href="https://nodejs.org/en">官网</a></strong> 进行下载即可。</p>
 </blockquote>
 </li>
-<li>安装hexo<br>先创建一个文件夹，用于存放hexo，这也是以后博客存放资料和修改的地方，例如下面我创建了<code>D:\blog\myblog</code>的文件夹，<br>然后再右键，git bash here，(此处和cmd，再cd到此文件夹效果相同)，运行如下命令：<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">npm install hexo-<span class="keyword">cli</span> -g</span><br></pre></td></tr></table></figure>
+<li>安装hexo <span id="more"></span><br>先创建一个文件夹，用于存放hexo，这也是以后博客存放资料和修改的地方，例如下面我创建了<code>D:\blog\myblog</code>的文件夹，<br>然后再右键，git bash here，(此处和cmd，再cd到此文件夹效果相同)，运行如下命令：<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">npm install hexo-<span class="keyword">cli</span> -g</span><br></pre></td></tr></table></figure>
 然后可以用如下命令检查是否安装成功<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">npm -v</span><br><span class="line">node -v</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
 若发现myblog下 <strong>node_modules</strong> 文件夹丢失，可运行如下命令重生成：<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">npm install hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></li>
 </ol>
