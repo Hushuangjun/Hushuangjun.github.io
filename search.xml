@@ -7,6 +7,10 @@
 <li>最开始搭建一个最简单的网站主要参考一下几条博客。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">https:<span class="regexp">//</span>blog.csdn.net<span class="regexp">/sinat_37781304/</span>article<span class="regexp">/details/</span><span class="number">82729029</span></span><br></pre></td></tr></table></figure></li>
 <li>hexo 如何新建一篇文章。<span id="more"></span><figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">[root@localhost blog]# hexo <span class="keyword">new</span> <span class="string">&quot;如何在hexo上创建一篇文章&quot;</span></span><br><span class="line">...</span><br><span class="line">INFO  Created: <span class="regexp">/blog/</span><span class="keyword">source</span><span class="regexp">/_posts/</span>如何在hexo上创建一篇文章.md</span><br></pre></td></tr></table></figure>
 这个缺点是他只能在<code>...source/_posts</code>下生成，没法完成自己的分类，还是推荐在<code>VSCode</code>中创建新文章。</li>
+<li>hexo 显示无法连接到 <code>github</code>.<blockquote>
+<p>fatal: unable to access ‘<a href="https://github.com/Hushuangjun/Hushuangjun.github.io.git">https://github.com/Hushuangjun/Hushuangjun.github.io.git</a></p>
+</blockquote>
+运行如下代码：<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> http<span class="selector-class">.proxy</span> </span><br><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> https.proxy</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="创建博客中遇到的问题"><a href="#创建博客中遇到的问题" class="headerlink" title="创建博客中遇到的问题"></a>创建博客中遇到的问题</h3><ol>
 <li>markdown中插入本地图片不显示<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">https:<span class="regexp">//</span>www.cnblogs.com<span class="regexp">/koo070/</span>p/<span class="number">16548228</span>.html</span><br></pre></td></tr></table></figure></li>
