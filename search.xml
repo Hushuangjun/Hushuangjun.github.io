@@ -1,50 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>五一游记</title>
-    <url>/2023/05/05/%E7%94%9F%E6%B4%BB/%E4%BA%94%E4%B8%80%E6%B8%B8%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="4-27-5-1"><a href="#4-27-5-1" class="headerlink" title="4.27-5.1"></a>4.27-5.1</h2><p>这几天都在学校学习，认真看了高层建筑这本书，感觉讲的比较浅显，如果不看具体例子不容易理解。<span id="more"></span></p>
-<p>5.1号还去网球场打了会网球，感觉有一点点进步，继续加油。</p>
-<h2 id="5-2"><a href="#5-2" class="headerlink" title="5.2"></a>5.2</h2><p>今天高中学姐请我出来吃饭，转眼间三年快过去了，真快呀，还记得刚来青岛时学长学姐们欢迎我们的时候，有时候真挺不舍的，但天下没有不散的筵席，今日的分别时为了他日更好的相见，加油加油！</p>
-]]></content>
-      <categories>
-        <category>日常记录</category>
-      </categories>
-      <tags>
-        <tag>假期游玩</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>搭建个人博客心得</title>
     <url>/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/</url>
-    <content><![CDATA[<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><ol>
-<li>Git<blockquote>
-<p>在其 <strong><a href="https://git-scm.com/download/win">官网</a></strong> 上进行下载即可，代替windows自带的cmd。</p>
-</blockquote>
-</li>
-<li>Node.js<blockquote>
-<p>在其 <strong><a href="https://nodejs.org/en">官网</a></strong> 进行下载即可。</p>
-</blockquote>
-</li>
-<li>安装hexo <span id="more"></span><br>先创建一个文件夹，用于存放hexo，这也是以后博客存放资料和修改的地方，例如下面我创建了<code>D:\blog\myblog</code>的文件夹，<br>然后再右键，git bash here，(此处和cmd，再cd到此文件夹效果相同)，运行如下命令：<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">npm install hexo-<span class="keyword">cli</span> -g</span><br></pre></td></tr></table></figure>
-然后可以用如下命令检查是否安装成功<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">npm -v</span><br><span class="line">node -v</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-若发现myblog下 <strong>node_modules</strong> 文件夹丢失，可运行如下命令重生成：<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">npm install hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></li>
+    <content><![CDATA[<h3 id="创建个人博客过程"><a href="#创建个人博客过程" class="headerlink" title="创建个人博客过程"></a>创建个人博客过程</h3><ol>
+<li>最开始搭建一个最简单的网站主要参考一下几条博客。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">https:<span class="regexp">//</span>blog.csdn.net<span class="regexp">/sinat_37781304/</span>article<span class="regexp">/details/</span><span class="number">82729029</span></span><br></pre></td></tr></table></figure></li>
+<li>hexo 如何新建一篇文章。<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">[root@localhost blog]# hexo <span class="keyword">new</span> <span class="string">&quot;如何在hexo上创建一篇文章&quot;</span></span><br><span class="line">...</span><br><span class="line">INFO  Created: <span class="regexp">/blog/</span><span class="keyword">source</span><span class="regexp">/_posts/</span>如何在hexo上创建一篇文章.md</span><br></pre></td></tr></table></figure>
+这个缺点是他只能在<code>...source/_posts</code>下生成，没法完成自己的分类，还是推荐在<code>VSCode</code>中创建新文章。</li>
 </ol>
-<p>下面为试验区：</p>
-<p>运行如下代码：</p>
-<p>首先需要声明一下语言：</p>
-<blockquote>
-<p>例如” <code>python ...   </code>之类的。代码块还需要缩进四个字符。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello world&quot;</span>)</span><br><span class="line">a=<span class="number">5</span></span><br><span class="line"><span class="keyword">while</span> a&gt;<span class="number">0</span> :</span><br><span class="line">    a = a-<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(a)   </span><br></pre></td></tr></table></figure>
-
-<p>看看效果咋样。</p>
+<h3 id="创建博客中遇到的问题"><a href="#创建博客中遇到的问题" class="headerlink" title="创建博客中遇到的问题"></a>创建博客中遇到的问题</h3><ol>
+<li>markdown中插入本地图片不显示<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">https:<span class="regexp">//</span>www.cnblogs.com<span class="regexp">/koo070/</span>p/<span class="number">16548228</span>.html</span><br></pre></td></tr></table></figure></li>
+</ol>
 ]]></content>
       <categories>
         <category>编程学习</category>
       </categories>
       <tags>
         <tag>搭建网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>五一游记</title>
+    <url>/2023/05/05/%E7%94%9F%E6%B4%BB/%E4%BA%94%E4%B8%80%E6%B8%B8%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="4-28-5-1"><a href="#4-28-5-1" class="headerlink" title="4.28-5.1"></a>4.28-5.1</h2><p>这几天都在学校学习，认真看了高层建筑这本书，感觉讲的比较浅显，如果不看具体例子不容易理解。<span id="more"></span></p>
+<p>5.1号还去网球场打了会网球，感觉有一点点进步，继续加油。</p>
+<h2 id="5-2"><a href="#5-2" class="headerlink" title="5.2"></a>5.2</h2><p>今天高中学姐请我出来吃饭，转眼间三年快过去了，真快呀，还记得刚来青岛时学长学姐们欢迎我们的时候，有时候真挺不舍的，但天下没有不散的筵席，今日的分别时为了他日更好的相见，加油加油！<br><img src="/2023/05/05/%E7%94%9F%E6%B4%BB/%E4%BA%94%E4%B8%80%E6%B8%B8%E8%AE%B0/%E5%AD%A6%E5%A7%90%E5%8D%B3%E5%B0%86%E6%AF%95%E4%B8%9A%E5%90%88%E7%85%A7.jpg" alt="跟学姐合照"></p>
+<p>祝学姐毕业快乐！工作顺利！<br>接下来我也要忙着复习和准备着保研啦！</p>
+]]></content>
+      <categories>
+        <category>日常记录</category>
+      </categories>
+      <tags>
+        <tag>假期游玩</tag>
       </tags>
   </entry>
 </search>
