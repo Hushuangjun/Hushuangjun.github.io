@@ -5,7 +5,7 @@
     <url>/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h3 id="创建个人博客过程"><a href="#创建个人博客过程" class="headerlink" title="创建个人博客过程"></a>创建个人博客过程</h3><ol>
 <li>最开始搭建一个最简单的网站主要参考一下几条博客。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">https:<span class="regexp">//</span>blog.csdn.net<span class="regexp">/sinat_37781304/</span>article<span class="regexp">/details/</span><span class="number">82729029</span></span><br></pre></td></tr></table></figure></li>
-<li>hexo 如何新建一篇文章。<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">[root@localhost blog]# hexo <span class="keyword">new</span> <span class="string">&quot;如何在hexo上创建一篇文章&quot;</span></span><br><span class="line">...</span><br><span class="line">INFO  Created: <span class="regexp">/blog/</span><span class="keyword">source</span><span class="regexp">/_posts/</span>如何在hexo上创建一篇文章.md</span><br></pre></td></tr></table></figure>
+<li>hexo 如何新建一篇文章。<span id="more"></span><figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">[root@localhost blog]# hexo <span class="keyword">new</span> <span class="string">&quot;如何在hexo上创建一篇文章&quot;</span></span><br><span class="line">...</span><br><span class="line">INFO  Created: <span class="regexp">/blog/</span><span class="keyword">source</span><span class="regexp">/_posts/</span>如何在hexo上创建一篇文章.md</span><br></pre></td></tr></table></figure>
 这个缺点是他只能在<code>...source/_posts</code>下生成，没法完成自己的分类，还是推荐在<code>VSCode</code>中创建新文章。</li>
 </ol>
 <h3 id="创建博客中遇到的问题"><a href="#创建博客中遇到的问题" class="headerlink" title="创建博客中遇到的问题"></a>创建博客中遇到的问题</h3><ol>
@@ -32,6 +32,20 @@
       </categories>
       <tags>
         <tag>假期游玩</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>宿舍生活</title>
+    <url>/2023/05/06/%E7%94%9F%E6%B4%BB/%E5%AE%BF%E8%88%8D%E7%94%9F%E6%B4%BB/</url>
+    <content><![CDATA[<h2 id="鸡哥"><a href="#鸡哥" class="headerlink" title="鸡哥"></a>鸡哥</h2><ol>
+<li>鸡哥喝醉酒，想着聊城妹子<br><img src="/2023/05/06/%E7%94%9F%E6%B4%BB/%E5%AE%BF%E8%88%8D%E7%94%9F%E6%B4%BB/%E9%B8%A1%E5%93%A5%E7%85%A7%E7%89%87.jpg" alt="鸡哥喝醉酒"></li>
+</ol>
+]]></content>
+      <categories>
+        <category>日常记录</category>
+      </categories>
+      <tags>
+        <tag>宿舍日常</tag>
       </tags>
   </entry>
 </search>
