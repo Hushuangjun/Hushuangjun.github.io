@@ -4,7 +4,7 @@
     <title>宿舍生活</title>
     <url>/2023/05/06/%E7%94%9F%E6%B4%BB/%E5%AE%BF%E8%88%8D%E7%94%9F%E6%B4%BB/</url>
     <content><![CDATA[<h2 id="鸡哥"><a href="#鸡哥" class="headerlink" title="鸡哥"></a>鸡哥</h2><ol>
-<li>大二上，考完出去吃饭，鸡哥喝醉酒，想着妹子。<span id="more"></span><br><img src="/2023/05/06/%E7%94%9F%E6%B4%BB/%E5%AE%BF%E8%88%8D%E7%94%9F%E6%B4%BB/../%E5%AE%BF%E8%88%8D%E7%94%9F%E6%B4%BB/%E9%B8%A1%E5%93%A5%E5%96%9D%E9%86%89%E9%85%92.jpg" alt="鸡哥喝醉酒"></li>
+<li>大二上，考完出去吃饭，鸡哥喝醉酒，想着妹子。<span id="more"></span><br><img src="/2023/05/06/%E7%94%9F%E6%B4%BB/%E5%AE%BF%E8%88%8D%E7%94%9F%E6%B4%BB/%E9%B8%A1%E5%93%A5%E5%96%9D%E9%86%89%E9%85%92.jpg" alt="鸡哥喝醉酒"></li>
 </ol>
 ]]></content>
       <categories>
@@ -56,7 +56,13 @@
   <entry>
     <title>每日一学</title>
     <url>/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/</url>
-    <content><![CDATA[<h3 id="内力组合相关疑惑"><a href="#内力组合相关疑惑" class="headerlink" title="内力组合相关疑惑"></a>内力组合相关疑惑</h3><p>以框架结构为例，<strong>抗震设计</strong>时，内力组合遵循一下原则：（电脑也是这么算的，具体可以参见<strong>广厦计算结果</strong>）<span id="more"></span><br><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E5%86%85%E5%8A%9B%E7%BB%84%E5%90%88%EF%BC%88%E4%B8%80%EF%BC%89.jpg" alt="内力组合-1"><br><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E5%86%85%E5%8A%9B%E7%BB%84%E5%90%88%EF%BC%88%E4%BA%8C%EF%BC%89.jpg" alt="内力组合-1"></p>
+    <content><![CDATA[<h3 id="内力组合相关疑惑"><a href="#内力组合相关疑惑" class="headerlink" title="内力组合相关疑惑"></a>内力组合相关疑惑</h3><p>以框架结构为例，<strong>抗震设计</strong>时，内力组合遵循一下原则：（电脑也是这么算的，具体可以参见<strong>广厦计算结果</strong>）<span id="more"></span></p>
+<div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/内力组合（一）.jpg" width="70%"></div>
+<div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/内力组合（二）.jpg" width="70%"></div>
+
+<h3 id="振型参与质量系数与振型有效质量系数的区别"><a href="#振型参与质量系数与振型有效质量系数的区别" class="headerlink" title="振型参与质量系数与振型有效质量系数的区别"></a>振型参与质量系数与振型有效质量系数的区别</h3><ol>
+<li>振型参与质量（系数）是振型有效质量（系数）的推广。<div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/振型参与质量系数与振型有效质量系数.jpg" width="70%"></div></li>
+</ol>
 ]]></content>
       <categories>
         <category>结构设计学习</category>
