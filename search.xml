@@ -30,7 +30,7 @@
       </tags>
   </entry>
   <entry>
-    <title>搭建个人博客心得</title>
+    <title>技术总结</title>
     <url>/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h3 id="创建个人博客过程"><a href="#创建个人博客过程" class="headerlink" title="创建个人博客过程"></a>创建个人博客过程</h3><ol>
 <li>最开始搭建一个最简单的网站主要参考一下几条博客。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">https:<span class="regexp">//</span>blog.csdn.net<span class="regexp">/sinat_37781304/</span>article<span class="regexp">/details/</span><span class="number">82729029</span></span><br></pre></td></tr></table></figure></li>
@@ -42,15 +42,20 @@
 运行如下代码：<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> http<span class="selector-class">.proxy</span> </span><br><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> https.proxy</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="创建博客中遇到的问题"><a href="#创建博客中遇到的问题" class="headerlink" title="创建博客中遇到的问题"></a>创建博客中遇到的问题</h3><ol>
-<li>markdown中插入本地图片不显示<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">https:<span class="regexp">//</span>www.cnblogs.com<span class="regexp">/koo070/</span>p/<span class="number">16548228</span>.html</span><br></pre></td></tr></table></figure></li>
-<li>为啥clash关掉后无法正常上网？<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">https:<span class="regexp">//</span>zhuanlan.zhihu.com<span class="regexp">/p/</span><span class="number">550446124</span></span><br></pre></td></tr></table></figure></li>
+<li><p>markdown中插入本地图片不显示</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">https:<span class="regexp">//</span>www.cnblogs.com<span class="regexp">/koo070/</span>p/<span class="number">16548228</span>.html</span><br></pre></td></tr></table></figure></li>
+<li><p>为啥clash关掉后无法正常上网？</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">https:<span class="regexp">//</span>zhuanlan.zhihu.com<span class="regexp">/p/</span><span class="number">550446124</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>怎么实现图片等比例缩放，或者指定高度，并且居中、左、右？</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">https:<span class="regexp">//</span>zhuanlan.zhihu.com<span class="regexp">/p/</span><span class="number">139007418</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
       <categories>
         <category>编程学习</category>
       </categories>
       <tags>
-        <tag>搭建网站</tag>
+        <tag>技术总结</tag>
       </tags>
   </entry>
   <entry>
