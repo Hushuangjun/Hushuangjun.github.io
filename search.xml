@@ -15,21 +15,6 @@
       </tags>
   </entry>
   <entry>
-    <title>五一游记</title>
-    <url>/2023/05/05/%E7%94%9F%E6%B4%BB/%E4%BA%94%E4%B8%80%E6%B8%B8%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="4-28-5-1"><a href="#4-28-5-1" class="headerlink" title="4.28-5.1"></a>4.28-5.1</h2><p>这几天都在学校学习，认真看了高层建筑这本书，感觉讲的比较浅显，如果不看具体例子不容易理解。<span id="more"></span></p>
-<p>5.1号还去网球场打了会网球，感觉有一点点进步，继续加油。</p>
-<h2 id="5-2"><a href="#5-2" class="headerlink" title="5.2"></a>5.2</h2><p>今天高中学姐请我出来吃饭，转眼间三年快过去了，真快呀，还记得刚来青岛时学长学姐们欢迎我们的时候，有时候真挺不舍的，但天下没有不散的筵席，今日的分别时为了他日更好的相见，加油加油！<br><img src="/2023/05/05/%E7%94%9F%E6%B4%BB/%E4%BA%94%E4%B8%80%E6%B8%B8%E8%AE%B0/%E5%AD%A6%E5%A7%90%E5%8D%B3%E5%B0%86%E6%AF%95%E4%B8%9A%E5%90%88%E7%85%A7.jpg" alt="跟学姐合照"></p>
-<p>祝学姐毕业快乐！工作顺利！<br>接下来我也要忙着复习和准备着保研啦！</p>
-]]></content>
-      <categories>
-        <category>日常记录</category>
-      </categories>
-      <tags>
-        <tag>假期游玩</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>技术总结</title>
     <url>/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h3 id="创建个人博客过程"><a href="#创建个人博客过程" class="headerlink" title="创建个人博客过程"></a>创建个人博客过程</h3><ol>
@@ -65,12 +50,34 @@
 <div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/内力组合（一）.jpg" width="70%"></div>
 <div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/内力组合（二）.jpg" width="70%"></div>
 
+<p>关键要义：<strong>在同一个组合下一直算，然后再在不同组合中取最不利的值</strong>。</p>
 <h3 id="振型参与质量系数与振型有效质量系数的区别"><a href="#振型参与质量系数与振型有效质量系数的区别" class="headerlink" title="振型参与质量系数与振型有效质量系数的区别"></a>振型参与质量系数与振型有效质量系数的区别</h3><ol>
 <li>振型参与质量（系数）是振型有效质量（系数）的推广。<div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/振型参与质量系数与振型有效质量系数.jpg" width="70%"></div></li>
 </ol>
+<h3 id="焊接纵向、横向残余应力的理解"><a href="#焊接纵向、横向残余应力的理解" class="headerlink" title="焊接纵向、横向残余应力的理解"></a>焊接纵向、横向残余应力的理解</h3><p>1.焊接纵向残余应力<br>所谓<strong>纵向</strong>，就是<strong>应力方向与焊缝长度方向平行</strong>。如下图所示。</p>
+<div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/焊接纵向残余应力.jpg" width="70%"></div>
+<div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/焊接纵向残余应力-1.jpg" width="70%"></div>
+
+<p>对于是<strong>拉应力还是压应力</strong>，应该这么理解：靠近焊缝的部分，在冷却时，受到两端已经冷却（或者说热影响不大）的区域限制，限制它<strong>收缩</strong>，故在其中产生了拉应力。由于板件<strong>未受外力</strong>，截面必然<strong>平衡</strong>，故两端的纵向残余应力为<strong>压应力</strong>。<br>2.焊接横向残余应力<br>所谓<strong>横向</strong>就是<strong>垂直于焊缝长度方向</strong>，例如两块板对接焊，当焊缝<strong>纵向收缩</strong>时，两块板件有向相反反向弯曲的趋势，造成焊缝中部<strong>两端受压，中间受拉</strong>。如下图所示。</p>
+<div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/焊接横向残余应力.jpg" width="70%"></div>
 ]]></content>
       <categories>
         <category>结构设计学习</category>
       </categories>
+  </entry>
+  <entry>
+    <title>游玩记录</title>
+    <url>/2023/05/05/%E7%94%9F%E6%B4%BB/%E6%B8%B8%E7%8E%A9%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="五一假期"><a href="#五一假期" class="headerlink" title="五一假期"></a>五一假期</h2><p>这几天都在学校学习，认真看了高层建筑这本书，感觉讲的比较浅显，如果不看具体例子不容易理解。<span id="more"></span></p>
+<p>5.1号还去网球场打了会网球，感觉有一点点进步，继续加油。</p>
+<p>高中学姐请我出来吃饭，转眼间三年快过去了，真快呀，还记得刚来青岛时学长学姐们欢迎我们的时候，有时候真挺不舍的，但天下没有不散的筵席，今日的分别时为了他日更好的相见，加油加油！<br><img src="/2023/05/05/%E7%94%9F%E6%B4%BB/%E6%B8%B8%E7%8E%A9%E8%AE%B0%E5%BD%95/%E5%AD%A6%E5%A7%90%E5%8D%B3%E5%B0%86%E6%AF%95%E4%B8%9A%E5%90%88%E7%85%A7.jpg" alt="跟学姐合照"></p>
+<p>祝学姐毕业快乐！工作顺利！<br>接下来我也要忙着复习和准备着保研啦！</p>
+]]></content>
+      <categories>
+        <category>日常记录</category>
+      </categories>
+      <tags>
+        <tag>假期游玩</tag>
+      </tags>
   </entry>
 </search>
