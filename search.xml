@@ -60,6 +60,11 @@
 
 <p>对于是<strong>拉应力还是压应力</strong>，应该这么理解：靠近焊缝的部分，在冷却时，受到两端已经冷却（或者说热影响不大）的区域限制，限制它<strong>收缩</strong>，故在其中产生了拉应力。由于板件<strong>未受外力</strong>，截面必然<strong>平衡</strong>，故两端的纵向残余应力为<strong>压应力</strong>。<br>2.焊接横向残余应力<br>所谓<strong>横向</strong>就是<strong>垂直于焊缝长度方向</strong>，例如两块板对接焊，当焊缝<strong>纵向收缩</strong>时，两块板件有向相反反向弯曲的趋势，造成焊缝中部<strong>两端受压，中间受拉</strong>。如下图所示。</p>
 <div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/焊接横向残余应力.jpg" width="70%"></div>
+
+<h3 id="钢筋混凝土受扭构件承载力公式推导的两种方法"><a href="#钢筋混凝土受扭构件承载力公式推导的两种方法" class="headerlink" title="钢筋混凝土受扭构件承载力公式推导的两种方法"></a>钢筋混凝土受扭构件承载力公式推导的两种方法</h3><div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/钢筋混凝土受扭构件承载力公式推导-0.png" width="70%"></div>
+<div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/钢筋混凝土受扭构件承载力公式推导-1.png" width="70%"></div>
+<div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/钢筋混凝土受扭构件承载力公式推导-2.png" width="70%"></div>
+<div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/钢筋混凝土受扭构件承载力公式推导-3.png" width="70%"></div>
 ]]></content>
       <categories>
         <category>结构设计学习</category>
