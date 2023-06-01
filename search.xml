@@ -91,7 +91,11 @@
 
 <h3 id="框架剪力墙结构内力计算"><a href="#框架剪力墙结构内力计算" class="headerlink" title="框架剪力墙结构内力计算"></a>框架剪力墙结构内力计算</h3><div class="pdf-container" data-target="框架剪力墙结构内力计算.pdf" data-height="500px"></div>
 
-
+<h3 id="双向板计算"><a href="#双向板计算" class="headerlink" title="双向板计算"></a>双向板计算</h3><p>对于双向板的设计，有<strong>弹性设计</strong>和<strong>塑性设计</strong>两种。对于弹性设计，是通过查表得出弯矩设计值，书上也容易理解。对于塑性设计，书上采用了<strong>塑性铰线法</strong>，通过一系列推到，得到荷载P作用时，板的弯矩（书上表述为<strong>承载力</strong>，尚有不妥，应该为<strong>内力</strong>更好），然后配筋设计了。</p>
+<blockquote>
+<p>过程后续有空补上</p>
+</blockquote>
+<p>从中也可以发现，所谓弹性设计、塑性设计，归纳起来就是：<strong>以何种状态的抗力去抵抗该状态下的效应就是何种设计</strong>，</p>
 ]]></content>
       <categories>
         <category>结构设计学习</category>
@@ -102,7 +106,14 @@
     <url>/2023/05/08/%E5%AD%A6%E4%B9%A0/%E4%BF%9D%E7%A0%94%E8%B7%AF%E9%80%94/</url>
     <content><![CDATA[<h2 id="材料力学"><a href="#材料力学" class="headerlink" title="材料力学"></a>材料力学</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>
 <li>花了我6元大洋，下载到了材料力学第六版（孙训方），打算今天先搞定拉压杆那部分，毕竟我也是学过的男人。考虑到书籍下载问题，后续等保研结束了，我单独在博客上挂上大学以来的电子书，拱土木学弟学妹们无偿下载！</li>
-<li>除此之外，我还想下载一本英语阅读的练习题，好久没学英语啦，开始学习！！！</li>
+<li>除此之外，我还想下载一本英语阅读的练习题，好久没学英语啦，开始学习！！！<span id="more"></span></li>
+</ol>
+<h3 id="6-1日总结"><a href="#6-1日总结" class="headerlink" title="6.1日总结"></a>6.1日总结</h3><ol>
+<li>最近学了拉压、扭的部分，大致思路都是<strong>强度-刚度-应变能</strong>，公式也很类似。下面分享几个比较有意思的点：</li>
+<li>第一个是<strong>小变形放大图</strong>，常用来解决超静定问题，依靠<strong>平衡方程</strong>和<strong>变形协调方程</strong>，再加上本构方程。这里的<strong>变形协调</strong>其实就是后面<strong>力法方程的本质</strong>，可以说是埋下伏笔了。</li>
+<li>第二个是<strong>功互等定理</strong>和<strong>位移互等定理</strong>，在材料力学中只是当作附加部分讲了讲，并没有涉及其本质，具体推导可以参见 <strong>《结构力学》（龙驭球）第五章最后一节</strong>，用虚功原理予以解释，此外，那里还介绍了两个互等定理。注意：上述四个互等定理只适用于<strong>线性变形体系</strong>。</li>
+<li><strong>剪应力互等定理</strong>新的理解<br>详细可以参考一下这篇文章。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">https:<span class="regexp">//</span>www.zhihu.com<span class="regexp">/question/</span><span class="number">21070058</span></span><br></pre></td></tr></table></figure></li>
+<li></li>
 </ol>
 ]]></content>
       <categories>
