@@ -88,6 +88,8 @@
 
 <h3 id="结构力学——结构对称性探究"><a href="#结构力学——结构对称性探究" class="headerlink" title="结构力学——结构对称性探究"></a>结构力学——结构对称性探究</h3><div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/结构力学对称性探究-1.JPG" width="70%"></div>
 <div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/结构力学对称性探究-2.JPG" width="70%"></div>
+关于结构对称性，可参考下面这篇文章：
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">https:<span class="regexp">//</span>zhuanlan.zhihu.com<span class="regexp">/p/</span><span class="number">576399081</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="剪力墙按受力特性的分类及其受力特征"><a href="#剪力墙按受力特性的分类及其受力特征" class="headerlink" title="剪力墙按受力特性的分类及其受力特征"></a>剪力墙按受力特性的分类及其受力特征</h3><ol>
 <li><strong>整体墙</strong><br> 定义：无洞口的剪力墙或剪力墙上开有一定数量的洞口，但洞口的面积不超过墙体面积的16%，且洞口至墙边的净距及洞口之间的净距大于洞孔长边尺寸时，可以忽略洞口对墙体的影响，这种墙体称为整体剪力墙。<br> 受力特征：整体剪力墙的受力状态如同竖向悬臂梁，截面变形后仍符合平面假定，<strong>因而截面应力可按材料力学公式计算</strong>，变形属弯曲型。</li>
@@ -104,7 +106,12 @@
 <div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/双向板塑性设计.jpg" width="90%"></div>
 <div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/双向板塑性设计计算公式.jpg" width="80%"></div>
 
-<p>从中也可以发现，所谓弹性设计、塑性设计，归纳起来就是<strong>以何种状态的抗力去抵抗该状态下的效应就是何种设计</strong>。</p>
+<p>从中也可以发现，所谓弹性设计、塑性设计，归纳起来就是<strong>以何种状态的抗力去抵抗该状态下的效应就是何种设计。</strong></p>
+<h3 id="应力应变、内力与位移之间关系"><a href="#应力应变、内力与位移之间关系" class="headerlink" title="应力应变、内力与位移之间关系"></a>应力应变、内力与位移之间关系</h3><p>应力与应变之间关系：<br>有应力不一定有应变（这个命题本身不是很严谨）比如三个方向应力取值得当可以使得某一方向无应变。<br>有应变不一定有应力，比如静定结构由于温度差异产生的应变。<br>内力和位移之间联系：<br>有内力不一定有位移。比如超静定结构中，由于温度变形受到限制而产生内力，但无位移。<br>有位移不一定有内力。比如静定结构支座位移并不产生内力。<br>关于<strong>位移和变形</strong>的区别，可以参考如下：</p>
+<div align="center"><img src="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/位移、变形的区别.png" width="90%"></div>
+
+<h3 id="混凝土结构裂缝典型特征"><a href="#混凝土结构裂缝典型特征" class="headerlink" title="混凝土结构裂缝典型特征"></a>混凝土结构裂缝典型特征</h3><pre><code>https://max.book118.com/html/2022/0926/7121153065004200.shtm
+</code></pre>
 ]]></content>
       <categories>
         <category>结构设计学习</category>
