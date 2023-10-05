@@ -54,6 +54,7 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
+
 </head>
 
 
@@ -233,9 +234,9 @@
     
     <div class="post-body" itemprop="articleBody"><h2 id="个人博客"><a href="#个人博客" class="headerlink" title="个人博客"></a>个人博客</h2><ol>
 <li><p>最开始搭建一个最简单的网站主要参考一下几条博客。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://blog.csdn.net/sinat_37781304/article/details/82729029</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>blog.csdn.net<span class="regexp">/sinat_37781304/</span>article<span class="regexp">/details/</span><span class="number">82729029</span></span><br></pre></td></tr></table></figure></li>
 <li><p>hexo 如何新建一篇文章。<span id="more"></span></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost blog]# hexo new &quot;如何在hexo上创建一篇文章&quot;</span><br><span class="line">...</span><br><span class="line">INFO  Created: /blog/source/_posts/如何在hexo上创建一篇文章.md</span><br></pre></td></tr></table></figure>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost blog]# hexo <span class="keyword">new</span> <span class="string">&quot;如何在hexo上创建一篇文章&quot;</span></span><br><span class="line">...</span><br><span class="line">INFO  Created: <span class="regexp">/blog/</span><span class="keyword">source</span><span class="regexp">/_posts/</span>如何在hexo上创建一篇文章.md</span><br></pre></td></tr></table></figure>
 <p>这个缺点是他只能在<code>...source/_posts</code>下生成，没法完成自己的分类，还是推荐在<code>VSCode</code>中创建新文章。</p>
 </li>
 <li><p>hexo 显示无法连接到 <code>github</code>.</p>
@@ -243,14 +244,14 @@
 <p>fatal: unable to access ‘<a target="_blank" rel="noopener" href="https://github.com/Hushuangjun/Hushuangjun.github.io.git">https://github.com/Hushuangjun/Hushuangjun.github.io.git</a></p>
 </blockquote>
 <p>运行如下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy </span><br><span class="line">git config --global --unset https.proxy  </span><br></pre></td></tr></table></figure></li>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> http<span class="selector-class">.proxy</span> </span><br><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> https<span class="selector-class">.proxy</span>  </span><br></pre></td></tr></table></figure></li>
 <li><p>markdown中插入本地图片不显示</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.cnblogs.com/koo070/p/16548228.html</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>www.cnblogs.com<span class="regexp">/koo070/</span>p/<span class="number">16548228</span>.html</span><br></pre></td></tr></table></figure></li>
 <li><p>为啥clash关掉后无法正常上网？</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://zhuanlan.zhihu.com/p/550446124</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>zhuanlan.zhihu.com<span class="regexp">/p/</span><span class="number">550446124</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>怎么实现图片等比例缩放，或者指定高度，并且居中、左、右？</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://zhuanlan.zhihu.com/p/139007418</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>zhuanlan.zhihu.com<span class="regexp">/p/</span><span class="number">139007418</span></span><br></pre></td></tr></table></figure></li>
 <li><p>为啥hexo-pdf按操作弄完之后，点进去直接下载却不显示pdf？</p>
 <blockquote>
 <p>因为我们<strong>idm</strong>插件接管了那个命令，<strong>只要把浏览器的idm插件关闭即可</strong>。</p>
@@ -364,5 +365,5 @@
   
   <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
   
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</body>
 </html>
