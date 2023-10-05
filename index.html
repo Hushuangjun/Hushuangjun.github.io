@@ -205,7 +205,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-05 20:32:53" itemprop="dateModified" datetime="2023-10-05T20:32:53+08:00">2023-10-05</time>
+      <time title="修改时间：2023-10-05 21:22:12" itemprop="dateModified" datetime="2023-10-05T21:22:12+08:00">2023-10-05</time>
     </span>
 
   
@@ -219,7 +219,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="电子书查找教程"><a href="#电子书查找教程" class="headerlink" title="电子书查找教程"></a>电子书查找教程</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>使用<strong>科学上网</strong>，在google上搜索相关书籍，可能会找到相关电子版。如下图所示。</p>
-<div align="center"><img src="/2023/07/30/%E5%AD%A6%E4%B9%A0/%E7%94%B5%E5%AD%90%E4%B9%A6%E7%B1%8D/google搜索电子书.jpg" width="90%"></div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/07/30/%E5%AD%A6%E4%B9%A0/%E7%94%B5%E5%AD%90%E4%B9%A6%E7%B1%8D/#more" rel="contents">
@@ -290,7 +289,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-30 15:59:46" itemprop="dateModified" datetime="2023-09-30T15:59:46+08:00">2023-09-30</time>
+      <time title="修改时间：2023-10-05 21:15:38" itemprop="dateModified" datetime="2023-10-05T21:15:38+08:00">2023-10-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -655,7 +654,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-05 16:56:14" itemprop="dateModified" datetime="2023-10-05T16:56:14+08:00">2023-10-05</time>
+      <time title="修改时间：2023-10-05 22:08:48" itemprop="dateModified" datetime="2023-10-05T22:08:48+08:00">2023-10-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -677,10 +676,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="个人博客"><a href="#个人博客" class="headerlink" title="个人博客"></a>个人博客</h2><ol>
-<li><p>最开始搭建一个最简单的网站主要参考一下几条博客。</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>blog.csdn.net<span class="regexp">/sinat_37781304/</span>article<span class="regexp">/details/</span><span class="number">82729029</span></span><br></pre></td></tr></table></figure></li>
-<li><p>hexo 如何新建一篇文章。</p></li></ol>
+          <h2 id="个人博客"><a href="#个人博客" class="headerlink" title="个人博客"></a>个人博客</h2><h3 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h3><ol>
+<li>安装<a target="_blank" rel="noopener" href="https://nodejs.org/en">Nodejs</a>,这里选择<code>LTS</code>版本，安装好后，运行如下命令(建议使用以管理员方式运行,例如将git bash设置为以管理员方式打开，我是选择始终以管理方式运行git bash)，检查nodejs安装是否成功。<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查nodejs是否安装成功</span></span><br><span class="line"><span class="keyword">node</span> <span class="title">-v</span></span><br><span class="line">npm -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看npm下载的全局保存目录(prefix)和缓存位置(cache)</span></span><br><span class="line"><span class="comment"># 如果在C盘，可以换到D盘某个位置，例如就在Nodejs安装路径下新建`node_global`和`node_cache`两个文件夹。</span></span><br><span class="line"><span class="comment"># 然后更改`Nodejs安装路径\node_modules\npm`下的npmrc和.npmrc文件，加上上述两个文件夹的路径。</span></span><br><span class="line">npm config ls  </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>将Nodejs中的全局保存目录（保存下载的库）和<code>Nodejs安装路径\node_modules\npm</code>放到系统变量中的Path下，如下图所示。<div align="center"><img src="/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/nodejs添加环境变量.jpg" width="70%"></div>
+> 其中全局保存目录是为了后面`hexo`命令能顺利运行，而`...\npm`文件夹则是为了npm能顺利运行。
+></li>
+<li>然后在博客文件夹（必须是新文件夹）(这里以<code>D:\Blog</code>举例),git bash,运行如下命令：<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-<span class="keyword">cli</span> <span class="meta">#(下载到全局保存目录)</span></span><br><span class="line"></span><br><span class="line">hexo init <span class="meta"># 博客初始化</span></span><br><span class="line"></span><br><span class="line">npm install hexo-<span class="keyword">cli</span>  <span class="meta">#下载hexo到`D:\Blog\node_modules`</span></span><br><span class="line"></span><br><span class="line">hexo -v <span class="meta"># 若成功显示版本，则表示hexo安装成功了。</span></span><br><span class="line"></span><br><span class="line">hexo g  </span><br><span class="line"></span><br><span class="line">hexo s  <span class="meta"># 然后再本地打开即可。</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 这样博客就初步搭建完成了。</span></span><br></pre></td></tr></table></figure></li>
+<li>可以运行<code>hexo new  xxx.md</code>来生成文章，然后运行<code>hexo g</code>，等待部署到github上。</li>
+<li>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_48121128/article/details/132380427"><strong>完成hexo到GitHub的部署</strong></a>，这里要注意，在博客目录下config.yaml修改时（如下）：<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">   type:</span> git</span><br><span class="line"><span class="symbol">   repo:</span> git@github.com:ymxinhe/ymxinhe.github.io.git   <span class="meta"># 这里不要用https:<span class="comment">//链接，否则后面部署时傻里傻气的。</span></span></span><br><span class="line"><span class="symbol">   branch:</span> main  <span class="meta">#这里分支要选择好，main是默认的，可以新建分支(比如source)，但要对应github-pages那里生成的分支，如下图所示。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<div align="center"><img src="/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/github%20pages生成选择分支.jpg" width="70%"></div></li>
+<li>再运行<code>npm install hexo-deployer-git --save</code>（否则<code>hexo d</code>无效，无法完成部署）。</li>
+</ol>
+<h3 id="搭建过程疑问"><a href="#搭建过程疑问" class="headerlink" title="搭建过程疑问"></a>搭建过程疑问</h3><ol>
+<li>最开始搭建一个最简单的网站主要参考一下几条博客。<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>blog.csdn.net<span class="regexp">/sinat_37781304/</span>article<span class="regexp">/details/</span><span class="number">82729029</span></span><br></pre></td></tr></table></figure></li>
+<li>hexo 如何新建一篇文章。</li></ol>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/#more" rel="contents">
