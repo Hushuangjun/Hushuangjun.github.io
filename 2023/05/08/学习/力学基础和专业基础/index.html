@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/purple/pace-theme-center-atom.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="材料力学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="力学基础和专业基础">
+<meta property="og:url" content="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%92%8C%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Hu_SE">
+<meta property="og:description" content="材料力学">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-30T07:59:46.309Z">
+<meta property="article:author" content="Charm_Hu">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%92%8C%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%92%8C%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/","path":"2023/05/08/学习/力学基础和专业基础/","title":"力学基础和专业基础"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>力学基础和专业基础 | Hu_SE</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hu_SE</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%90%E6%96%99%E5%8A%9B%E5%AD%A6"><span class="nav-number">1.</span> <span class="nav-text">材料力学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%8A%9B%E5%AD%A6"><span class="nav-number">2.</span> <span class="nav-text">结构力学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="nav-number">2.1.</span> <span class="nav-text">结构动力学基础</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%9F%E5%8A%9B%E5%AD%A6"><span class="nav-number">3.</span> <span class="nav-text">土力学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B7%E5%87%9D%E5%9C%9F%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">混凝土结构基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%92%A2%E7%BB%93%E6%9E%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">钢结构基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="nav-number">5.1.</span> <span class="nav-text">稳定性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%84%E8%8C%83%E4%B8%8A%E5%AF%B9%E4%BA%8E%E8%BD%B4%E5%BF%83%E5%8F%97%E5%8E%8B%E3%80%81%E5%8F%97%E5%BC%AF%E5%8F%8A%E5%8E%8B%E5%BC%AF%E6%9E%84%E4%BB%B6%E7%9A%84%E5%AE%BD%E5%8E%9A%E6%AF%94%E9%99%90%E5%80%BC%E6%98%AF%E4%BB%8E%E4%BD%95%E5%BE%97%E6%9D%A5%E7%9A%84%EF%BC%9F"><span class="nav-number">5.1.1.</span> <span class="nav-text">规范上对于轴心受压、受弯及压弯构件的宽厚比限值是从何得来的？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5"><span class="nav-number">6.</span> <span class="nav-text">土木工程施工</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%9F%E6%96%B9%E5%B7%A5%E7%A8%8B"><span class="nav-number">6.1.</span> <span class="nav-text">土方工程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E5%9D%91%E6%94%AF%E6%8A%A4"><span class="nav-number">6.1.1.</span> <span class="nav-text">基坑支护</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Charm_Hu"
+      src="/images/%E9%B8%A1%E5%93%A5.jpg">
+  <p class="site-author-name" itemprop="name">Charm_Hu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Hushuangjun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Hushuangjun" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/691881848?spm_id_from=333.1007.0.0" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;691881848?spm_id_from&#x3D;333.1007.0.0" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%92%8C%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E9%B8%A1%E5%93%A5.jpg">
+      <meta itemprop="name" content="Charm_Hu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hu_SE">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="力学基础和专业基础 | Hu_SE">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          力学基础和专业基础
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-05-08 00:00:00" itemprop="dateCreated datePublished" datetime="2023-05-08T00:00:00+08:00">2023-05-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-09-30 15:59:46" itemprop="dateModified" datetime="2023-09-30T15:59:46+08:00">2023-09-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/" itemprop="url" rel="index"><span itemprop="name">结构设计</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="材料力学"><a href="#材料力学" class="headerlink" title="材料力学"></a>材料力学</h2><span id="more"></span>
+<ol>
+<li><p>最近学了拉压、扭的部分，大致思路都是<strong>强度-刚度-应变能</strong>，公式也很类似。下面分享几个比较有意思的点：<br>第一个是<strong>小变形放大图</strong>，常用来解决超静定问题，依靠<strong>平衡方程</strong>和<strong>变形协调方程</strong>，再加上本构方程。这里的<strong>变形协调</strong>其实就是后面<strong>力法方程的本质</strong>，可以说是埋下伏笔了。</p>
+</li>
+<li><p>第二个是<strong>功互等定理</strong>和<strong>位移互等定理</strong>，在材料力学中只是当作附加部分讲了讲，并没有涉及其本质，具体推导可以参见 <strong>《结构力学》（龙驭球）第五章最后一节</strong>，用虚功原理予以解释，此外，那里还介绍了两个互等定理。注意：上述四个互等定理只适用于<strong>线性变形体系</strong>。</p>
+</li>
+<li><p><strong>剪应力互等定理</strong>新的理解<br>详细可以参考一下这篇文章。感觉与以前理解不同的地方在于：取出来的单元体实际上六个面均有力，每个面有两个方向的切应力和一个正应力，相对的面上应力相等。（他给出的解释是单元体足够小，可以看作一个点，故相对的两个面力相等）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.zhihu.com/question/21070058</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>非对称纯弯曲梁的正应力（《材料力学》下册1-1节）<br>推导得到了<strong>广义弯曲正应力</strong>，有一个印象即可。对于<strong>非对称</strong>，应该是指梁不具有对称平面，或者梁具有对称平面，但外力不作用在该平面内，梁将发生非对称弯曲。</p>
+</li>
+<li><p>开口薄壁截面梁的剪应力和弯曲中心<br>重点是理解了<strong>弯曲中心（剪切中心）</strong>，非对称截面梁发生平面弯曲的条件：<strong>外力必须作用在通过弯曲中心且平行于形心主惯性平面（或与之重合）的平面内。</strong></p>
+<div class="pdf-container" data-target="弯曲中心.pdf" data-height="500px"></div>
+<p>而弯曲中心的确定方法见《材料力学合并文档》P252.核心就是<strong>截面上剪应力合成到某点，只有力而无力偶，该点即为弯曲中心</strong>。</p>
+</li>
+</ol>
+<h2 id="结构力学"><a href="#结构力学" class="headerlink" title="结构力学"></a>结构力学</h2><h3 id="结构动力学基础"><a href="#结构动力学基础" class="headerlink" title="结构动力学基础"></a>结构动力学基础</h3><ol>
+<li>今天复习了结构动力学基础中一个重要问题——单自由度结构体系自由振动自振频率的求解。困扰了将近一年的问题今天终于搞定了。顺便复习了<strong>科氏加速度</strong>等几个概念，具体参见《理论力学》P190.<div class="pdf-container" data-target="单自由度结构体系自振频率求解.pdf" data-height="500px"></div></li>
+</ol>
+<h2 id="土力学"><a href="#土力学" class="headerlink" title="土力学"></a>土力学</h2><h2 id="混凝土结构基本原理"><a href="#混凝土结构基本原理" class="headerlink" title="混凝土结构基本原理"></a>混凝土结构基本原理</h2><h2 id="钢结构基本原理"><a href="#钢结构基本原理" class="headerlink" title="钢结构基本原理"></a>钢结构基本原理</h2><h3 id="稳定性"><a href="#稳定性" class="headerlink" title="稳定性"></a>稳定性</h3><h4 id="规范上对于轴心受压、受弯及压弯构件的宽厚比限值是从何得来的？"><a href="#规范上对于轴心受压、受弯及压弯构件的宽厚比限值是从何得来的？" class="headerlink" title="规范上对于轴心受压、受弯及压弯构件的宽厚比限值是从何得来的？"></a>规范上对于轴心受压、受弯及压弯构件的宽厚比限值是从何得来的？</h4><p>宽厚比限值的根本目的是为了防止局部失稳先于整体失稳。由此，规范采用等稳定性原则，即板件屈曲应力不小于构件屈曲应力。$$\sigma_{crx}\geq \sigma <em>{cr}$$<br>同时，根据<strong>以何种状态下（例如弹性）抗力抵抗该种状态下效应即为该种状态设计</strong>，故当板件弹性屈曲应力不小于构件弹性屈曲应力，为<strong>弹性设计</strong>。<br>$$\frac{b</em>{1}}{t}\leq 15 \varepsilon _{k}$$</p>
+<h2 id="土木工程施工"><a href="#土木工程施工" class="headerlink" title="土木工程施工"></a>土木工程施工</h2><h3 id="土方工程"><a href="#土方工程" class="headerlink" title="土方工程"></a>土方工程</h3><h4 id="基坑支护"><a href="#基坑支护" class="headerlink" title="基坑支护"></a>基坑支护</h4><p>基坑支护包括一般基坑支护和深基坑支护。<br>深基坑支护方法有：<br>1.<strong>水泥土挡墙式支护结构</strong>：采用深层搅拌机就地将土和输入的水泥浆强行搅拌，形成连续搭接的水泥土柱状加固体挡墙。<br>2.<strong>排桩与板墙式支护结构</strong>：开挖前在基坑周围设置砼灌注桩或钢板桩，桩的排列有间隔式、双排式和连续式，桩顶设置砼连系梁或锚桩、拉杆。<br>3.<strong>土钉墙支护</strong>：在天然土体通过钻孔、插筋、注浆来设置土钉(亦称砂浆锚杆)并与喷射砼面板相结合，形成类似重力挡墙的土钉墙，以抵抗墙后的土压力，保持开挖面的稳定。<br>4.<strong>土层锚杆支护结构</strong>：在深基础立壁上钻孔，并达到一定深度，然后在孔内放入钢筋等材料，灌入泥浆或化学浆液，使其与土层结合成为抗拉（拔）力强的锚杆，将立壁土体侧压力传至稳定土层。</p>
+<blockquote>
+<p>在实际工程中，其实上述某些方法可组合使用，例如挡土灌注桩（排桩）+土层锚杆等。</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/" rel="prev" title="每日一学">
+                  <i class="fa fa-angle-left"></i> 每日一学
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/07/30/%E5%AD%A6%E4%B9%A0/%E7%94%B5%E5%AD%90%E4%B9%A6%E7%B1%8D/" rel="next" title="电子书籍">
+                  电子书籍 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Charm_Hu</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.12/pdfobject.min.js","integrity":"sha256-g2xji1rlE3KsGVClvuxTbcR0Kn2+wtQADSff2Tbb4zA="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

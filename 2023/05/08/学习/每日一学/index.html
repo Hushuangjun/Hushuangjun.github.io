@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/purple/pace-theme-center-atom.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="内力组合相关疑惑以框架结构为例，抗震设计时，内力组合遵循一下原则：（电脑也是这么算的，具体可以参见广厦计算结果）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日一学">
+<meta property="og:url" content="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/index.html">
+<meta property="og:site_name" content="Hu_SE">
+<meta property="og:description" content="内力组合相关疑惑以框架结构为例，抗震设计时，内力组合遵循一下原则：（电脑也是这么算的，具体可以参见广厦计算结果）">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E5%86%85%E5%8A%9B%E7%BB%84%E5%90%88%EF%BC%88%E4%B8%80%EF%BC%89.jpg">
+<meta property="og:image" content="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E5%86%85%E5%8A%9B%E7%BB%84%E5%90%88%EF%BC%88%E4%BA%8C%EF%BC%89.jpg">
+<meta property="og:image" content="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E5%B9%BF%E5%8E%A6%E5%86%85%E5%8A%9B%E7%BB%84%E5%90%88.jpg">
+<meta property="og:image" content="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E6%8C%AF%E5%9E%8B%E5%8F%82%E4%B8%8E%E8%B4%A8%E9%87%8F%E7%B3%BB%E6%95%B0%E4%B8%8E%E6%8C%AF%E5%9E%8B%E6%9C%89%E6%95%88%E8%B4%A8%E9%87%8F%E7%B3%BB%E6%95%B0.jpg">
+<meta property="og:image" content="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E7%84%8A%E6%8E%A5%E7%BA%B5%E5%90%91%E6%AE%8B%E4%BD%99%E5%BA%94%E5%8A%9B.jpg">
+<meta property="og:image" content="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E7%84%8A%E6%8E%A5%E7%BA%B5%E5%90%91%E6%AE%8B%E4%BD%99%E5%BA%94%E5%8A%9B-1.jpg">
+<meta property="og:image" content="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E7%84%8A%E6%8E%A5%E6%A8%AA%E5%90%91%E6%AE%8B%E4%BD%99%E5%BA%94%E5%8A%9B.jpg">
+<meta property="og:image" content="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E7%BB%93%E6%9E%84%E5%8A%9B%E5%AD%A6%E5%AF%B9%E7%A7%B0%E6%80%A7%E6%8E%A2%E7%A9%B6-1.JPG">
+<meta property="og:image" content="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E7%BB%93%E6%9E%84%E5%8A%9B%E5%AD%A6%E5%AF%B9%E7%A7%B0%E6%80%A7%E6%8E%A2%E7%A9%B6-2.JPG">
+<meta property="og:image" content="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E5%8F%8C%E5%90%91%E6%9D%BF%E5%A1%91%E6%80%A7%E8%AE%BE%E8%AE%A1.jpg">
+<meta property="og:image" content="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E5%8F%8C%E5%90%91%E6%9D%BF%E5%A1%91%E6%80%A7%E8%AE%BE%E8%AE%A1%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.jpg">
+<meta property="og:image" content="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E4%BD%8D%E7%A7%BB%E3%80%81%E5%8F%98%E5%BD%A2%E7%9A%84%E5%8C%BA%E5%88%AB.png">
+<meta property="article:published_time" content="2023-05-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-23T06:22:22.385Z">
+<meta property="article:author" content="Charm_Hu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/%E5%86%85%E5%8A%9B%E7%BB%84%E5%90%88%EF%BC%88%E4%B8%80%EF%BC%89.jpg">
+
+
+<link rel="canonical" href="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/","path":"2023/05/08/学习/每日一学/","title":"每日一学"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>每日一学 | Hu_SE</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hu_SE</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%8A%9B%E7%BB%84%E5%90%88%E7%9B%B8%E5%85%B3%E7%96%91%E6%83%91"><span class="nav-number">1.</span> <span class="nav-text">内力组合相关疑惑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%AF%E5%9E%8B%E5%8F%82%E4%B8%8E%E8%B4%A8%E9%87%8F%E7%B3%BB%E6%95%B0%E4%B8%8E%E6%8C%AF%E5%9E%8B%E6%9C%89%E6%95%88%E8%B4%A8%E9%87%8F%E7%B3%BB%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">振型参与质量系数与振型有效质量系数的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%84%8A%E6%8E%A5%E7%BA%B5%E5%90%91%E3%80%81%E6%A8%AA%E5%90%91%E6%AE%8B%E4%BD%99%E5%BA%94%E5%8A%9B%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">焊接纵向、横向残余应力的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%92%A2%E7%AD%8B%E6%B7%B7%E5%87%9D%E5%9C%9F%E5%8F%97%E6%89%AD%E6%9E%84%E4%BB%B6%E6%89%BF%E8%BD%BD%E5%8A%9B%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">钢筋混凝土受扭构件承载力公式推导的两种方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%8A%9B%E5%AD%A6%E2%80%94%E2%80%94%E7%BB%93%E6%9E%84%E5%AF%B9%E7%A7%B0%E6%80%A7%E6%8E%A2%E7%A9%B6"><span class="nav-number">5.</span> <span class="nav-text">结构力学——结构对称性探究</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E8%BE%B9%E7%95%8C%E4%B8%8E%E5%8F%8D%E5%AF%B9%E7%A7%B0%E8%BE%B9%E7%95%8C%E4%BD%8D%E7%A7%BB%E6%9D%A1%E4%BB%B6"><span class="nav-number">5.1.</span> <span class="nav-text">对称边界与反对称边界位移条件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%AA%E5%8A%9B%E5%A2%99%E6%8C%89%E5%8F%97%E5%8A%9B%E7%89%B9%E6%80%A7%E7%9A%84%E5%88%86%E7%B1%BB%E5%8F%8A%E5%85%B6%E5%8F%97%E5%8A%9B%E7%89%B9%E5%BE%81"><span class="nav-number">6.</span> <span class="nav-text">剪力墙按受力特性的分类及其受力特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%86%E6%9E%B6%E5%89%AA%E5%8A%9B%E5%A2%99%E7%BB%93%E6%9E%84%E5%86%85%E5%8A%9B%E8%AE%A1%E7%AE%97"><span class="nav-number">7.</span> <span class="nav-text">框架剪力墙结构内力计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E5%90%91%E6%9D%BF%E8%AE%A1%E7%AE%97"><span class="nav-number">8.</span> <span class="nav-text">双向板计算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%95%E4%B8%BA%E5%8D%95%E5%90%91%E6%9D%BF%E4%B8%8E%E5%8F%8C%E5%90%91%E6%9D%BF%EF%BC%9F"><span class="nav-number">8.1.</span> <span class="nav-text">何为单向板与双向板？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E5%8A%9B%E5%BA%94%E5%8F%98%E3%80%81%E5%86%85%E5%8A%9B%E4%B8%8E%E4%BD%8D%E7%A7%BB%E4%B9%8B%E9%97%B4%E5%85%B3%E7%B3%BB"><span class="nav-number">9.</span> <span class="nav-text">应力应变、内力与位移之间关系</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Charm_Hu"
+      src="/images/%E9%B8%A1%E5%93%A5.jpg">
+  <p class="site-author-name" itemprop="name">Charm_Hu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Hushuangjun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Hushuangjun" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/691881848?spm_id_from=333.1007.0.0" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;691881848?spm_id_from&#x3D;333.1007.0.0" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/08/%E5%AD%A6%E4%B9%A0/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%AD%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E9%B8%A1%E5%93%A5.jpg">
+      <meta itemprop="name" content="Charm_Hu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hu_SE">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="每日一学 | Hu_SE">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          每日一学
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-05-08 00:00:00" itemprop="dateCreated datePublished" datetime="2023-05-08T00:00:00+08:00">2023-05-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-09-23 14:22:22" itemprop="dateModified" datetime="2023-09-23T14:22:22+08:00">2023-09-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">结构设计学习</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="内力组合相关疑惑"><a href="#内力组合相关疑惑" class="headerlink" title="内力组合相关疑惑"></a>内力组合相关疑惑</h3><p>以框架结构为例，<strong>抗震设计</strong>时，内力组合遵循一下原则：（电脑也是这么算的，具体可以参见<strong>广厦计算结果</strong>）<span id="more"></span><br>注意：下面γGE取1.2是老规范，新规范是1.3.</p>
+<div align=center><img src="每日一学/内力组合（一）.jpg" width="70%"></div>
+<div align=center><img src="每日一学/内力组合（二）.jpg" width="70%"></div>
+
+<p>关键要义：<strong>在同一个组合下一直算（包括强柱弱梁等内力调整，要在同一个组合内调整），然后再在不同组合中取最不利的值</strong>。<br>广厦内力组合如下，验证了上面的想法。</p>
+<div align=center><img src="每日一学/广厦内力组合.jpg" width="90%"></div>
+
+<h3 id="振型参与质量系数与振型有效质量系数的区别"><a href="#振型参与质量系数与振型有效质量系数的区别" class="headerlink" title="振型参与质量系数与振型有效质量系数的区别"></a>振型参与质量系数与振型有效质量系数的区别</h3><ol>
+<li>振型参与质量（系数）是振型有效质量（系数）的推广。<div align=center><img src="每日一学/振型参与质量系数与振型有效质量系数.jpg" width="70%"></div></li>
+</ol>
+<h3 id="焊接纵向、横向残余应力的理解"><a href="#焊接纵向、横向残余应力的理解" class="headerlink" title="焊接纵向、横向残余应力的理解"></a>焊接纵向、横向残余应力的理解</h3><p>1.焊接纵向残余应力<br>所谓<strong>纵向</strong>，就是<strong>应力方向与焊缝长度方向平行</strong>。如下图所示。</p>
+<div align=center><img src="每日一学/焊接纵向残余应力.jpg" width="70%"></div>
+<div align=center><img src="每日一学/焊接纵向残余应力-1.jpg" width="70%"></div>
+
+<p>对于是<strong>拉应力还是压应力</strong>，应该这么理解：靠近焊缝的部分，在冷却时，受到两端已经冷却（或者说热影响不大）的区域限制，限制它<strong>收缩</strong>，故在其中产生了拉应力。由于板件<strong>未受外力</strong>，截面必然<strong>平衡</strong>，故两端的纵向残余应力为<strong>压应力</strong>。<br>2.焊接横向残余应力<br>所谓<strong>横向</strong>就是<strong>垂直于焊缝长度方向</strong>，例如两块板对接焊，当焊缝<strong>纵向收缩</strong>时，两块板件有向相反反向弯曲的趋势，造成焊缝中部<strong>两端受压，中间受拉</strong>。如下图所示。</p>
+<div align=center><img src="每日一学/焊接横向残余应力.jpg" width="70%"></div>
+
+<h3 id="钢筋混凝土受扭构件承载力公式推导的两种方法"><a href="#钢筋混凝土受扭构件承载力公式推导的两种方法" class="headerlink" title="钢筋混凝土受扭构件承载力公式推导的两种方法"></a>钢筋混凝土受扭构件承载力公式推导的两种方法</h3><p>此文章写于大三下学期，目前来看，这两种方法的本质相同，第一种根据q相同求得，第二种根据Tu相同求得，但又有 $$T _ { u } &#x3D; 2 q A _ { c o r }$$ 故其本质相同。</p>
+<div class="pdf-container" data-target="钢筋混凝土受扭构件承载力.pdf" data-height="500px"></div>
+
+<h3 id="结构力学——结构对称性探究"><a href="#结构力学——结构对称性探究" class="headerlink" title="结构力学——结构对称性探究"></a>结构力学——结构对称性探究</h3><div align=center><img src="每日一学/结构力学对称性探究-1.JPG" width="70%"></div>
+<div align=center><img src="每日一学/结构力学对称性探究-2.JPG" width="70%"></div>
+
+<p>正是由于上述结论，可将奇&#x2F;偶跨对称结构简化，值得注意的是，<strong>对称轴处的荷载要减半，当然最终结果加和时，对称轴处相当于加了两次，合理的。</strong>可参考下面这篇文章：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">文章一：https://zhuanlan.zhihu.com/p/576399081</span><br><span class="line">文章二：https://zhuanlan.zhihu.com/p/147244195</span><br></pre></td></tr></table></figure>
+<h4 id="对称边界与反对称边界位移条件"><a href="#对称边界与反对称边界位移条件" class="headerlink" title="对称边界与反对称边界位移条件"></a>对称边界与反对称边界位移条件</h4><p>最近学习了<strong>水哥ansys初级教程</strong>，其中谈到<strong>对称边界和反对称边界位移条件时</strong>时，有：</p>
+<ol>
+<li>受对称载荷作用则对称面上的位移条件为<ol>
+<li>垂直于对称面的移动位移分量为零。</li>
+<li>绕平行于对称面的两相互垂直的轴的转动位移分量均为零。</li>
+</ol>
+</li>
+<li>受反对称载荷作用则对称面上的位移条件为<ol>
+<li>平行于对称面的移动位移分量为零；</li>
+<li>绕方向矢量垂直于对称面的轴的转动位移分量为零。</li>
+</ol>
+</li>
+</ol>
+<h3 id="剪力墙按受力特性的分类及其受力特征"><a href="#剪力墙按受力特性的分类及其受力特征" class="headerlink" title="剪力墙按受力特性的分类及其受力特征"></a>剪力墙按受力特性的分类及其受力特征</h3><ol>
+<li><strong>整体墙</strong><br> 定义：无洞口的剪力墙或剪力墙上开有一定数量的洞口，但洞口的面积不超过墙体面积的16%，且洞口至墙边的净距及洞口之间的净距大于洞孔长边尺寸时，可以忽略洞口对墙体的影响，这种墙体称为整体剪力墙。<br> 受力特征：整体剪力墙的受力状态如同竖向悬臂梁，截面变形后仍符合平面假定，<strong>因而截面应力可按材料力学公式计算</strong>，变形属弯曲型。</li>
+<li><strong>整体小开口墙</strong><br> 定义：当剪力墙上所开洞口面积稍大且超过墙体面积的16%时，在水平荷载作用下，这类剪力墙截面上的正应力分布略偏离了直线分布的规律，变成了相当于在整体墙弯曲时的直线分布应力之上叠加了墙肢局部弯曲应力，当墙肢中的局部弯矩不超过墙体整体弯矩的15%时，其截面变形仍接近于整体截面剪力墙，这种剪力墙称之为小开口整体剪力墙。<br> 受力特征：<strong>对于小开口剪力墙，其截面变形大体上仍符合平面假定，正应力大体上呈直线分布。为计算方便，力和变形仍按材料力学计算，然后适当修正。</strong>（一般<strong>内力计算</strong>是：将总力矩的85%按材料力学的方法计算墙肢弯矩及轴力，将总力矩的15%按墙肢的刚度进行分配。<strong>位移的计算</strong>：按照整体墙计算，不过考虑到洞口削弱墙体刚度，最终结果要放大20%）</li>
+<li><strong>联肢墙</strong><br> 定义：当剪力墙沿竖向开有一列或多列较大的洞口时，由于洞口较大，剪力墙截面的整体性已被破坏，剪力墙的截面变形已不再符合平截面假设。这时剪力墙成为由一系列连梁约束的墙肢所组成的联肢墙。<br> 受力特征：洞口开得比较大，截面的整体性已经破坏，<strong>横截面上正应力的分布远不是遵循沿一根直线的规律。</strong>但墙肢的线刚度比同列两孔间所形成的连梁的线刚度大得多，每根连梁中部有反弯点，各墙肢单独弯曲作用较为显著，但仅在个别或少数层墙肢出现反弯点。<strong>其变形曲线与整体小开口墙相近，仍以弯曲变形为主</strong>，内力计算宜采用连续化方法，例如<strong>连续连杆法</strong>。<blockquote>
+<p>连续连杆法：<br> <strong>基本假定</strong>：<br>    1. 连梁反弯点位于跨中，连梁的作用可以用沿高度 均匀分布的连续弹性薄片代替。<br>    2. 各墙肢的刚度相差不过分悬殊，因而变形曲线相似。<br>    3. 连梁和墙肢考虑弯曲和剪切变形，墙肢还应考虑轴向变形的影响。<br>    4. 各墙肢、连梁截面尺寸、材料强度及层高沿剪力墙全高相同。<br> <strong>基本原理</strong>：运用力法原理，将连梁中点切开，去掉多余约束，建立静定体系。切开后连杆剪力是多余未知力，是一个连续函数。由切开处的变形协调条件建立连杆剪力的微分方程，求解微分方程即得连杆剪力 。将层高范围内的各点剪力积分还原成一根连梁的剪力。各层连梁中点剪力求出后，所有墙肢及连梁内力都可相继求出。</p>
+</blockquote>
+</li>
+<li><strong>壁式框架</strong><br> 定义：当剪力墙的洞口尺寸较大，墙肢宽度较小，连梁的线刚度接近于墙肢的线刚度时，剪力墙的受力性能已接近于框架，这种剪力墙称为壁式框架。<br> 受力特征：洞口开得比联肢剪力墙更宽，墙肢宽度较小，墙肢与连梁刚度接近时，墙肢明显出现局部弯矩，在许多楼层有反弯点。剪力墙的内力分布接近框架。壁式框架实质是介于剪力墙和框架之间的一种过渡形式，它的变形已很接近剪切型。只不过壁柱和壁梁都较宽，因而在梁柱交接区形成不产生变形的刚域。</li>
+</ol>
+<h3 id="框架剪力墙结构内力计算"><a href="#框架剪力墙结构内力计算" class="headerlink" title="框架剪力墙结构内力计算"></a>框架剪力墙结构内力计算</h3><div class="pdf-container" data-target="框架剪力墙结构内力计算.pdf" data-height="500px"></div>
+
+<h3 id="双向板计算"><a href="#双向板计算" class="headerlink" title="双向板计算"></a>双向板计算</h3><p>对于双向板的设计，有<strong>弹性设计</strong>和<strong>塑性设计</strong>两种。对于弹性设计，是通过查表得出弯矩设计值，书上也容易理解。对于塑性设计，书上采用了<strong>塑性铰线法</strong>，通过一系列推到，得到荷载P作用时，板的弯矩（书上表述为<strong>承载力</strong>，尚有不妥，应该为<strong>内力</strong>更好），然后配筋设计了。</p>
+<div align=center><img src="每日一学/双向板塑性设计.jpg" width="90%"></div>
+<div align=center><img src="每日一学/双向板塑性设计计算公式.jpg" width="80%"></div>
+
+<p>从中也可以发现，所谓弹性设计、塑性设计，归纳起来就是<strong>以何种状态的抗力去抵抗该状态下的效应就是何种设计。</strong></p>
+<h4 id="何为单向板与双向板？"><a href="#何为单向板与双向板？" class="headerlink" title="何为单向板与双向板？"></a>何为单向板与双向板？</h4><p>在学习《混凝土结构基本原理》之初，对于单向板，我们是按照长边&#x2F;短边大于2（具体分为大于等于3和介于2-3之间）的原则来判断的。久而久之容易形成刻板印象，只通过边长比值来判断，这是不可取的。（见《混凝土》下册P30）<br>而实际上单向板和双向板定义：只在一个方向弯曲或主要在一个方向弯曲的板称为单向板；在两个方向弯曲且不能忽略任一方向弯曲的板称为双向板。</p>
+<h3 id="应力应变、内力与位移之间关系"><a href="#应力应变、内力与位移之间关系" class="headerlink" title="应力应变、内力与位移之间关系"></a>应力应变、内力与位移之间关系</h3><p>应力与应变之间关系：<br>有应力不一定有应变（这个命题本身不是很严谨）比如三个方向应力取值得当可以使得某一方向无应变。<br>有应变不一定有应力，比如静定结构由于温度差异产生的应变。<br>内力和位移之间联系：<br>有内力不一定有位移。比如超静定结构中，由于温度变形受到限制而产生内力，但无位移。<br>有位移不一定有内力。比如静定结构支座位移并不产生内力。<br>关于<strong>位移和变形</strong>的区别，可以参考如下：</p>
+<div align=center><img src="每日一学/位移、变形的区别.png" width="90%"></div>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/05/06/%E7%94%9F%E6%B4%BB/%E5%AE%BF%E8%88%8D%E7%94%9F%E6%B4%BB/" rel="prev" title="宿舍生活">
+                  <i class="fa fa-angle-left"></i> 宿舍生活
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/05/08/%E5%AD%A6%E4%B9%A0/%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%92%8C%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/" rel="next" title="力学基础和专业基础">
+                  力学基础和专业基础 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Charm_Hu</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.12/pdfobject.min.js","integrity":"sha256-g2xji1rlE3KsGVClvuxTbcR0Kn2+wtQADSff2Tbb4zA="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
