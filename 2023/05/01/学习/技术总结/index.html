@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://example.com/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/nodejs%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg">
 <meta property="og:image" content="http://example.com/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/github%20pages%E7%94%9F%E6%88%90%E9%80%89%E6%8B%A9%E5%88%86%E6%94%AF.jpg">
 <meta property="article:published_time" content="2023-04-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-10-05T14:31:53.281Z">
+<meta property="article:modified_time" content="2023-10-05T14:40:28.151Z">
 <meta property="article:author" content="Charm_Hu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/nodejs%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg">
@@ -214,7 +214,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-05 22:31:53" itemprop="dateModified" datetime="2023-10-05T22:31:53+08:00">2023-10-05</time>
+      <time title="修改时间：2023-10-05 22:40:28" itemprop="dateModified" datetime="2023-10-05T22:40:28+08:00">2023-10-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -227,6 +227,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
 </div>
 
         </div>
@@ -236,23 +243,19 @@
     
     
     <div class="post-body" itemprop="articleBody"><h2 id="个人博客"><a href="#个人博客" class="headerlink" title="个人博客"></a>个人博客</h2><h3 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h3><ol>
-<li><p>安装<a target="_blank" rel="noopener" href="https://nodejs.org/en">Nodejs</a>,这里选择<code>LTS</code>版本，安装好后，运行如下命令(建议使用以管理员方式运行,例如将git bash设置为以管理员方式打开，我是选择始终以管理方式运行git bash)，检查nodejs安装是否成功。</p>
-<span id="more"></span>
+<li>安装<a target="_blank" rel="noopener" href="https://nodejs.org/en">Nodejs</a>,这里选择<code>LTS</code>版本，安装好后，运行如下命令(建议使用以管理员方式运行,例如将git bash设置为以管理员方式打开，我是选择始终以管理方式运行git bash)，检查nodejs安装是否成功。<span id="more"></span>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查nodejs是否安装成功</span></span><br><span class="line"><span class="keyword">node</span> <span class="title">-v</span></span><br><span class="line">npm -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看npm下载的全局保存目录(prefix)和缓存位置(cache)</span></span><br><span class="line"><span class="comment"># 如果在C盘，可以换到D盘某个位置，例如就在Nodejs安装路径下新建`node_global`和`node_cache`两个文件夹。</span></span><br><span class="line"><span class="comment"># 然后更改`Nodejs安装路径\node_modules\npm`下的npmrc和.npmrc文件，加上上述两个文件夹的路径。</span></span><br><span class="line">npm config ls  </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>将Nodejs中的全局保存目录（保存下载的库）和<code>Nodejs安装路径\node_modules\npm</code>放到系统变量中的Path下，如下图所示。</p>
-<div align="center"><img src="/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/nodejs添加环境变量.jpg" width="70%"></div>
-> 其中全局保存目录是为了后面`hexo`命令能顺利运行，而`...\npm`文件夹则是为了npm能顺利运行。
->
+<li>将Nodejs中的全局保存目录（保存下载的库）和<code>Nodejs安装路径\node_modules\npm</code>放到系统变量中的Path下，如下图所示。<div align="center"><img src="/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/nodejs添加环境变量.jpg" width="70%"></div>
+
+<blockquote>
+<p>其中全局保存目录是为了后面<code>hexo</code>命令能顺利运行，而<code>...\npm</code>文件夹则是为了npm能顺利运行。</p>
+</blockquote>
 </li>
-<li><p>然后在博客文件夹（必须是新文件夹）(这里以<code>D:\Blog</code>举例),git bash,运行如下命令：</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-<span class="keyword">cli</span> <span class="meta">#(下载到全局保存目录)</span></span><br><span class="line"></span><br><span class="line">hexo init <span class="meta"># 博客初始化</span></span><br><span class="line"></span><br><span class="line">npm install hexo-<span class="keyword">cli</span>  <span class="meta">#下载hexo到`D:\Blog\node_modules`</span></span><br><span class="line"></span><br><span class="line">hexo -v <span class="meta"># 若成功显示版本，则表示hexo安装成功了。</span></span><br><span class="line"></span><br><span class="line">hexo g  </span><br><span class="line"></span><br><span class="line">hexo s  <span class="meta"># 然后再本地打开即可。</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 这样博客就初步搭建完成了。</span></span><br></pre></td></tr></table></figure></li>
-<li><p>可以运行<code>hexo new  xxx.md</code>来生成文章，然后运行<code>hexo g</code>，等待部署到github上。</p>
-</li>
-<li><p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_48121128/article/details/132380427"><strong>完成hexo到GitHub的部署</strong></a>，这里要注意，在博客目录下config.yaml修改时（如下）：</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">   type:</span> git</span><br><span class="line"><span class="symbol">   repo:</span> git@github.com:Yourname/Yourname.github.io.git   <span class="meta"># 这里不要用https:<span class="comment">//链接，否则后面部署时傻里傻气的。</span></span></span><br><span class="line"><span class="symbol">   branch:</span> main  <span class="meta">#这里分支要选择好，main是默认的，可以新建分支(比如source)，但要对应github-pages那里生成的分支，如下图所示。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<li>然后在博客文件夹（必须是新文件夹）(这里以<code>D:\Blog</code>举例),git bash,运行如下命令：<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-<span class="keyword">cli</span> <span class="meta">#(下载到全局保存目录)</span></span><br><span class="line"></span><br><span class="line">hexo init <span class="meta"># 博客初始化</span></span><br><span class="line"></span><br><span class="line">npm install hexo-<span class="keyword">cli</span>  <span class="meta">#下载hexo到`D:\Blog\node_modules`</span></span><br><span class="line"></span><br><span class="line">hexo -v <span class="meta"># 若成功显示版本，则表示hexo安装成功了。</span></span><br><span class="line"></span><br><span class="line">hexo g  </span><br><span class="line"></span><br><span class="line">hexo s  <span class="meta"># 然后再本地打开即可。</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 这样博客就初步搭建完成了。</span></span><br></pre></td></tr></table></figure></li>
+<li>可以运行<code>hexo new  xxx.md</code>来生成文章，然后运行<code>hexo g</code>，等待部署到github上。</li>
+<li>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_48121128/article/details/132380427"><strong>完成hexo到GitHub的部署</strong></a>，这里要注意，在博客目录下config.yaml修改时（如下）：<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">   type:</span> git</span><br><span class="line"><span class="symbol">   repo:</span> git@github.com:Yourname/Yourname.github.io.git   <span class="meta"># 这里不要用https: 链接，否则后面部署时傻里傻气的。</span></span><br><span class="line"><span class="symbol">   branch:</span> main  <span class="meta">#这里分支要选择好，main是默认的，可以新建分支(比如source)，但要对应github-pages那里生成的分支，如下图所示。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <div align="center"><img src="/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/github%20pages生成选择分支.jpg" width="70%"></div></li>
-<li><p>再运行<code>npm install hexo-deployer-git --save</code>（否则<code>hexo d</code>无效，无法完成部署）。</p>
-</li>
+<li>再运行<code>npm install hexo-deployer-git --save</code>（否则<code>hexo d</code>无效，无法完成部署）。</li>
 </ol>
 <h3 id="搭建过程疑问"><a href="#搭建过程疑问" class="headerlink" title="搭建过程疑问"></a>搭建过程疑问</h3><ol>
 <li><p>最开始搭建一个最简单的网站主要参考一下几条博客。</p>
@@ -344,9 +347,30 @@
     </span>
     <span class="author" itemprop="copyrightHolder">Charm_Hu</span>
   </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
     </div>
   </footer>
@@ -377,6 +401,7 @@
 
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
