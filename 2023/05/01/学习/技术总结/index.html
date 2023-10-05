@@ -21,17 +21,17 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="个人博客搭建过程 安装Nodejs,这里选择LTS版本，安装好后，运行如下命令(建议使用以管理员方式运行,例如将git bash设置为以管理员方式打开，我是选择始终以管理方式运行git bash)，检查nodejs安装是否成功。123456789# 检查nodejs是否安装成功node -vnpm -v# 查看npm下载的全局保存目录(prefix)和缓存位置(cache)# 如果在C盘，可以换到">
+    <meta name="description" content="个人博客搭建过程 安装Nodejs,这里选择LTS版本，安装好后，运行如下命令(建议使用以管理员方式运行,例如将git bash设置为以管理员方式打开，我是选择始终以管理方式运行git bash)，检查nodejs安装是否成功。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="技术总结">
 <meta property="og:url" content="http://example.com/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Hu_SE">
-<meta property="og:description" content="个人博客搭建过程 安装Nodejs,这里选择LTS版本，安装好后，运行如下命令(建议使用以管理员方式运行,例如将git bash设置为以管理员方式打开，我是选择始终以管理方式运行git bash)，检查nodejs安装是否成功。123456789# 检查nodejs是否安装成功node -vnpm -v# 查看npm下载的全局保存目录(prefix)和缓存位置(cache)# 如果在C盘，可以换到">
+<meta property="og:description" content="个人博客搭建过程 安装Nodejs,这里选择LTS版本，安装好后，运行如下命令(建议使用以管理员方式运行,例如将git bash设置为以管理员方式打开，我是选择始终以管理方式运行git bash)，检查nodejs安装是否成功。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/nodejs%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg">
 <meta property="og:image" content="http://example.com/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/github%20pages%E7%94%9F%E6%88%90%E9%80%89%E6%8B%A9%E5%88%86%E6%94%AF.jpg">
 <meta property="article:published_time" content="2023-04-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-10-05T14:19:40.415Z">
+<meta property="article:modified_time" content="2023-10-05T14:22:40.362Z">
 <meta property="article:author" content="Charm_Hu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/nodejs%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg">
@@ -214,7 +214,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-05 22:19:40" itemprop="dateModified" datetime="2023-10-05T22:19:40+08:00">2023-10-05</time>
+      <time title="修改时间：2023-10-05 22:22:40" itemprop="dateModified" datetime="2023-10-05T22:22:40+08:00">2023-10-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -236,7 +236,8 @@
     
     
     <div class="post-body" itemprop="articleBody"><h2 id="个人博客"><a href="#个人博客" class="headerlink" title="个人博客"></a>个人博客</h2><h3 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h3><ol>
-<li>安装<a target="_blank" rel="noopener" href="https://nodejs.org/en">Nodejs</a>,这里选择<code>LTS</code>版本，安装好后，运行如下命令(建议使用以管理员方式运行,例如将git bash设置为以管理员方式打开，我是选择始终以管理方式运行git bash)，检查nodejs安装是否成功。<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查nodejs是否安装成功</span></span><br><span class="line"><span class="keyword">node</span> <span class="title">-v</span></span><br><span class="line">npm -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看npm下载的全局保存目录(prefix)和缓存位置(cache)</span></span><br><span class="line"><span class="comment"># 如果在C盘，可以换到D盘某个位置，例如就在Nodejs安装路径下新建`node_global`和`node_cache`两个文件夹。</span></span><br><span class="line"><span class="comment"># 然后更改`Nodejs安装路径\node_modules\npm`下的npmrc和.npmrc文件，加上上述两个文件夹的路径。</span></span><br><span class="line">npm config ls  </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>安装<a target="_blank" rel="noopener" href="https://nodejs.org/en">Nodejs</a>,这里选择<code>LTS</code>版本，安装好后，运行如下命令(建议使用以管理员方式运行,例如将git bash设置为以管理员方式打开，我是选择始终以管理方式运行git bash)，检查nodejs安装是否成功。<span id="more"></span>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查nodejs是否安装成功</span></span><br><span class="line"><span class="keyword">node</span> <span class="title">-v</span></span><br><span class="line">npm -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看npm下载的全局保存目录(prefix)和缓存位置(cache)</span></span><br><span class="line"><span class="comment"># 如果在C盘，可以换到D盘某个位置，例如就在Nodejs安装路径下新建`node_global`和`node_cache`两个文件夹。</span></span><br><span class="line"><span class="comment"># 然后更改`Nodejs安装路径\node_modules\npm`下的npmrc和.npmrc文件，加上上述两个文件夹的路径。</span></span><br><span class="line">npm config ls  </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 <li>将Nodejs中的全局保存目录（保存下载的库）和<code>Nodejs安装路径\node_modules\npm</code>放到系统变量中的Path下，如下图所示。<div align="center"><img src="/2023/05/01/%E5%AD%A6%E4%B9%A0/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/nodejs添加环境变量.jpg" width="70%"></div>
 > 其中全局保存目录是为了后面`hexo`命令能顺利运行，而`...\npm`文件夹则是为了npm能顺利运行。
 ></li>
@@ -248,7 +249,7 @@
 </ol>
 <h3 id="搭建过程疑问"><a href="#搭建过程疑问" class="headerlink" title="搭建过程疑问"></a>搭建过程疑问</h3><ol>
 <li>最开始搭建一个最简单的网站主要参考一下几条博客。<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>blog.csdn.net<span class="regexp">/sinat_37781304/</span>article<span class="regexp">/details/</span><span class="number">82729029</span></span><br></pre></td></tr></table></figure></li>
-<li>hexo 如何新建一篇文章。<span id="more"></span><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost blog]# hexo <span class="keyword">new</span> <span class="string">&quot;如何在hexo上创建一篇文章&quot;</span></span><br><span class="line">...</span><br><span class="line">INFO  Created: <span class="regexp">/blog/</span><span class="keyword">source</span><span class="regexp">/_posts/</span>如何在hexo上创建一篇文章.md</span><br></pre></td></tr></table></figure>
+<li>hexo 如何新建一篇文章。<!--more--><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost blog]# hexo <span class="keyword">new</span> <span class="string">&quot;如何在hexo上创建一篇文章&quot;</span></span><br><span class="line">...</span><br><span class="line">INFO  Created: <span class="regexp">/blog/</span><span class="keyword">source</span><span class="regexp">/_posts/</span>如何在hexo上创建一篇文章.md</span><br></pre></td></tr></table></figure>
 这个缺点是他只能在<code>...source/_posts</code>下生成，没法完成自己的分类，还是推荐在<code>VSCode</code>中创建新文章。</li>
 <li>hexo 显示无法连接到 <code>github</code>.<blockquote>
 <p>fatal: unable to access ‘<a target="_blank" rel="noopener" href="https://github.com/Hushuangjun/Hushuangjun.github.io.git">https://github.com/Hushuangjun/Hushuangjun.github.io.git</a></p>
