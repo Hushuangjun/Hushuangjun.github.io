@@ -170,7 +170,7 @@
 
   
   <url>
-    <loc>http://example.com/categories/%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>http://example.com/categories/%E7%A7%91%E7%A0%94%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2023-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -184,7 +184,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E7%A7%91%E7%A0%94%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://example.com/categories/%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2023-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
