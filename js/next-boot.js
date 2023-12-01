@@ -53,6 +53,8 @@ NexT.boot.refresh = function() {
   NexT.utils.registerSidebarTOC();
   NexT.utils.registerPostReward();
   NexT.utils.registerVideoIframe();
+  
+  codeUnfold();
 };
 
 NexT.boot.motion = function() {
