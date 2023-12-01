@@ -1,4 +1,4 @@
-var CODE_MAX_HEIGHT = 30;
+var CODE_MAX_HEIGHT = 5;
 var containers = [];
 
 // 展开
