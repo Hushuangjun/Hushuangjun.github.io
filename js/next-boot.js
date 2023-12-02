@@ -54,6 +54,7 @@ NexT.boot.refresh = function() {
   NexT.utils.registerPostReward();
   NexT.utils.registerVideoIframe();
   
+  codeUnfold() 
 
 };
 
@@ -75,3 +76,5 @@ document.addEventListener('DOMContentLoaded', () => {
   NexT.boot.refresh();
   NexT.boot.motion();
 });
+
+
