@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://husj0711.top/2023/11/13/Study/%E7%A0%B4%E5%B1%80/%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7%E5%8F%8A%E7%BB%93%E5%90%88%E6%80%A7.jpg">
 <meta property="article:published_time" content="2023-11-13T06:23:57.426Z">
-<meta property="article:modified_time" content="2023-12-08T10:47:54.709Z">
+<meta property="article:modified_time" content="2023-12-09T13:02:02.659Z">
 <meta property="article:author" content="Charm_Hu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://husj0711.top/2023/11/13/Study/%E7%A0%B4%E5%B1%80/%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7%E5%8F%8A%E7%BB%93%E5%90%88%E6%80%A7.jpg">
@@ -161,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -243,7 +243,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-12-08 18:47:54" itemprop="dateModified" datetime="2023-12-08T18:47:54+08:00">2023-12-08</time>
+      <time title="修改时间：2023-12-09 21:02:02" itemprop="dateModified" datetime="2023-12-09T21:02:02+08:00">2023-12-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -284,28 +284,34 @@
 <p>getchar()函数</p>
 <ol>
 <li><strong>只能从键盘缓冲区接收字符，一次只能接收一个字符</strong>。如果之前有<code>scanf(&quot;%c&quot;,&amp;str);</code>类似语句，回车键<code>\n</code>也被会当作一个字符留在键盘缓冲区。如果不是char类型倒不要紧。</li>
-<li>如果之前没有用scanf()接收过字符,那么使用getchar()函数时，需要先键入字符，<strong>按enter键后</strong>，键入的字符(串)进入缓冲区，然后getchar会从中取一个字符(按输入的顺序)，以后每次调用getchar()都会从缓冲区接收一个字符，直至缓冲区字符用完，在重复以上步骤。</li>
+<li>如果之前没有用scanf()接收过字符,那么使用getchar()函数时，需要先键入字符，<strong>按enter键后</strong>，键入的字符(串)进入缓冲区，然后getchar会从中取一个字符(按输入的顺序)，以后每次调用getchar()都会从缓冲区接收一个字符，直至缓冲区字符用完，再重复以上步骤。</li>
+<li>getchar()函数的返回值也不是字符而是一个整型.(读取成功时就返回该字符的ASCⅡ值，失败时就返回一个-1。)</li>
 <li>典型例题：加密电文，所有大小写英文字母＋4(ASCII码) 循环，其余字符不变。</li>
 </ol>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">char</span> str;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span> ( ; (str=getchar()) != <span class="string">&#x27;\n&#x27;</span> ; )&#123;</span><br><span class="line">      <span class="keyword">if</span> (str&gt;=<span class="string">&#x27;a&#x27;</span>&amp;&amp; str &lt;= <span class="string">&#x27;z&#x27;</span>)&#123;</span><br><span class="line">            <span class="built_in">putchar</span>(<span class="string">&#x27;a&#x27;</span>+(str+<span class="number">4</span>-<span class="string">&#x27;a&#x27;</span>)%<span class="number">26</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span> (str &gt;= <span class="string">&#x27;A&#x27;</span>&amp;&amp; str &lt;= <span class="string">&#x27;Z&#x27;</span>)&#123;</span><br><span class="line">            <span class="built_in">putchar</span>(<span class="string">&#x27;A&#x27;</span>+(str+<span class="number">4</span>-<span class="string">&#x27;A&#x27;</span>)%<span class="number">26</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">putchar</span>(str);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li>
-<p>关于<code>str = '!'; 48 &lt;= str &lt;= 57</code>为啥总是得到1？<br>
-因为<code>&lt;=</code>的结合性是自左向右，故先会计算<code>48 &lt;= str</code>,此时str = ‘!’,ASCII值是33，故返回值是1.再计算<code>1 &lt;= 57</code>,返回值是1.由此可以看出学了python之后，再学C感觉步骤很啰嗦。但正是因为步骤啰嗦（分类齐全，条理清晰），故C速度很快。</p>
+<p>scanf()函数</p>
+<ol>
+<li>
+<p>scanf()函数返回值是是成功读取并赋值的参数的数量。<br>
+scanf()函数返回值分为3种：<br>
+(1)返回正整数。表示正确输入参数的个数。<br>
+(2)返回整数0。表示用户的输入不匹配，无法正确输入任何值。<br>
+(3)返回-1。表示输入流已经结束。在Windows下，用户按下CTRL+Z（会看到一个^Z字符）再按下回车（可能需要重复多次），就表示输入结束；Linux/Unix下使用CTRL+D表示输入结束。</p>
+<p>参考如下例题：<a target="_blank" rel="noopener" href="https://fishc.com.cn/thread-237278-1-1.html">计算输入整数满足正确算式的数量</a>.<br>
+上述例题的两种解法：(链接中已给出一种，下给出另一种)</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> i,j,d[<span class="number">3</span>];</span><br><span class="line">    <span class="type">int</span> judge = <span class="number">1</span>,count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; judge;)&#123; <span class="comment">//判断条件是judge不为0.</span></span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j&lt;<span class="number">3</span>; j++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;d[j]);</span><br><span class="line">            <span class="keyword">if</span> (getchar() == <span class="string">&#x27;\n&#x27;</span>)&#123;</span><br><span class="line">                judge = <span class="number">0</span>; <span class="comment">//遇到换行符即表示输入结束。</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (j == <span class="number">3</span> &amp;&amp; (d[<span class="number">0</span>] + d[<span class="number">1</span>] == d[<span class="number">2</span>]))&#123;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,count);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 <li>
-<p>自增运算符(++)辨析</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="type">int</span> b,c;</span><br><span class="line"></span><br><span class="line">b = a++; <span class="comment">//答案是b = 2; 先进行b = a, 再a = a + 1；计算过程中a的值不变，最终a的值要+1，这个语句结束后,a = 3。</span></span><br><span class="line">c = ++a; <span class="comment">//答案是b = 4;先进行a = a + 1, 再进行c = a;</span></span><br></pre></td></tr></table></figure>
-<p>关于自增运算符和逗号运算符等一系列疑惑，可参见这篇博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/DouXiulu/article/details/128124624">逗号表达式辨析</a>，不过该博客中还有点小瑕疵，现纠正如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">   <span class="type">int</span> x = <span class="number">1</span>, y = <span class="number">1</span>; z;</span><br><span class="line"></span><br><span class="line">   z = (x++, y++, ++y);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;%d\n%d\n%d\n&quot;</span>,x,y,z);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//结果是：</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
-<p>下面根据逗号表达式结合性和自增运算符特点分解步骤:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z = (x++, y++, ++y);</span><br></pre></td></tr></table></figure>
-<ol>
-<li>x++，计算过程x = 1，故结果是1，结束后x自增，值为2.</li>
-<li>y++，计算过程y = 1，故结果是1，结束后y自增，y值为2.</li>
-<li>++y，y先自增，y值为3，故结果是3。<br>
-于是z = (1,1,3); 即z = 3.</li>
+<p>scanf()也是从键盘缓冲区得到输入，一般来说，遇到换行符<code>\n</code>就表示输入项结束了，但在上述例子<a target="_blank" rel="noopener" href="https://fishc.com.cn/thread-237278-1-1.html">计算输入整数满足正确算式的数量</a>中，scanf由于一次性需要接收三个参数，此时换行符<code>\n</code>就不起作用了，需要手动敲<code>ctrl + z</code>再按回车。<strong>windows上，<code>ctrl + z</code>就表示输入项的结束</strong>。具体可参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/i6223671/article/details/89041492">详解输入输出流结束标志ctrl+z和EOF</a>.</p>
+</li>
 </ol>
+</li>
+<li>
+<p>逗号表达式<br>
+逗号表达式一般形式为: <code>expr1, expr2, expr3,...,exprn</code>.<br>
+逗号表达式从左到右依次求值，每个表达式的值被忽略，除了最后一个表达式。逗号表达式的值就是最后一个表达式的值。</p>
 </li>
 <li>
 <p>运算符优先级及结合性<br>
@@ -318,7 +324,12 @@
 <p>x = 6; y = 10;</p>
 </blockquote>
 <p>于是疑问出现了，自增运算符<code>++</code>优先级不是大于乘<code>*</code>吗？不是先自增再乘嘛，这样<code>y = 2*6 = 12</code>.<br>
-其实：<strong>程序确实先进行自增运算符，但<code>++x和x++</code>返回的结果是不同的，然后再赋值给y。特别是x++，它的返回值就是x，而++x的返回值是x + 1, 所以造成一种假象，以为先进行了乘法运算</strong>。</p>
+其实：<strong>程序确实先进行自增运算符，但<code>++x和x++</code>返回的结果是不同的，然后再赋值给y。特别是x++，它的返回值就是x，而++x的返回值是x + 1, 所以造成一种假象，以为先进行了乘法运算</strong>。<br>
+小试牛刀：</p>
+<blockquote>
+<p>关于<code>str = '!'; 48 &lt;= str &lt;= 57</code>为啥总是得到1？</p>
+</blockquote>
+<p>因为<code>&lt;=</code>的结合性是自左向右，故先会计算<code>48 &lt;= str</code>,此时str = ‘!’,ASCII值是33，故返回值是1.再计算<code>1 &lt;= 57</code>,返回值是1.由此可以看出学了python之后，再学C感觉步骤很啰嗦。但正是因为步骤啰嗦（分类齐全，条理清晰），故C速度很快。</p>
 </li>
 </ol>
 <h3 id="选择结构程序设计"><a class="markdownIt-Anchor" href="#选择结构程序设计"></a> 选择结构程序设计</h3>
@@ -347,7 +358,11 @@
 <p>一维数组定义：(二维数组同理)<br>
 类型符  数组名[常量表达式]</p>
 </blockquote>
-特别注意是<strong>常量表达式</strong>，不能是<strong>变量</strong>。</li>
+特别注意是<strong>常量表达式</strong>，不能是<strong>变量</strong>。<br>
+但是！C99推出了<strong>变长数组</strong>(Variable Length Array，VLA),它允许在运行时动态地定义数组的长度，而不是在编译时指定一个常量长度，但一旦一定，在其生命周期内大小不可改变。<br>
+例如：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> rows, cols;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Enter the number of rows: &quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;rows);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Enter the number of columns: &quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;cols);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> matrix[rows][cols];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 其他操作...</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+同时，值得注意的是，<strong>VLA不允许在定义的时候初始化</strong>！<br>
+例如<code>int matrix[rows][cols] = &#123;0&#125;;</code>，编译器会报错。</li>
 <li>二维数组是一维数组线性拓展得到的，也是以线性的方式存储的。</li>
 <li>数组名的值数组第一个元素的地址，相当于是一个常量，是不能被赋值的。因此下列数组初始化是错误的:<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> a = <span class="string">&quot;string&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> b = &#123;<span class="number">1</span>,<span class="number">2</span>&#125;;</span><br></pre></td></tr></table></figure>
 </li>
