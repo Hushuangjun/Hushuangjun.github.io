@@ -2701,3 +2701,34 @@ body {
   -moz-background-size: cover;
   -ms-background-size: cover;
 }
+.column > header {
+  background: rgba(0,0,0,0.5);
+  opacity: 0.8;
+  border-radius: 20px;
+}
+.site-brand-container {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.site-nav {
+  background: #fff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.posts-expand {
+  opacity: 0.9;
+  border-radius: 20px;
+  padding: 50px;
+}
+.sidebar-inner {
+  background: rgba(255,255,255,0.8);
+  border-radius: 10px;
+}
+.post-block {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 30px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
