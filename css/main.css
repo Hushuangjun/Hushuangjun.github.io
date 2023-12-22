@@ -2357,7 +2357,7 @@ mark.search-keyword {
 }
 header.header {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 20px 20px 20px 20px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 @media (max-width: 991px) {
@@ -2394,7 +2394,7 @@ header.header {
   }
 }
 .main-inner {
-  border-radius: initial;
+  border-radius: 20px 20px 20px 20px;
   box-sizing: border-box;
   width: calc(100% - 252px);
 }
@@ -2535,7 +2535,7 @@ header.header {
 }
 .sidebar-inner {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 20px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
   box-sizing: border-box;
   color: var(--text-color);
@@ -2594,11 +2594,11 @@ header.header {
 .main-inner .comment-position .comments,
 .main-inner .pagination {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 20px 20px 20px 20px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 .main-inner .post-block:not(:first-child):not(:first-child) {
-  border-radius: initial;
+  border-radius: 20px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
   margin-top: 12px;
 }
@@ -2616,7 +2616,7 @@ header.header {
 .main-inner > .comments,
 .main-inner .comment-position .comments,
 .main-inner .pagination {
-  border-radius: initial;
+  border-radius: 20px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
   margin-top: 12px;
 }
@@ -2682,14 +2682,7 @@ header.header {
     padding: 10px 12px;
   }
 }
-code {
-  padding: 2px 4px;
-  overflow-wrap: break-word;
-  color: #c7254e;
-  background: #f9f2f4;
-  border-radius: 3px;
-  font-size: 18px;
-}
+/*背景图片 */
 body {
   background: url("/images/background.jpg");
   background-repeat: no-repeat;
@@ -2701,34 +2694,30 @@ body {
   -moz-background-size: cover;
   -ms-background-size: cover;
 }
-.column > header {
-  background: rgba(0,0,0,0.5);
-  opacity: 0.8;
-  border-radius: 30px;
+/* 代码块隐藏 */
+.code-hidden {
+  display: none;
 }
-.site-brand-container {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+.main-inner > .sub-menu,
+.main-inner > .post-block,
+.main-inner > .tabs-comment,
+.main-inner > .comments,
+.main-inner > .pagination {
+  background: rgba(245,245,245,0.42);
 }
-.site-nav {
-  background: #fff;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+body {
+  color: #000;
 }
-.posts-expand {
+.posts-expand .post-title-link {
+  color: #000;
+}
+.posts-expand .post-meta-container {
+  color: #000;
+}
+.popup {
   opacity: 0.85;
-  border-radius: 30px;
-  padding: 10px;
 }
-.sidebar-inner {
-  background: rgba(255,255,255,0.8);
-  border-radius: 20px;
-}
-.post-block {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 30px;
-  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
-  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+.main-inner {
+  background-color: rgba(255,255,255,0.85);
+  padding: 10px 10px 10px 10px;
 }

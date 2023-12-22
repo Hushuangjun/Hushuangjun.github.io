@@ -394,17 +394,74 @@
 
 <script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"Hushuangjun/Comment-system","issue_term":"pathname","theme":"github-light"}</script>
 <script src="/js/third-party/comments/utterances.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // 查找所有 div.table-container 元素
+    const tableContainers = document.querySelectorAll(".table-container");
+
+    // 遍历所有 div.table-container 元素
+    tableContainers.forEach(function(tableContainer) {
+      // 获取 div.table-container 内的 span 元素数量
+      const spanCount = tableContainer.querySelectorAll("tbody > tr > td.code > pre > span").length;
+
+      // 检查 span 元素数量是否 >= 15
+      if (spanCount >= 15) {
+        // 检查 div.table-container 前面是否有 figcaption 元素，如果没有则添加一个
+        const prevElement = tableContainer.previousElementSibling;
+        let figcaption;
+        let iElement;
+        if (!prevElement || prevElement.tagName.toLowerCase() !== "figcaption") {
+          // 在 div.table-container 前插入一个 figcaption 元素
+          figcaption = document.createElement("figcaption");
+
+          // 将 figcaption 插入到 DOM 中
+          tableContainer.parentNode.insertBefore(figcaption, tableContainer);
+
+          // 设置默认状态为折叠
+          tableContainer.classList.add("code-hidden");
+        } else {
+          figcaption = prevElement;
+        }
+
+        // 创建一个 <i> 标签并添加功能
+        iElement = document.createElement("i");
+        iElement.className = "fas fa-angle-down";
+        // 插入一点空格
+        iElement.innerHTML = "&nbsp;&nbsp;&nbsp;";
+        figcaption.insertBefore(iElement, figcaption.firstChild);
+
+        // 为 <i> 标签添加点击事件
+        iElement.addEventListener("click", function() {
+          // 切换 tableContainer 的 "code-hidden" 类
+          tableContainer.classList.toggle("code-hidden");
+
+          // 切换 <i> 标签的类名
+          if (iElement.classList.contains("fa-angle-down")) {
+            iElement.classList.remove("fa-angle-down");
+            iElement.classList.add("fa-angle-right");
+          } else {
+            iElement.classList.remove("fa-angle-right");
+            iElement.classList.add("fa-angle-down");
+          }
+        });
+      }
+    });
+  });
+</script>
+
 
   
   
   <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
   
+  <!--浏览器搞笑标题-->
+  <script type="text/javascript" src="\js\FunnyTitle.js"></script>
   <script src="https://utteranc.es/client.js"
         repo="[ENTER REPO HERE]"
         issue-term="[ENTER TERM HERE]"
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script>
+  </script>
 </body>
 </html>
