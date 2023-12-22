@@ -11,7 +11,7 @@ document.addEventListener('visibilitychange', function () {
 
 // Listen for the focus event
 window.addEventListener('focus', function () {
-    changePageState('(ฅ>ω<*ฅ) 噫又好了~' + originalTitle);
+    changePageState('(ฅ>ω<*ฅ) 噫又好了~');
 
     // Delay for 3 seconds and then restore the original title
     setTimeout(function () {

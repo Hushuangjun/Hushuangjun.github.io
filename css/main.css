@@ -11,7 +11,7 @@
   --table-row-odd-bg-color: #f9f9f9;
   --table-row-hover-bg-color: #f5f5f5;
   --menu-item-bg-color: #f5f5f5;
-  --theme-color: #222;
+  --theme-color: #87ceeb;
   --btn-default-bg: #fff;
   --btn-default-color: #555;
   --btn-default-border-color: #555;
@@ -185,7 +185,7 @@ body {
   box-sizing: border-box;
   color: var(--text-color);
   font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 1em;
+  font-size: 1.3em;
   line-height: 2;
   min-height: 100%;
   position: relative;
@@ -1152,7 +1152,7 @@ pre code {
 }
 .sidebar-inner {
   color: #999;
-  padding: 18px 10px;
+  padding: 25px 10px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -2406,7 +2406,7 @@ header.header {
 .main-inner {
   border-radius: 20px 20px 20px 20px;
   box-sizing: border-box;
-  width: calc(100% - 252px);
+  width: calc(100% - 312px);
 }
 @media (max-width: 991px) {
   .main-inner {
@@ -2415,7 +2415,7 @@ header.header {
   }
 }
 .footer-inner {
-  padding-left: 252px;
+  padding-left: 312px;
 }
 @media (max-width: 991px) {
   .footer-inner {
@@ -2425,7 +2425,7 @@ header.header {
   }
 }
 .column {
-  width: 240px;
+  width: 300px;
 }
 @media (max-width: 991px) {
   .column {
@@ -2729,7 +2729,7 @@ body {
 }
 .main-inner {
   background-color: rgba(255,255,255,0.85);
-  padding: 10px 10px 10px 10px;
+  padding: 30px 30px 30px 30px;
 }
 /* 自定义的引用样式 */
 blockquote.question {
@@ -2744,4 +2744,37 @@ blockquote.question {
 }
 :link {
   cursor: url("/images/pointer.cur"), auto;
+}
+.btn {
+  border: 2px solid #06a2e4;
+  color: #06a2e4;
+}
+.back-to-top {
+  width: 70px;
+  height: 900px;
+  top: -900px;
+  bottom: unset;
+  transition: all 0.5s ease-in-out;
+  background: url("/images/scroll.png");
+}
+.back-to-top > i {
+  display: none;
+}
+.back-to-top.back-to-top-on {
+  bottom: unset;
+  top: calc(100vh - 900px - 200px);
+}
+.links-of-recent-posts {
+  font-size: 0.8125em;
+  margin-top: 10px;
+}
+.links-of-recent-posts-title {
+  font-size: 1.03em;
+  font-weight: 600;
+  margin-top: 0;
+}
+.links-of-recent-posts-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
