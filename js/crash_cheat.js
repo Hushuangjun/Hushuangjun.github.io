@@ -1,27 +1,35 @@
-var OriginTitle = document.title;
-var titleTime1, titleTime2, titleTime3;
+// 检查是否是用户第一次访问
+var isFirstVisit = localStorage.getItem('isFirstVisit');
 
+// 保存原始标题
+var originalTitle = document.title;
+
+// 当页面加载完成时触发
+window.addEventListener('load', function () {
+    // 如果是用户第一次访问，则显示原标题，否则显示自定义标题
+    if (isFirstVisit === null) {
+        document.title = originalTitle;
+        // 设置标志表示用户已经访问过
+        localStorage.setItem('isFirstVisit', 'false');
+    } else {
+        // 显示自定义标题
+        document.title = '欢迎回来！';
+    }
+
+
+});
+
+// 当页面变为不可见时触发
 document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
-        $('[rel="shortcut icon"]').attr('href', "/images/杰尼龟.ico");
-        document.title = '😰 w(ﾟДﾟ)w 页面崩溃啦!  ';
-        clearTimeout(titleTime1);
-        clearTimeout(titleTime2);
-        clearTimeout(titleTime3);
+        // 当用户离开页面时，在这里可以设置你想要显示的标题
+        document.title = '页面崩溃啦';
     } else {
-        $('[rel="shortcut icon"]').attr('href', "/images/杰尼龟.ico");
-        document.title = '😏 ♪(^∇^*) 噫? 又好了! ';
-
-        titleTime1 = setTimeout(function () {
-            document.title = '🤔 啊来来! 原标题是啥来着?  ';
-        }, 2000);
-
-        titleTime2 = setTimeout(function () {
-            document.title = '😮哦~! 想起来了!  ';
-        }, 4000);
-
-        titleTime3 = setTimeout(function () {
-            document.title = OriginTitle;
-        }, 6000);
+		// 设置一个定时器，3秒后还原标题
+		setTimeout(function () {
+			document.title = originalTitle;
+		}, 3000); // 3秒
+        // 当用户回到页面时，在这里可以设置你想要显示的标题
+        document.title = '欢迎回来！';
     }
 });
