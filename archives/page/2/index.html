@@ -280,6 +280,7 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -353,8 +354,8 @@
         iElement.innerHTML = "&nbsp;&nbsp;&nbsp;";
         figcaption.insertBefore(iElement, figcaption.firstChild);
 
-        // 为 <i> 标签添加点击事件
-        iElement.addEventListener("click", function() {
+        // 为代码块区域和 <i> 标签添加点击事件
+        figcaption.addEventListener("click", function() {
           // 切换 tableContainer 的 "code-hidden" 类
           tableContainer.classList.toggle("code-hidden");
 
@@ -372,19 +373,25 @@
   });
 </script>
 
-
   
   
   <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
   
-  <!--浏览器搞笑标题-->
-  <script type="text/javascript" src="\js\FunnyTitle.js"></script>
+  
+<!--崩溃欺骗-->
+
+  <script type="text/javascript" src="/js/crash_cheat.js"></script>
+
+
+  
   <script src="https://utteranc.es/client.js"
         repo="[ENTER REPO HERE]"
         issue-term="[ENTER TERM HERE]"
         theme="github-light"
         crossorigin="anonymous"
         async>
-  </script>
+</script>
+	
+
 </body>
 </html>
