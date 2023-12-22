@@ -13,10 +13,13 @@ window.addEventListener('load', function () {
         localStorage.setItem('isFirstVisit', 'false');
     } else {
         // 显示自定义标题
-        document.title = '欢迎回来！';
+        document.title = '让我想想原来标题是啥？';
     }
 
-
+    // 设置一个定时器，3秒后还原标题
+    setTimeout(function () {
+        document.title = originalTitle;
+    }, 3000); // 3秒
 });
 
 // 当页面变为不可见时触发
@@ -25,11 +28,7 @@ document.addEventListener('visibilitychange', function () {
         // 当用户离开页面时，在这里可以设置你想要显示的标题
         document.title = '页面崩溃啦';
     } else {
-		// 设置一个定时器，3秒后还原标题
-		setTimeout(function () {
-			document.title = originalTitle;
-		}, 3000); // 3秒
         // 当用户回到页面时，在这里可以设置你想要显示的标题
-        document.title = '欢迎回来！';
+        document.title = '让我想想原来标题是啥？';
     }
 });
