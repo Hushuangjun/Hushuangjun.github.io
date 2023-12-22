@@ -2731,3 +2731,17 @@ body {
   background-color: rgba(255,255,255,0.85);
   padding: 10px 10px 10px 10px;
 }
+/* 自定义的引用样式 */
+blockquote.question {
+  color: #555;
+  border-left: 4px solid #1098ad;
+  background-color: #e3f2fd;
+  margin-bottom: 20px;
+}
+/* 鼠标样式 */
+* {
+  cursor: url("/images/default.cur"), auto;
+}
+:link {
+  cursor: url("/images/pointer.cur"), auto;
+}

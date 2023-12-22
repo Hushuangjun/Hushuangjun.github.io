@@ -78,7 +78,7 @@
       <link href="/2023/12/08/Study/%E4%B8%93%E4%B8%9A%E8%BF%9B%E9%98%B6/"/>
       <url>/2023/12/08/Study/%E4%B8%93%E4%B8%9A%E8%BF%9B%E9%98%B6/</url>
       
-        <content type="html"><![CDATA[<h2 id="结构动力学"><a class="markdownIt-Anchor" href="#结构动力学"></a> 结构动力学</h2><span id="more"></span><ul><li>[x] item 1<ul><li>[x] item A</li><li>[ ] item B<br>more text<ul><li>[x] item a</li><li>[ ] item b</li><li>[x] item c</li></ul></li><li>[x] item C</li></ul></li><li>[ ] item 2</li><li>[ ] item 3</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="结构动力学"><a class="markdownIt-Anchor" href="#结构动力学"></a> 结构动力学</h2><span id="more"></span><blockquote class="question">我现在引用一下呢<br>如何实现分行呢<br>看可不可以<br>果然可以！！！</blockquote>]]></content>
       
       
       <categories>
