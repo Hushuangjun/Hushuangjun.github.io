@@ -78,7 +78,7 @@
       <link href="/2023/12/08/Study/%E4%B8%93%E4%B8%9A%E8%BF%9B%E9%98%B6/"/>
       <url>/2023/12/08/Study/%E4%B8%93%E4%B8%9A%E8%BF%9B%E9%98%B6/</url>
       
-        <content type="html"><![CDATA[<h2 id="结构动力学"><a class="markdownIt-Anchor" href="#结构动力学"></a> 结构动力学</h2><span id="more"></span><blockquote class="question">我现在引用一下呢<br>如何实现分行呢<br>看可不可以<br>果然可以！！！</blockquote>]]></content>
+        <content type="html"><![CDATA[<h2 id="结构动力学"><a href="#结构动力学" class="headerlink" title="结构动力学"></a>结构动力学</h2><h2 id><a href="#" class="headerlink" title></a><span id="more"></span></h2><p>下方为网站调试：</p><blockquote class="question">我现在引用一下呢<br>如何实现分行呢<br>看可不可以<br>果然可以！！！</blockquote><details class="note "><summary><p>提示块</p></summary><p>这是很重要的信息呢！！！</p></details><div class="tabs" id="标签"><ul class="nav-tabs"><li class="tab active"><a href="#标签-1">标签 1</a></li><li class="tab"><a href="#标签-2">标签 2</a></li><li class="tab"><a href="#标签-3">标签三</a></li></ul><div class="tab-content"><div class="tab-pane active" id="标签-1"><p><strong>选项卡 1</strong> </p></div><div class="tab-pane" id="标签-2"><p><strong>选项卡 2</strong></p></div><div class="tab-pane" id="标签-3"><p><strong>选项卡 3</strong> , 名字为 <code>TAB三</code></p></div></div></div>]]></content>
       
       
       <categories>
