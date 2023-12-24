@@ -11,7 +11,7 @@
   --table-row-odd-bg-color: #f9f9f9;
   --table-row-hover-bg-color: #f5f5f5;
   --menu-item-bg-color: #f5f5f5;
-  --theme-color: #87ceeb;
+  --theme-color: #fff;
   --btn-default-bg: #fff;
   --btn-default-color: #555;
   --btn-default-border-color: #555;
@@ -1855,6 +1855,16 @@ pre code {
   top: 0;
   width: 100%;
 }
+.post-body p a {
+  color: #0593d3;
+  border-bottom: none;
+  border-bottom: 1px solid #0593d3;
+}
+.post-body p a:hover {
+  color: #fc6423;
+  border-bottom: none;
+  border-bottom: 1px solid #fc6423;
+}
 .post-gallery {
   display: flex;
   min-height: 200px;
@@ -2738,13 +2748,6 @@ body {
   background-color: rgba(255,255,255,0.85);
   padding: 30px 30px 30px 30px;
 }
-/* 自定义的引用样式 */
-blockquote.question {
-  color: #555;
-  border-left: 4px solid #1098ad;
-  background-color: #e3f2fd;
-  margin-bottom: 20px;
-}
 /* 鼠标样式 */
 * {
   cursor: url("/images/default.cur"), auto;
@@ -2789,4 +2792,113 @@ code {
   color: #ff7600;
   background: #fbf7f8;
   margin: 2px;
+}
+/* 网站标题 炫彩效果1 */
+.site-title {
+  background-image: linear-gradient(to right, #ff4500, #ffa500, #ffd700, #90ee90, #0ff, #1e90ff, #9370db, #ff69b4, #ff4500);
+/*注意颜色得始终要相同,不然就会有突变颜色线条,影响视觉*/
+  background-size: 110vw;
+  -webkit-background-clip: text;
+  color: rgba(0,0,0,0.1); /* transparent IE 不支持 */
+  animation: sliding 30s linear infinite;
+}
+/* 网站副标题 炫彩效果2 */
+.site-meta,
+.site-subtitle {
+  font-family: 'Apple Chancery', fantasy, 'Comic Sans MS', sans-serif;
+  letter-spacing: 2px;
+  color: rgba(0,0,0,0.1); /* transparent IE 不支持 */
+  animation: hue 1.5s linear infinite;
+  background-image: linear-gradient(to right bottom, #f00, #ff8000, #ff0, #0f0, #00ff80, #0ff, #0080ff, #00f, #8000ff, #f0f, #ff0080);
+  -webkit-background-clip: text;
+}
+@media (max-width: 767px) {
+  .site-meta,
+  .site-subtitle {
+    font-size: 12px;
+  }
+}
+/*修改h1前面图标*/
+.posts-expand .post-body h1:before {
+  top: 10px;
+  width: 18px;
+  height: 18px;
+  content: "🐵";
+  font-size: 18px;
+  line-height: 18px;
+  margin-right: 16px;
+}
+/*修改h2前面图标*/
+.posts-expand .post-body h2:before {
+  top: 10px;
+  width: 18px;
+  height: 18px;
+  content: "🌈";
+  font-size: 18px;
+  line-height: 18px;
+  margin-right: 16px;
+}
+/*修改h3前面图标*/
+.posts-expand .post-body h3:before {
+  top: 10px;
+  width: 18px;
+  height: 18px;
+  content: "🌞";
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 18px;
+  line-height: 18px;
+  margin-right: 16px;
+}
+/*修改h4前面图标*/
+.posts-expand .post-body h4:before {
+  display: none;
+  top: 10px;
+  width: 18px;
+  height: 18px;
+  content: "🔍";
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 18px;
+  line-height: 18px;
+  margin-right: 16px;
+}
+/* 5级标题前置设置 */
+.posts-expand .post-body h5:before {
+  top: 10px;
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  line-height: 18px;
+  margin-right: 18px;
+}
+/*去掉图片边框*/
+.posts-expand .post-body img {
+  border: 0px;
+}
+div.post-block.tag .collection-title h2 {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #3f3f3f;
+  border-radius: 20px;
+  font-size: 26px;
+  background-color: #b4e8fa;
+  padding: 2px 15px;
+  letter-spacing: 1.5px;
+  box-sizing: border-box;
+  color: #3f3f3f;
+  display: inline-block;
+  margin: 10px 0% 10px;
+  text-align: center;
+}
+@keyframes sliding {
+  to {
+    background-position: -2000vw;
+  }
+}
+@keyframes hue {
+  from {
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(-360deg);
+  }
 }
