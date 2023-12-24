@@ -185,7 +185,7 @@ body {
   box-sizing: border-box;
   color: var(--text-color);
   font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 1.3em;
+  font-size: 1.2em;
   line-height: 2;
   min-height: 100%;
   position: relative;
@@ -705,8 +705,9 @@ pre code {
   margin-bottom: 20px;
   padding: 1em;
   position: relative;
-  border: 1px solid #eee;
-  border-left-width: 5px;
+  background: #f9f9f9;
+  border: initial;
+  border-left: 3px solid #eee;
 }
 .post-body .note summary {
   cursor: pointer;
@@ -731,6 +732,7 @@ pre code {
   margin-bottom: 0;
 }
 .post-body .note.default {
+  background: #f7f7f7;
   border-left-color: #777;
 }
 .post-body .note.default h2,
@@ -741,6 +743,7 @@ pre code {
   color: #777;
 }
 .post-body .note.primary {
+  background: #f5f0fa;
   border-left-color: #6f42c1;
 }
 .post-body .note.primary h2,
@@ -751,6 +754,7 @@ pre code {
   color: #6f42c1;
 }
 .post-body .note.info {
+  background: #eef7fa;
   border-left-color: #428bca;
 }
 .post-body .note.info h2,
@@ -761,6 +765,7 @@ pre code {
   color: #428bca;
 }
 .post-body .note.success {
+  background: #eff8f0;
   border-left-color: #5cb85c;
 }
 .post-body .note.success h2,
@@ -771,6 +776,7 @@ pre code {
   color: #5cb85c;
 }
 .post-body .note.warning {
+  background: #fdf8ea;
   border-left-color: #f0ad4e;
 }
 .post-body .note.warning h2,
@@ -781,6 +787,7 @@ pre code {
   color: #f0ad4e;
 }
 .post-body .note.danger {
+  background: #fcf1f2;
   border-left-color: #d9534f;
 }
 .post-body .note.danger h2,
@@ -2406,7 +2413,7 @@ header.header {
 .main-inner {
   border-radius: 20px 20px 20px 20px;
   box-sizing: border-box;
-  width: calc(100% - 312px);
+  width: calc(100% - 287px);
 }
 @media (max-width: 991px) {
   .main-inner {
@@ -2415,7 +2422,7 @@ header.header {
   }
 }
 .footer-inner {
-  padding-left: 312px;
+  padding-left: 287px;
 }
 @media (max-width: 991px) {
   .footer-inner {
@@ -2425,7 +2432,7 @@ header.header {
   }
 }
 .column {
-  width: 300px;
+  width: 275px;
 }
 @media (max-width: 991px) {
   .column {
@@ -2765,7 +2772,7 @@ blockquote.question {
   top: calc(100vh - 900px - 200px);
 }
 .links-of-recent-posts {
-  font-size: 0.8125em;
+  font-size: 0.925m;
   margin-top: 10px;
 }
 .links-of-recent-posts-title {
@@ -2777,4 +2784,9 @@ blockquote.question {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+code {
+  color: #ff7600;
+  background: #fbf7f8;
+  margin: 2px;
 }
