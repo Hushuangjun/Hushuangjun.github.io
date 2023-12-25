@@ -259,7 +259,7 @@
 }
 
 .carousel{
-    width: 100%;
+    width: 65%;
     height: 100%;
     position: relative;
 }
@@ -485,10 +485,20 @@
     bottom: 20px;
   }
 }
-</style>
-<div width="100%" height="320px" style="border: 0px; overflow: hidden; border-radius: 10px;" scrolling="no">
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3500" >
+
+</style>
+
+<style>
+    .my-carousel img.rounded {
+        border-radius: 10px; /* Adjust the radius as needed */
+        margin-bottom: 15px; /* Adjust the vertical spacing as needed */
+    }
+</style>
+
+<div width="100%" height="320px"  style="border: 0px; overflow: hidden; border-radius: 10px;" scrolling="no">
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3500" style="float:left" >
         <!-- 轮播（Carousel）指标 -->
         <ol class="carousel-indicators">
         
@@ -505,7 +515,7 @@
         
         </ol>
         <!-- 轮播（Carousel）项目,且在这里设置高度 -->
-        <div class="carousel-inner" style="height: 350px; border-radius: 10px; width: 100%;">
+        <div class="carousel-inner" style="height: 320px; border-radius: 10px; width: 100%;">
 
         
          
@@ -532,15 +542,30 @@
         <!-- 轮播（Carousel）导航 -->
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-
         </a>
         <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-
         </a>
     </div>
 
+    <div class="rights" style="width: 30%; height: 24%; margin-right: 15px; margin-left: 0; float: right">
+        <iframe allowtransparency="true" frameborder="0" width="300" height="55" scrolling="no" src="//tianqi.2345.com/plugin/widget/index.htm?s=2&amp;z=3&amp;t=1&amp;v=2&amp;d=1&amp;bd=0&amp;k=000000&amp;f=&amp;ltf=009944&amp;htf=cc0000&amp;q=1&amp;e=1&amp;a=1&amp;c=54511&amp;w=300&amp;h=55&amp;align=left"></iframe>
+        <div class="my-carousel">
+            <a href="/tags/" target="_blank" data-pjax-state="">
+                <img class="right-siders nofancybox rounded" src="https://cdn.jsdelivr.net/gh/leafjame/cdn/img/carousel/hot.png" width="100%">
+            </a>
+        </div>
+        <div class="my-carousel">
+            <a href="/categories/" target="_blank" data-pjax-state="">
+                <img class="right-siders nofancybox rounded" src="https://cdn.jsdelivr.net/gh/leafjame/cdn/img/carousel/times.png">
+            </a>
+        </div>
+    </div>
 </div>
+
+
+
+
 
 
     
@@ -749,7 +774,7 @@ hrsold=setzero(Math.floor(e_hrsold));
 e_minsold=(e_hrsold-hrsold)*60;
 minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
 seconds=setzero(Math.floor((e_minsold-minsold)*60));
-document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"时"+minsold+"分"+seconds+"秒";
+document.getElementById('days').innerHTML="本站已运行"+daysold+"天"+hrsold+"时"+minsold+"分"+seconds+"秒";
 }
 function setzero(i){
 if (i<10)
@@ -818,8 +843,8 @@ show_date_time();
       // 获取 div.table-container 内的 span 元素数量
       const spanCount = tableContainer.querySelectorAll("tbody > tr > td.code > pre > span").length;
 
-      // 检查 span 元素数量是否 >= 15
-      if (spanCount >= 15) {
+      // 检查 span 元素数量是否 >= 20
+      if (spanCount >= 20) {
         // 检查 div.table-container 前面是否有 figcaption 元素，如果没有则添加一个
         const prevElement = tableContainer.previousElementSibling;
         let figcaption;
