@@ -362,11 +362,13 @@
   background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-repeat: repeat-x;
+  
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
 }
 .carousel-control.right {
   left: auto;
   right: 0;
+  border-radius: 20px;
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
@@ -490,15 +492,22 @@
 </style>
 
 <style>
-    .my-carousel img.rounded {
-        border-radius: 10px; /* Adjust the radius as needed */
-        margin-bottom: 15px; /* Adjust the vertical spacing as needed */
-    }
+.my-carousel img.rounded {
+    border-radius: 10px; /* Adjust the radius as needed */
+    margin-bottom: 20px; /* Adjust the vertical spacing as needed */
+}
+.my-carousel {
+    transition: transform 0.3s ease-in-out; /* 添加平滑过渡效果 */
+}
+
+.my-carousel:hover {
+    transform: scale(1.1); /* 鼠标悬停时放大1.1倍 */
+}
 </style>
 
 <div width="100%" height="320px"  style="border: 0px; overflow: hidden; border-radius: 20px;" scrolling="no">
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3500" style="float:left" >
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3500" style="float:left;" >
         <!-- 轮播（Carousel）指标 -->
         <ol class="carousel-indicators">
         
@@ -515,7 +524,7 @@
         
         </ol>
         <!-- 轮播（Carousel）项目,且在这里设置高度 -->
-        <div class="carousel-inner" style="height: 320px; border-radius: 0px; width: 100%; background-color: #FFFFFF;">
+        <div class="carousel-inner" style="height: 320px; border-radius: 20px; width: 100%;">
 
         
          
@@ -550,7 +559,7 @@
 
     <div class="rights" style="width: 30%; height: 24%; margin-right: 15px; margin-left: 0; float: right">
         <iframe allowtransparency="true" frameborder="0" width="300" height="55" scrolling="no" src="//tianqi.2345.com/plugin/widget/index.htm?s=2&amp;z=3&amp;t=1&amp;v=2&amp;d=1&amp;bd=0&amp;k=000000&amp;f=&amp;ltf=009944&amp;htf=cc0000&amp;q=1&amp;e=1&amp;a=1&amp;c=54511&amp;w=300&amp;h=55&amp;align=left"></iframe>
-        <div class="my-carousel">
+        <div class="my-carousel" style="margin-top: 20px;">
             <a href="https://www.husj0711.top/2023/11/13/Study/%E7%A0%B4%E5%B1%80/#more" target="_blank" data-pjax-state="">
                 <img class="right-siders nofancybox rounded" src="https://cdn.jsdelivr.net/gh/leafjame/cdn/img/carousel/hot.png" width="100%">
             </a>
@@ -558,6 +567,16 @@
         <div class="my-carousel">
             <a href="https://www.husj0711.top/2023/05/05/Life/%E6%9C%AC%E7%A7%91%E7%94%9F%E6%B4%BB/" target="_blank" data-pjax-state="">
                 <img class="right-siders nofancybox rounded" src="https://cdn.jsdelivr.net/gh/leafjame/cdn/img/carousel/times.png">
+            </a>
+        </div>
+        <div class="my-carousel">
+            <a href="https://www.liaofuzhan.com/" target="_blank" data-pjax-state="">
+                <img class="right-siders nofancybox rounded" src="https://cdn.jsdelivr.net/gh/leafjame/cdn/img/carousel/read.png">
+            </a>
+        </div>
+        <div class="my-carousel">
+            <a href="https://www.liaofuzhan.com/" target="_blank" data-pjax-state="">
+                <img class="right-siders nofancybox rounded" src="https://cdn.jsdelivr.net/gh/leafjame/cdn/img/carousel/sub.png">
             </a>
         </div>
     </div>
@@ -635,7 +654,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="五一假期"><a href="#五一假期" class="headerlink" title="五一假期"></a>五一假期</h2><p>这几天都在学校学习，认真看了高层建筑这本书，感觉讲的比较浅显，如果不看具体例子不容易理解。</p>
+          <h2 id="五一假期"><a class="markdownIt-Anchor" href="#五一假期"></a> 五一假期</h2>
+<p>这几天都在学校学习，认真看了高层建筑这本书，感觉讲的比较浅显，如果不看具体例子不容易理解。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/05/05/Life/%E6%9C%AC%E7%A7%91%E7%94%9F%E6%B4%BB/#more" rel="contents">
