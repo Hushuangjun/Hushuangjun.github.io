@@ -394,7 +394,7 @@ queueMicrotask(() => {
           'date': e.time || e.insertedAt
         }
       })
-      saveToLocal.set('waline-newest-comments', JSON.stringify(walineArray), 10/(60*24))
+      saveToLocal.set('waline-newest-comments', JSON.stringify(walineArray), 5/(60*24))
       generateHtml(walineArray)
     } catch (err) {
       console.error(err)
