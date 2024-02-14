@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://husj0711.top/album/WorldScenery/index.html</loc>
+    
+    <lastmod>2024-02-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://husj0711.top/album/Crush/index.html</loc>
     
     <lastmod>2024-02-14</lastmod>
@@ -183,15 +192,6 @@
   
   <url>
     <loc>http://husj0711.top/album/DailyPhoto/index.html</loc>
-    
-    <lastmod>2024-01-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://husj0711.top/album/WorldScenery/index.html</loc>
     
     <lastmod>2024-01-02</lastmod>
     
