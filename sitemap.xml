@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://husj0711.top/album/worldscenery/index.html</loc>
+    <loc>http://husj0711.top/album/world%20scenery/index.html</loc>
     
     <lastmod>2024-02-14</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://husj0711.top/album/crush/index.html</loc>
+    <loc>http://husj0711.top/album/my%20crush/index.html</loc>
     
     <lastmod>2024-02-14</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>http://husj0711.top/album/dailyphoto/index.html</loc>
+    <loc>http://husj0711.top/album/daily%20photo/index.html</loc>
     
     <lastmod>2024-01-02</lastmod>
     
@@ -279,6 +279,13 @@
   </url>
   
   <url>
+    <loc>http://husj0711.top/tags/Hexo/</loc>
+    <lastmod>2024-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://husj0711.top/tags/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/</loc>
     <lastmod>2024-02-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -307,13 +314,6 @@
   </url>
   
   <url>
-    <loc>http://husj0711.top/tags/Hexo/</loc>
-    <lastmod>2024-02-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://husj0711.top/tags/C/</loc>
     <lastmod>2024-02-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -330,6 +330,13 @@
 
   
   <url>
+    <loc>http://husj0711.top/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/</loc>
+    <lastmod>2024-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://husj0711.top/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2024-02-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -344,7 +351,7 @@
   </url>
   
   <url>
-    <loc>http://husj0711.top/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/</loc>
+    <loc>http://husj0711.top/categories/%E7%A7%91%E7%A0%94%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2024-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -352,13 +359,6 @@
   
   <url>
     <loc>http://husj0711.top/categories/%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2024-02-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://husj0711.top/categories/%E7%A7%91%E7%A0%94%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2024-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
