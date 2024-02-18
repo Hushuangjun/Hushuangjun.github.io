@@ -309,7 +309,21 @@
   </url>
   
   <url>
+    <loc>http://husj0711.top/tags/%E6%A3%80%E7%B4%A2%E8%B5%84%E6%96%99/</loc>
+    <lastmod>2024-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://husj0711.top/tags/Hexo/</loc>
+    <lastmod>2024-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://husj0711.top/tags/C/</loc>
     <lastmod>2024-02-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -324,20 +338,6 @@
   
   <url>
     <loc>http://husj0711.top/tags/%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%9D%82%E8%B0%88/</loc>
-    <lastmod>2024-02-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://husj0711.top/tags/C/</loc>
-    <lastmod>2024-02-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://husj0711.top/tags/%E6%A3%80%E7%B4%A2%E8%B5%84%E6%96%99/</loc>
     <lastmod>2024-02-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -374,14 +374,14 @@
   </url>
   
   <url>
-    <loc>http://husj0711.top/categories/%E7%A7%91%E7%A0%94%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://husj0711.top/categories/%E5%AE%9E%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2024-02-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://husj0711.top/categories/%E5%AE%9E%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <loc>http://husj0711.top/categories/%E7%A7%91%E7%A0%94%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2024-02-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
