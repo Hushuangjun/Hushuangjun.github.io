@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Kriging 模型（新手福利，超详细！）</title>
+      <link href="/2024/Specific%20subject/06Kriging%E6%A8%A1%E5%9E%8B%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/"/>
+      <url>/2024/Specific%20subject/06Kriging%E6%A8%A1%E5%9E%8B%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/</url>
+      
+        <content type="html"><![CDATA[<p>最近写毕业论文用到kriging模型，经过一周的摸索，对其有一定的了解，遂作此笔记。<br>接下来我将从一个萌新的角度逐步带你揭开kriging模型神秘的面纱！</p><h1 id="初识kriging-模型"><a href="#初识kriging-模型" class="headerlink" title="初识kriging 模型"></a>初识kriging 模型</h1><p>一开始接触到这个名词，大家较多的会看看B站上有没有相关教程，由此映入眼帘的就是<a href="https://space.bilibili.com/6676614">猪星人</a>这位up主的视频，从那里大家就会发现kriging有现成的matlab工具箱，如下所示：<br><img src="/2024/Specific%20subject/06Kriging%E6%A8%A1%E5%9E%8B%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/kriging模型工具箱.png" alt="Kriging模型工具箱"></p><p>而且工具箱也提供了几个例子，简单好上手，如<a href="https://blog.csdn.net/zhwzhaowei/article/details/114303882">CSDN上那篇博客</a>介绍。(见下图)<br><img src="/2024/Specific%20subject/06Kriging%E6%A8%A1%E5%9E%8B%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/kriging工具箱自带例子.png" alt="dace工具箱例子"><br>于是大家兴奋不已，如获珍宝，难道到这就结束了？噩梦才刚开始！</p><p>紧接着，大家就会像，kriging模型理论是啥，毕竟大家论文前面论文总要凑字数的嘛😁😁😁</p><p>于是你就会看到上述CSDN上博客写着的教程：</p><blockquote><p>1）参考工具箱中的dace文档<br>2）<a href="https://xg1990.com/blog/archives/222">https://xg1990.com/blog/archives/222</a></p></blockquote><p>显然，对于dace自带的说明书，全英文，我们直呼不能接受！而选项2）,点进去一看，中文，哎，兴趣就来了。</p><blockquote><p>这里我推荐你一定要把xg1990大佬的这篇文章<strong>认真研读一遍</strong>，这篇文章算是我接触过的最易理解的关于kriging模型的介绍了！</p></blockquote><div class="row">    <embed src="克里金(Kriging)插值的原理与公式推导" width="100%" height="550" type="application/pdf"></div><blockquote><p>pdf不显示的话刷新一下就好了！</p></blockquote><p>文中推导需要用到的一些概率统计的基本公式，这里总结一下：</p><script type="math/tex; mode=display">VarX = E\left[ { { {\left( {X - \mu } \right)}^2} } \right]</script><script type="math/tex; mode=display">\mu  = E\left( X \right)</script>$$Cov\left( {X,Y} \right) = E\left[ {\left( {X - E\left( X \right)} \right)\left( {Y - E\left( Y \right)} \right)} \right] = E\left( {XY} \right) - E\left( X \right)E\left( Y \right)$$$$Var\left( X \right) = Cov\left( {X,X} \right) = E\left( {{X^2}} \right) - {E^2}\left( X \right)$$$$Var\left( {X - Y} \right) = E\left[ {{{\left( {\left( {X - Y} \right) - E\left( {X - Y} \right)} \right)}^2}} \right] = Var\left( X \right) + Var\left( Y \right) - 2Cov\left( {X,Y} \right)$$$${\left( {\sum\limits_{i = 1}^n {{x_i}} } \right)^2} = \sum\limits_{i = 1}^n {\sum\limits_{j = 1}^n {\left( {{x_i}{x_j}} \right)} } $$$$Var\left( {\sum\limits_{i = 1}^n {{X_i}} } \right) = E\left[ {{{\left( {\sum\limits_{i = 1}^n {\left( {{X_i} - {\mu _i}} \right)} } \right)}^2}} \right] = \sum\limits_{i = 1}^n {\sum\limits_{j = 1}^n {E\left[ {\left( {{X_i} - {\mu _i}} \right)\left( {{X_j} - {\mu _j}} \right)} \right]} }  = \sum\limits_{i = 1}^n {\sum\limits_{j = 1}^n {Cov\left( {{X_i},{X_j}} \right)} } $$<hr><p>看完上述xg1990大佬写的文章，整个人的心情瞬间舒畅，大佬文尾贴心地总结了kriging模型建模步骤(如下图)。<br><img src="/2024/Specific%20subject/06Kriging%E6%A8%A1%E5%9E%8B%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/kriging模型求解步骤.png" alt="kriging模型求解步骤"></p><p>于是我们就兴致冲冲开干，拿着dace工具箱验算个几篇论文。这里我们挑选几篇比较经典和最新的文章。<br>第一篇，韩忠华老师的文章。<br><img src="/2024/Specific%20subject/06Kriging%E6%A8%A1%E5%9E%8B%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/韩忠华老师_kriging.png" alt="韩忠华老师文章"><br>什么y(x)可以被表述成下式:</p><script type="math/tex; mode=display">Y\left( X \right) = {\beta _0} + Z\left( X \right)</script><p>Z(X)竟然还是一个静态随机过程！</p><p>最后预测值竟然是:</p><script type="math/tex; mode=display">\hat y\left( X \right) = {\beta _0} + {r^T}\left( X \right){R^{ - 1} }\left( { {y_s} - {\beta _0}F} \right)</script><p>我们的$\hat y\left( X \right) = \sum\limits_{i = 1}^n { {\omega _i}{y_i} }$这样通俗易懂的插值到哪里去了啊？<br>在xg1990大佬博客中那个半方差函数又去哪了呢？怎么又多出来个相关函数$R\left( {\theta ,{x_i},{x_j} } \right)$呢？</p><p>于是我们又点开一篇文章。<br>第二篇，<a href="https://kns.cnki.net/kcms2/article/abstract?v=HR7ide6_o4SL8yojDE9VH2Yj71Lz5gG6rXyGYWM_CMlBsteG88YxyGmV87KC0GPTBBdYGxn8VyxmyjxBxsSr1ulkMHgFQMTsK8eemqkXYY0tKZUIZzasK_cDcln7pHuVnabIesQVe_U=&amp;uniplatform=NZKPT&amp;language=CHS">查从燚老师(学长)文章</a>。<br><img src="/2024/Specific%20subject/06Kriging%E6%A8%A1%E5%9E%8B%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/查从燚_kriging.png" alt="查从燚_kriging"><br>kriging 模型又被表示成:</p><script type="math/tex; mode=display">\hat y\left( x \right) = {f^T}\left( x \right)\beta  + Z\left( x \right)</script><p>怎么回事，怎么又多了个f(x)啊？把人搞得晕头转向！<br><img src="/2024/Specific%20subject/06Kriging%E6%A8%A1%E5%9E%8B%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/小老弟你怎么回事.png" alt="小老弟你怎么回事"></p><p>莫慌莫慌，接下来我会带你完整的捋一遍！发车咯(●ˇ∀ˇ●)</p><h1 id="kriging-模型推导"><a href="#kriging-模型推导" class="headerlink" title="kriging 模型推导"></a>kriging 模型推导</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据分析 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> kriging模型 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>提高搜索效率的小技巧</title>
       <link href="/2024/Useful%20tools/01%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E6%90%9C%E7%B4%A2%E6%8A%80%E6%9C%AF/"/>
       <url>/2024/Useful%20tools/01%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E6%90%9C%E7%B4%A2%E6%8A%80%E6%9C%AF/</url>
