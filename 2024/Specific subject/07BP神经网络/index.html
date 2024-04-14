@@ -1,0 +1,691 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>BP神经网络 | Hu_SE</title><meta name="keywords" content="神经网络"><meta name="author" content="Charm_Hu"><meta name="copyright" content="Charm_Hu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="BP神经网络"><meta name="application-name" content="BP神经网络"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="BP神经网络"><meta property="og:url" content="http://husj0711.top/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/index.html"><meta property="og:site_name" content="Hu_SE"><meta property="og:description" content="说明本文是基于B站UP主神罗Noctis的文档修改的，并参考了一些资料1，特此说明！ $BP$神经网络1.激活函数​        激活函数（Activation Function）是在人工神经网络的神经元上运行的函数，负责将神经元的输入映射到输出端。激活函数对于人工神经网络模型去学习、理解复杂的非"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://ooo.0x0.ooo/2024/04/14/OmYkrP.png"><meta property="article:author" content="Charm_Hu"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://ooo.0x0.ooo/2024/04/14/OmYkrP.png"><meta name="description" content="说明本文是基于B站UP主神罗Noctis的文档修改的，并参考了一些资料1，特此说明！ $BP$神经网络1.激活函数​        激活函数（Activation Function）是在人工神经网络的神经元上运行的函数，负责将神经元的输入映射到输出端。激活函数对于人工神经网络模型去学习、理解复杂的非"><link rel="shortcut icon" href="/%E6%9D%B0%E5%B0%BC%E9%BE%9F.ico"><link rel="canonical" href="http://husj0711.top/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: undefined,
+  diytitle: {"enable":true,"leaveTitle":"网页崩溃啦！┭┮﹏┭┮","backTitle":"噫O(∩_∩)O又好了！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: {"mode":"both","api":"https://img2color-go.vercel.app/api?img=","cover_change":true},
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🏃 脚踏实地行动派"]},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: Charm_Hu","link":"链接: ","source":"来源: Hu_SE","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'Hu_SE',
+  title: 'BP神经网络',
+  postAI: '',
+  pageFillDescription: '$BP$神经网络, 1.激活函数, 常用的激活函数, 2.神经网络结构, 符号约定, 3.损失函数, 回归问题, 分类问题, 4.反向传播, 求解梯度矩阵, 梯度下降法, 反向传播公式推导（四个基础等式）, 等式一    输出层误差, 等式二    隐藏层误差, 等式三  参数变化率, 等式四 参数更新, 反向传播图解, 反向传播公式总结, 单样本输入公式表, 多样本输入公式表, 成本函数, 误差, 参数变换率说明本文是基于站主神罗的文档修改的并参考了一些资料特此说明神经网络激活函数激活函数是在人工神经网络的神经元上运行的函数负责将神经元的输入映射到输出端激活函数对于人工神经网络模型去学习理解复杂的非线性函数具有十分重要的作用如果不使用激活函数每一层输出都是上一层输入的线性运算无论神经网络有多少层最终的输出只是输入的线性组合相当于感知机如果使用了激活函数将非线性因素引入到网络中使得神经网络可以任意逼近任何非线性函数能够应用到更多的非线性模型常用的激活函数函数函数是一个在生物学中常见的型函数也称为型生长曲线在信息科学中由于其单增以及反函数单增等性质函数常被用作神经网络的阈值函数将变量映射到之间公式如下函数激活函数用于隐藏层的神经元输出公式如下函数是双曲函数中的一个为双曲正切在数学中双曲正切是由基本双曲函数双曲正弦和双曲余弦推导而来公式如下函数函数用于输出层假设输出层共有个神经元计算第个神经元的输出函数的分子是输入信号的指数函数分母是所有输入信号的指数函数的和函数公式如下神经网络结构第层是输入层个神经元第层是隐含层个神经元第层是隐含层个神经元第层是输出层符号约定表示从网络第层第个神经元指向第层第个神经元的连接权重同时也是第层权重矩阵第行第列的元素例如上图中第层第个神经元指向第层第个神经元的权重褐色也就是第层权重矩阵第行第列的元素同理使用表示第层第个神经元的偏置同时也是第层偏置向量的第个元素使用表示第层第个神经元的线性结果使用来表示第层第个神经元的激活函数输出其中激活函数使用符号表示第层中第个神经元的激活为表示第层的权重矩阵表示第层的偏置向量表示第层的神经元向量结合上图讲述进行线性矩阵运算矩阵形状矩阵形状那么前向传播过程可以表示为上述讲述的前向传播过程输入层只有个列向量也就是只有一个输入样本对于多个样本输入不再是个列向量而是个列向量每列表示一个输入样本个列向量组成一个列的矩阵多样本输入的前向传播过程可以表示为与单样本输入相比多样本和的定义是完全一样的不同的只是和从列变成列每列表示一个样本的计算结果损失函数在有监督的机器学习算法中我们希望在学习过程中最小化每个训练样例的误差通过梯度下降等优化策略完成的而这个误差来自损失函数损失函数用于单个训练样本而成本函数是多个训练样本的平均损失优化策略旨在最小化成本函数下面例举几个常用的损失函数回归问题绝对值损失函数损失函数表示真实值或期望值表示预测值平方损失函数损失函数表示真实值或期望值表示预测值上述表达式是针对输出为维的如果输出多维那么就是一个列向量分类问题交叉熵损失表示真实值或期望值表示预测值反向传播反向传播的基本思想通过计算输出层与期望值之间的误差来调整网络参数使得误差变小最小化损失函数或成本函数反向传播基于四个基础等式非常简洁优美但想要理解透彻还是挺烧脑的求解梯度矩阵假设函数将输入的列向量映射为一个实数那么函数的梯度定义为同理假设函数将输入的矩阵映射为一个实数函数的梯度定义为可以简化为注意梯度求解的前提是函数返回的必须是一个实数如果函数返回的是一个矩阵或者向量是没有办法求解梯度的例如函数函数返回一个实数可以求解梯度矩阵如果函数返回一个行的列向量就不能对求解梯度矩阵矩阵相乘矩阵矩阵矩阵对应元素相乘使用符号表示梯度下降法从几何意义梯度矩阵代表了函数增加最快的方向沿着梯度相反的方向可以更快找到最小值反向传播的过程就是利用梯度下降法原理逐步找到成本函数的最小值得到最终的模型参数反向传播公式推导四个基础等式要想最小化成本函数需要求解神经网络中的权重和偏置的梯度再用梯度下降法优化参数求解梯度也就是计算偏导数和为了计算这些偏导数引入一个中间变量它表示网络中第层第个神经元的误差反向传播能够计算出误差再根据链式法则求出和定义网络中第层第个神经元的误差为其中表示损失函数表示真实值表示输出层的预测值每一层的误差向量可以表示为等式一输出层误差表示输出层层数以下用表示写成矩阵形式是表示成公式推导计算输出层的误差根据链式法则看起来上面式子很复杂但是由于第个神经元的输出激活值只依赖于当时消失了于是上式简化为表示激活函数由计算出代入最后得到等式二隐藏层误差写成矩阵形式推导对求偏导由于两层神经网络时间任意一对神经元只有一条连接即和之间只通过连接故根据链式法则其中用到等式三参数变化率推导对求偏导根据链式法则得到对求偏导根据链式法则得到等式四参数更新根据梯度下降法原理朝着梯度的反方向更新参数写成矩阵形式这里的指的是学习率学习率决定了反向传播过程中梯度下降的步长反向传播图解计算输出层误差计算隐藏层误差隐藏层误差公式写成矩阵形式时权重矩阵需要转置上面两幅图直观地解释了转置的原因计算参数变化率最后更新每层的参数反向传播公式总结单样本输入公式表说明公式输出层误差隐含层误差参数变化率参数更新多样本输入公式表成本函数多样本输入使用的成本函数与单样本不同假设单样本的成本函数是交叉熵损失函数那么对于个样本输入成本函数是每个样本的成本总和的平均值误差单样本输入的每一层的误差是一个列向量而多样本输入的每一层的误差不再是一个列向量变成一个列的矩阵每一列对应一个样本的向量那么多样本的误差定义为的维度是表示第层神经元的个数表示样本数量参数变换率因为的维度是更新的时候需要对每行求平均值再乘以的维度是的维度是是第层神经元个数矩阵相乘得到的维度是与本身的维度相同因此更新时只需乘以求平均值说明公式输出层误差隐含层误差参数变化率参数更新参考资料',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-14 21:20:05',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://ooo.0x0.ooo/2024/01/02/OKuyvU.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.husj0711.top/" title="博客"><img class="back-menu-item-icon" src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">Hu_SE</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=9246893035&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 1.05rem;">C<sup>1</sup></a><a href="/tags/Hexo/" style="font-size: 1.05rem;">Hexo<sup>1</sup></a><a href="/tags/Kriging%E6%A8%A1%E5%9E%8B/" style="font-size: 1.05rem;">Kriging模型<sup>1</sup></a><a href="/tags/%E4%B8%AD%E5%BF%83%E5%B7%AE%E5%88%86%E6%B3%95/" style="font-size: 1.05rem;">中心差分法<sup>1</sup></a><a href="/tags/%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/" style="font-size: 1.05rem;">力学基础与专业基础<sup>1</sup></a><a href="/tags/%E5%8D%95%E8%AF%8D%E6%8B%BC%E8%AF%BB/" style="font-size: 1.05rem;">单词拼读<sup>1</sup></a><a href="/tags/%E6%8C%AF%E5%9E%8B%E5%88%86%E8%A7%A3%E5%8F%8D%E5%BA%94%E8%B0%B1%E6%B3%95/" style="font-size: 1.05rem;">振型分解反应谱法<sup>1</sup></a><a href="/tags/%E6%A3%80%E7%B4%A2%E8%B5%84%E6%96%99/" style="font-size: 1.05rem;">检索资料<sup>1</sup></a><a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/" style="font-size: 1.05rem;">毕业论文<sup>1</sup></a><a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 1.05rem;">生活<sup>1</sup></a><a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" style="font-size: 1.05rem;">神经网络<sup>1</sup></a><a href="/tags/%E7%A7%91%E7%A0%94%E7%BB%98%E5%9B%BE/" style="font-size: 1.05rem;">科研绘图<sup>1</sup></a><a href="/tags/%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%9D%82%E8%B0%88/" style="font-size: 1.05rem;">结构设计杂谈<sup>1</sup></a><a href="/tags/%E9%9F%B3%E6%A0%87/" style="font-size: 1.05rem;">音标<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">6</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url">机器学习</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>神经网络</span></a></span></div></div><h1 class="post-title" itemprop="name headline">BP神经网络</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-04-13T16:00:00.000Z" title="发表于 2024-04-14 00:00:00">2024-04-14</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-04-14T13:20:05.947Z" title="更新于 2024-04-14 21:20:05">2024-04-14</time></span></div><div class="meta-secondline"></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://ooo.0x0.ooo/2024/04/14/OmYkrP.png"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://husj0711.top/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><header><a class="post-meta-categories" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url">机器学习</a><a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" tabindex="-1" itemprop="url">神经网络</a><h1 id="CrawlerTitle" itemprop="name headline">BP神经网络</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">Charm_Hu</span><time itemprop="dateCreated datePublished" datetime="2024-04-13T16:00:00.000Z" title="发表于 2024-04-14 00:00:00">2024-04-14</time><time itemprop="dateCreated datePublished" datetime="2024-04-14T13:20:05.947Z" title="更新于 2024-04-14 21:20:05">2024-04-14</time></header><p><strong>说明</strong><br>本文是基于B站UP主<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV11k4y167rQ/?spm_id_from=333.788.top_right_bar_window_custom_collection.content.click&amp;vd_source=41769b252ab81d02e47e5775242eda15">神罗Noctis</a>的文档修改的，并参考了一些资料<sup><a href="#fn_1" id="reffn_1">1</a></sup>，特此说明！</p>
+<h1 id="BP-神经网络"><a href="#BP-神经网络" class="headerlink" title="$BP$神经网络"></a>$BP$神经网络</h1><h2 id="1-激活函数"><a href="#1-激活函数" class="headerlink" title="1.激活函数"></a>1.激活函数</h2><p>​        激活函数（Activation Function）是在人工神经网络的神经元上运行的函数，负责将神经元的输入映射到输出端。激活函数对于人工神经网络模型去学习、理解复杂的非线性函数，具有十分重要的作用。</p>
+<p>​        如果不使用激活函数，每一层输出都是上一层输入的线性运算，无论神经网络有多少层，最终的输出只是输入的线性组合，相当于感知机。如果使用了激活函数，将非线性因素引入到网络中，使得神经网络可以任意逼近任何非线性函数，能够应用到更多的非线性模型。</p>
+<h3 id="常用的激活函数"><a href="#常用的激活函数" class="headerlink" title="常用的激活函数"></a>常用的激活函数</h3><p><strong>$sigmoid$ 函数</strong></p>
+<p>​        $Sigmoid$函数是一个在生物学中常见的S型函数，也称为S型生长曲线。在信息科学中，由于其单增以及反函数单增等性质，Sigmoid函数常被用作神经网络的阈值函数，将变量映射到0,1之间，公式如下：</p>
+<script type="math/tex; mode=display">
+f(x)=\frac{1}{1+e^{(-x)}}</script><p><img src="/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/sigmoid.png" alt="sigmoid" style="zoom: 33%;"></p>
+<p><strong>$ReLU$函数</strong></p>
+<p>$Relu$激活函数（The Rectified Linear Unit），用于隐藏层的神经元输出。公式如下：</p>
+<script type="math/tex; mode=display">
+f(x)=max(0,x)</script><p><img src="/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/ReLU.png" alt="ReLU" style="zoom:33%;"></p>
+<p><strong>$Tanh$ 函数</strong></p>
+<p>​        $Tanh$ 是双曲函数中的一个，$Tanh()$ 为双曲正切。在数学中，双曲正切“$Tanh$”是由基本双曲函数双曲正弦和双曲余弦推导而来。公式如下：</p>
+<script type="math/tex; mode=display">
+f(x)=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}</script><p><strong>$softmax$ 函数</strong></p>
+<p>​        $softmax$ 函数用于输出层。假设输出层共有 $n$ 个神经元，计算第 $k$ 个神经元的输出 $y_k$。$softmax$ 函数的分子是输入信号 $a_k$ 的指数函数，分母是所有输入信号的指数函数的和。$softmax$ 函数公式如下：</p>
+<script type="math/tex; mode=display">
+y_{k}=\frac{e^{a_{k}}}{\sum_{i=1}^{n} e^{a_{i}}}</script><h2 id="2-神经网络结构"><a href="#2-神经网络结构" class="headerlink" title="2.神经网络结构"></a>2.神经网络结构</h2><p>​        第0层是输入层（2个神经元），第1层是隐含层（3个神经元），第2层是隐含层（2个神经元），第3层是输出层。</p>
+<p><img src="/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/前向传播.png" alt="前向传播"></p>
+<h3 id="符号约定"><a href="#符号约定" class="headerlink" title="符号约定"></a>符号约定</h3><p>​         $w_{j k}^{[l]}$表示从网络第$(l-1)^{t h}$ 层第$k^{t h}$ 个神经元指向第 $l^{t h}$ 层第 $j^{t h}$ 个神经元的连接权重，同时也是第 $l$ 层权重矩阵第 $j$ 行第 $k$ 列的元素。例如，上图中 $w_{21}^{[1]}$ ，第0层第1个神经元指向第1层第2个神经元的权重（褐色），也就是第 1 层权重矩阵第 2 行第 1 列的元素。同理，使用 $b_{j}^{[l]}$ 表示第 $l^{t h}$ 层第 $j^{t h}$ 个神经元的偏置 ，同时也是第 $l$ 层偏置向量的第 $j$ 个元素。使用 $z_{j}^{[l]}$ 表示第 $l^{t h}$ 层第 $j^{t h}$ 个神经元的线性结果，使用 $a_{j}^{[l]}$ 来表示第 $l^{t h}$ 层第 $j^{t h}$ 个神经元的激活函数输出。其中，激活函数使用符号σ表示，第 $l^{t h}$ 层中第 $j^{t h}$ 个神经元的激活为:</p>
+<script type="math/tex; mode=display">
+a_{j}^{[l]}=\sigma(z_{j}^{[l]})=\sigma\left(\sum_{k} w_{j k}^{[l]} a_{k}^{[l-1]}+b_{j}^{[l]}\right)</script><p> $w^{[l]}$ 表示第 $l$ 层的权重矩阵，$b^{[l]}$ 表示第 $l$ 层的偏置向量，$a^{[l]}$ 表示第 $l$ 层的神经元向量，结合上图讲述：</p>
+<p>$w^{[1]}=\left[\begin{array}{lll}w_{11}^{[1]} &amp; w_{12}^{[1]} &amp; \\ w_{21}^{[1]} &amp; w_{22}^{[1]} &amp; \\ w_{31}^{[1]} &amp; w_{32}^{[1]}\end{array}\right]$                         $w^{[2]}=\left[\begin{array}{lll}w_{11}^{[2]} &amp; w_{12}^{[2]} &amp; w_{13}^{[2]} \\ w_{21}^{[2]} &amp; w_{22}^{[2]} &amp; w_{23}^{[2]}\end{array}\right]$</p>
+<p>$b^{[1]}=\left[\begin{array}{l}b_{1}^{[1]} \\ b_{2}^{[1]} \\  b_{3}^{[1]}\end{array}\right]$                                        $b^{[2]}=\left[\begin{array}{l}b_{1}^{[2]} \\ b_{2}^{[2]}\end{array}\right]$</p>
+<p>进行线性矩阵运算。</p>
+<p>$z^{[1]}=\left[\begin{array}{lll}w_{11}^{[1]} &amp; w_{12}^{[1]} &amp; \\ w_{21}^{[1]} &amp; w_{22}^{[1]} &amp; \\ w_{31}^{[1]} &amp; w_{32}^{[1]}\end{array}\right] \cdot\left[\begin{array}{c}a_{1}^{[0]} \\ a_{2}^{[0]}\end{array}\right]+\left[\begin{array}{l}b_{1}^{[1]} \\ b_{2}^{[1]} \\ b_{3}^{[1]}\end{array}\right]=\left[\begin{array}{c}w_{11}^{[1]} a_{1}^{[0]}+w_{12}^{[1]} a_{2}^{[0]}+b_{1}^{[1]} \\ w_{21}^{[1]} a_{1}^{[0]}+w_{22}^{[1]}a_{2}^{[0]}+b_{2}^{[1]} \\ w_{31}^{[1]}a_{1}^{[0]}+w_{32}^{[1]}a_{2}^{[0]}+b_{3}^{[1]}\end{array}\right]$</p>
+<p>矩阵形状     (3,2)              (2,1)         (3,1)                         (3,1)</p>
+<p>$z^{[2]}=\left[\begin{array}{ccc}w_{11}^{[2]} &amp; w_{12}^{[2]} &amp; w_{13}^{[2]} \\ w_{21}^{[2]} &amp; w_{22}^{[2]} &amp; w_{23}^{[2]}\end{array}\right] \cdot\left[\begin{array}{c}a_{1}^{[1]} \\ a_{2}^{[1]} \\ a_{3}^{[1]}\end{array}\right]+\left[\begin{array}{c}b_{1}^{[2]} \\ b_{2}^{[2]}\end{array}\right]=\left[\begin{array}{c}w_{11}^{[2]} a_{1}^{[1]}+w_{12}^{[2]} a_{2}^{[1]}+w_{13}^{[2]} a_{3}^{[1]}+b_{1}^{[2]} \\ w_{21}^{[2]} a_{1}^{[1]}+w_{22}^{[2]} a_{2}^{[1]}+w_{23}^{[2]} a_{3}^{[1]}+b_{2}^{[2]}\end{array}\right]$</p>
+<p>矩阵形状        (2,3)                 (3,1)         (2,1)                                 (2,1)</p>
+<p>那么，前向传播过程可以表示为：</p>
+<script type="math/tex; mode=display">
+a^{[l]}=\sigma\left(w^{[l]} a^{[l-1]}+b^{[l]}\right)</script><p><strong>上述讲述的前向传播过程，输入层只有1个列向量，也就是只有一个输入样本</strong>。对于多个样本，输入不再是1个列向量，而是m个列向量，每1列表示一个输入样本。m个$a^{[l-1]}$列向量组成一个m列的矩阵$A^{[l-1]}$。</p>
+<script type="math/tex; mode=display">A^{[l-1]}=\left[\begin{array}{cccc}| & | & \cdots & | \\ a^{[l-1](1)} & a^{[l-1](2)} & \dots & a^{[l-1](m)} \\ | & | & \dots & |\end{array}\right]</script><p>多样本输入的前向传播过程可以表示为：</p>
+<script type="math/tex; mode=display">
+\begin{array}{c}
+Z^{[l]}=w^{[l]} \cdot A^{[l-1]}+b^{[l]} \\
+A^{[l]}=\sigma\left(Z^{[l]}\right)
+\end{array}</script><p>与单样本输入相比，多样本$w^{[l]}$和$b^{[l]}$的定义是完全一样的，不同的只是$Z^{[l]}$和$A^{[l]}$从1列变成m列，每1列表示一个样本的计算结果。</p>
+<h2 id="3-损失函数"><a href="#3-损失函数" class="headerlink" title="3.损失函数"></a>3.损失函数</h2><p>​        在有监督的机器学习算法中，我们希望在学习过程中最小化每个训练样例的误差。通过梯度下降等优化策略完成的，而这个误差来自损失函数。</p>
+<p>​        <strong>损失函数</strong>用于单个训练样本，而<strong>成本函数</strong>是多个训练样本的平均损失。优化策略旨在最小化成本函数。下面例举几个常用的损失函数。</p>
+<h3 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h3><ol>
+<li>绝对值损失函数($L_{1}$损失函数)：</li>
+</ol>
+<p>$L(\hat{y},y)=|y-\hat{y}|$</p>
+<p>$y$ 表示真实值或期望值，$\hat{y}$ 表示预测值</p>
+<ol>
+<li>平方损失函数($L_{2}$损失函数)：</li>
+</ol>
+<p>$L(\hat{y},y)=(y-\hat{y})^{2}$</p>
+<p>$y$ 表示真实值或期望值，$\hat{y}$​ 表示预测值</p>
+<blockquote>
+<p>上述表达式是针对输出为1维的，如果输出多维，那么y就是一个列向量。</p>
+</blockquote>
+<h3 id="分类问题"><a href="#分类问题" class="headerlink" title="分类问题"></a>分类问题</h3><ol>
+<li>交叉熵损失：</li>
+</ol>
+<p>$L(\hat{y}, y)=-y \log (\hat{y})-(1-y) \log (1-\hat{y})$</p>
+<p>$y$ 表示真实值或期望值，$\hat{y}$ 表示预测值</p>
+<h2 id="4-反向传播"><a href="#4-反向传播" class="headerlink" title="4.反向传播"></a>4.反向传播</h2><p>​        反向传播的基本思想：通过计算输出层与期望值之间的误差来调整网络参数，使得误差变小(最小化损失函数或成本函数)。反向传播基于<strong>四个基础等式</strong>，非常简洁优美，但想要理解透彻还是挺烧脑的。</p>
+<h3 id="求解梯度矩阵"><a href="#求解梯度矩阵" class="headerlink" title="求解梯度矩阵"></a>求解梯度矩阵</h3><p>假设函数 $f:R^{n \times 1} \rightarrow R$ 将输入的列向量（shape: $n \times 1$ ）映射为一个实数。那么，函数 $f$ 的梯度定义为：</p>
+<p>$\nabla_{x} f(x)=\left[\begin{array}{c}\frac{\partial f(x)}{\partial x_{1}} \\ \frac{\partial f(x)}{\partial x_{2}} \\ \vdots \\ \frac{\partial f(x)}{\partial x_{n}}\end{array}\right]$</p>
+<p>同理，假设函数 $f: R^{m \times n} \rightarrow R$ 将输入的矩阵（shape: $m \times n$ ）映射为一个实数。函数 $f$ 的梯度定义为：</p>
+<p>$\nabla_{A} f(A)=\left[\begin{array}{cccc}\frac{\partial f(A)}{\partial A_{11}} &amp; \frac{\partial f(A)}{\partial A_{12}} &amp; \dots &amp; \frac{\partial f(A)}{\partial A_{13}} \\ \frac{\partial f(A)}{\partial A_{21}} &amp; \frac{\partial f(A)}{\partial A_{22}} &amp; \dots &amp; \frac{\partial f(A)}{\partial A_{2 n}} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \frac{\partial f(A)}{\partial A_{m 1}} &amp; \frac{\partial f(A)}{\partial A_{m 2}} &amp; \dots &amp; \frac{\partial f(A)}{\partial A_{m n}}\end{array}\right]$</p>
+<p>可以简化为：</p>
+<p>$\left(\nabla_{A} f(A)\right)_{i j}=\frac{\partial f(A)}{\partial A_{i j}}$</p>
+<p><strong>注意</strong>：梯度求解的前提是函数 $f$ 返回的必须是一个实数，如果函数返回的是一个矩阵或者向量，是没有办法求解梯度的。例如，函数$f(A) =\sum_{i=0}^{m} \sum_{j=0}^{n} A_{i j}^{2}$，函数返回一个实数，可以求解梯度矩阵。如果 $f(x)=A x\left(A \in R^{m \times n}, x \in R^{n \times 1}\right),$ 函数返回一个m行的列向量，就不能对 $f$ 求解梯度矩阵。</p>
+<p><strong>矩阵相乘</strong></p>
+<p>矩阵 $A=\left[\begin{array}{cc}1 &amp; 2 \\ 3 &amp; 4\end{array}\right]$，矩阵 $B=\left[\begin{array}{cc}-1 &amp; -2 \\ -3 &amp; -4\end{array}\right]$</p>
+<p>$A B=\left[\begin{array}{ll}1 \times-1+2 \times-3 &amp; 1 \times-2+2 \times-4 \\ 3 \times-1+4 \times-3 &amp; 3 \times-2+4 \times-4\end{array}\right]=\left[\begin{array}{cc}-7 &amp; -10 \\ -15 &amp; -22\end{array}\right]$</p>
+<p><strong>矩阵对应元素相乘</strong></p>
+<p>使用符号$\odot$表示：</p>
+<p>$A \odot B=\left[\begin{array}{cc}1 \times-1 &amp; 2 \times-2 \\ 3 \times-3 &amp; 4 \times-4\end{array}\right]=\left[\begin{array}{cc}-1 &amp; -4 \\ -9 &amp; -16\end{array}\right]$</p>
+<h3 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h3><p>​        从几何意义，梯度矩阵代表了函数增加最快的方向，沿着梯度相反的方向可以更快找到最小值。</p>
+<p><img src="/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/梯度下降法.png" alt="梯度下降法" style="zoom:50%;"></p>
+<p>​        反向传播的过程就是利用梯度下降法原理，逐步找到成本函数的最小值，得到最终的模型参数。</p>
+<h3 id="反向传播公式推导（四个基础等式）"><a href="#反向传播公式推导（四个基础等式）" class="headerlink" title="反向传播公式推导（四个基础等式）"></a>反向传播公式推导（四个基础等式）</h3><p>要想最小化成本函数，需要求解神经网络中的权重 $w$ 和偏置 $b$ 的梯度，再用梯度下降法优化参数。求解梯度也就是计算偏导数 $\frac{\partial L\left(a^{[L]}, y\right)}{\partial w_{j k}^{[l]}}$ 和 $\frac{\partial L\left(a^{[L]}, y\right)}{\partial b_{j}^{[l]}}$ 。为了计算这些偏导数，引入一个中间变量 $\delta_{j}^{[l]}$，它表示网络中第 $l^{t h}$ 层第 $j^{t h}$ 个神经元的误差。反向传播能够计算出误差$\delta_{j}^{[l]},$ 再根据链式法则求出 $\frac{\partial L\left(a^{[L]}, y\right)}{\partial w_{j k}^{[l]}}$ 和 $\frac{\partial L\left(a^{[L]}, y\right)}{\partial b_{j}^{[l]}}$ 。</p>
+<p>定义网络中第 $l$ 层第 $j$ 个神经元的误差为 $\delta_{j}^{[l]}$ :</p>
+<script type="math/tex; mode=display">
+\delta_{j}^{[l]}=\frac{\partial L\left(a^{[L]},y\right)}{\partial z_{j}^{[l]}}</script><p>其中 $L(a^{[L]},y)$ 表示损失函数，$y$ 表示真实值，$a^{[L]}$ 表示输出层的预测值。</p>
+<p>每一层的误差向量可以表示为：</p>
+<script type="math/tex; mode=display">
+\delta^{[l]}=\left[\begin{array}{c}\delta_{1}^{[l]} \\ \delta_{2}^{[l]} \\ \vdots \\ \delta_{n}^{[l]}\end{array}\right]</script><h4 id="等式一-输出层误差"><a href="#等式一-输出层误差" class="headerlink" title="等式一    输出层误差"></a>等式一    输出层误差</h4><script type="math/tex; mode=display">
+\delta_{j}^{[L]}=\frac{\partial L}{\partial a_{j}^{[L]}} \sigma^{\prime}\left(z_{j}^{[L]}\right)</script><p>L表示输出层层数。以下用 $\partial L$ 表示 $\partial L\left(a^{[L]}, y\right)$</p>
+<p>写成矩阵形式是：</p>
+<script type="math/tex; mode=display">
+\delta^{[L]}= \left[\begin{array}{c}\frac{\partial L}{\partial a_{1}^{[L]}} \\ \frac{\partial L}{\partial a_{2}^{[L]}} \\ \vdots \\ \frac{\partial L}{\partial a_{j}^{[L]}}\end{array}\right] \odot\left[\begin{array}{c}\sigma^{\prime}\left(z_{1}^{[L]}\right) \\ \sigma^{\prime}\left(z_{2}^{[L]}\right) \\ \vdots \\ \sigma^{\prime}\left(z_{j}^{[L]}\right)\end{array}\right]</script><p>表示成公式：</p>
+<script type="math/tex; mode=display">
+\delta^{[L]}=\nabla_{a} L \odot \sigma^{\prime}\left(z^{[L]}\right)</script><p><strong>推导</strong></p>
+<p>计算输出层的误差 $\delta_{j}^{[L]}=\frac{\partial L}{\partial z_{j}^{[L]}}$ ，根据<strong>链式法则</strong></p>
+<script type="math/tex; mode=display">
+\delta_{j}^{[L]}=\sum_{k} \frac{\partial L}{\partial a_{k}^{[L]}} \frac{\partial a_{k}^{[L]}}{\partial z_{j}^{[L]}}</script><p>看起来上面式子很复杂，但是由于第k个神经元的输出激活值$a_k^l$只依赖于$z_j^l$。当$k≠j$时$\partial a^L_k / \partial z^L_j$消失了。于是上式简化为：</p>
+<script type="math/tex; mode=display">
+\delta_{j}^{[L]}=\frac{\partial L}{\partial a_{j}^{[L]}} \frac{\partial a_{j}^{[L]}}{\partial z_{j}^{[L]}}</script><p>$\sigma$ 表示激活函数，由$a_{j}^{[L]}=\sigma\left(z_{j}^{[L]}\right)$，计算出 $\frac{\partial a_{j}^{[L]}}{\partial z_{j}^{[L]}}=\sigma^{\prime}\left(z_{j}^{[L]}\right)$ ，代入最后得到</p>
+<script type="math/tex; mode=display">
+\delta_{j}^{[L]}=\frac{\partial L}{\partial a_{j}^{[L]}} \sigma^{\prime}\left(z_{j}^{[L]}\right)</script><h4 id="等式二-隐藏层误差"><a href="#等式二-隐藏层误差" class="headerlink" title="等式二    隐藏层误差"></a>等式二    隐藏层误差</h4><script type="math/tex; mode=display">
+\begin{array}{c}
+\delta_{j}^{[l]}=\sum_{k} w_{k j}^{[l+1]} \delta_{k}^{[l+1]} \sigma^{\prime}\left(z_{j}^{[l]}\right)
+\end{array}</script><p>写成矩阵形式：</p>
+<script type="math/tex; mode=display">
+\delta^{[l]}=\left[w^{[l+1]^{T}} \delta^{[l+1]}\right] \odot \sigma^{\prime}\left(z^{[l]}\right)</script><p><strong>推导</strong></p>
+<script type="math/tex; mode=display">
+z_{k}^{[l+1]}=\sum_{j} w_{k j}^{[l+1]} a_{j}^{[l]}+b_{k}^{[l+1]}=\sum_{j} w_{k j}^{[l+1]} \sigma\left(z_{j}^{[l]}\right)+b_{k}^{[l+1]}</script><p>对 $z_{j}^{[l]}$ 求偏导，由于两层神经网络时间任意一对神经元只有一条连接，即$z_k^{l+1}$和$z_k^l$之间只通过$w_{kj}^{l+1}$连接，故</p>
+<script type="math/tex; mode=display">
+\frac{\partial z_{k}^{[l+1]}}{\partial z_{j}^{[l]}}=w_{k j}^{[l+1]} \sigma^{\prime}\left(z_{j}^{[l]}\right)</script><p>根据链式法则</p>
+<script type="math/tex; mode=display">
+\delta_{j}^{[l]}=\frac{\partial L}{\partial z_{j}^{[l]}}= \sum_{k} \frac{\partial L}{\partial z_{k}^{[l+1]}}\frac{\partial z_{k}^{[l+1]}}{\partial z_{j}^{[l]}}=\sum_{k} w_{k j}^{[l+1]} \delta_{k}^{[l+1]} \sigma^{\prime}\left(z_{j}^{[l]}\right)</script><p>其中用到：</p>
+<script type="math/tex; mode=display">
+\frac{\partial L}{\partial z_{k}^{[l+1]}} = \delta_{k}^{[l+1]}</script><h4 id="等式三-参数变化率"><a href="#等式三-参数变化率" class="headerlink" title="等式三  参数变化率"></a>等式三  参数变化率</h4><script type="math/tex; mode=display">
+\begin{array}{c}
+\frac{\partial L}{\partial b_{j}^{[l]}}=\delta_{j}^{[l]} \\
+\frac{\partial L}{\partial w_{j k}^{[l]}}=\delta_{j}^{[l]}a_{k}^{[l-1]}
+\end{array}</script><p><strong>推导</strong></p>
+<script type="math/tex; mode=display">
+z_{j}^{[l]}=\sum_{k} w_{j k}^{[l]} a_{k}^{[l-1]}+b_{j}^{[l]}</script><p>L 对 $b_{j}^{[l]}$ 求偏导，根据链式法则得到</p>
+<script type="math/tex; mode=display">
+\frac{\partial L}{\partial b_{j}^{[l]}}=\frac{\partial L}{\partial z_{j}^{[l]}} \frac{\partial z_{j}^{[l]}}{b_{j}^{[l]}}= \frac{\partial L}{\partial z_{j}^{[l]}} * 1 = \delta_{j}^{[l]}</script><p>L 对 $w_{j k}^{[l]}$ 求偏导，根据链式法则得到</p>
+<script type="math/tex; mode=display">
+\frac{\partial L}{\partial w_{j k}^{[l]}}=\frac{\partial L}{\partial z_{j}^{[l]}} \frac{\partial z_{j}^{[l]}}{w_{j k}^{[l]}}= \delta_{j}^{[l]}a_{k}^{[l-1]}</script><h4 id="等式四-参数更新"><a href="#等式四-参数更新" class="headerlink" title="等式四 参数更新"></a>等式四 参数更新</h4><p>根据梯度下降法原理，朝着梯度的反方向更新参数</p>
+<script type="math/tex; mode=display">
+\begin{array}{c}
+b_{j}^{[l]} \leftarrow b_{j}^{[l]}-\alpha \frac{\partial L}{\partial b_{j}^{[l]}} \\
+w_{j k}^{[l]} \leftarrow w_{j k}^{[l]}-\alpha \frac{\partial L}{\partial w_{j k}^{[l]}}
+\end{array}</script><p>写成矩阵形式：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+b^{[l]} \leftarrow b^{[l]}-\alpha \frac{\partial L}{\partial b^{[l]}} \\
+w^{[l]} \leftarrow w^{[l]}-\alpha \frac{\partial L}{\partial w^{[l]}}
+\end{array}</script><p>这里的 $\alpha$ 指的是学习率。学习率决定了反向传播过程中梯度下降的步长。</p>
+<h3 id="反向传播图解"><a href="#反向传播图解" class="headerlink" title="反向传播图解"></a>反向传播图解</h3><p>计算输出层误差</p>
+<p><img src="/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/反向传播输出层误差.png" alt="反向传播输出层误差" style="zoom: 80%;"></p>
+<p>计算隐藏层误差</p>
+<p><img src="/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/反向传播隐藏层误差1.png" alt="反向传播隐藏层误差1" style="zoom: 80%;"></p>
+<p><img src="/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/反向传播隐藏层误差2.png" alt="反向传播隐藏层误差2" style="zoom:80%;"></p>
+<p>隐藏层误差公式写成矩阵形式  $\delta^{[l]}=\left[w^{[l+1]^{T}} \delta^{[l+1]}\right] \odot \sigma^{\prime}\left(z^{[l]}\right)$ 时， 权重矩阵需要转置。上面两幅图，直观地解释了转置的原因。</p>
+<p><img src="/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/反向传播隐藏层误差3.png" alt="反向传播隐藏层误差3" style="zoom:80%;"></p>
+<p><img src="/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/反向传播隐藏层误差4.png" alt="反向传播隐藏层误差4" style="zoom:80%;"></p>
+<p><img src="/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/反向传播隐藏层误差5.png" alt="反向传播隐藏层误差5" style="zoom:80%;"></p>
+<p>计算参数变化率</p>
+<p><img src="/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/反向传播参数变化率.png" alt="反向传播参数变化率" style="zoom:80%;"></p>
+<p>最后更新每层的参数。</p>
+<h3 id="反向传播公式总结"><a href="#反向传播公式总结" class="headerlink" title="反向传播公式总结"></a>反向传播公式总结</h3><h4 id="单样本输入公式表"><a href="#单样本输入公式表" class="headerlink" title="单样本输入公式表"></a>单样本输入公式表</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">输出层误差</td>
+<td style="text-align:center">$\delta^{[L]}=\nabla_{a} L \odot \sigma^{\prime}\left(z^{[L]}\right)$</td>
+</tr>
+<tr>
+<td style="text-align:center">隐含层误差</td>
+<td style="text-align:center">$\delta^{[l]}=\left[w^{[l+1]^{T}} \delta^{[l+1]}\right] \odot \sigma^{\prime}\left(z^{[l]}\right)$</td>
+</tr>
+<tr>
+<td style="text-align:center">参数变化率</td>
+<td style="text-align:center">$\begin{array}{c}\frac{\partial L}{\partial b^{[l]}}=\delta^{[l]} \\\frac{\partial L}{\partial w^{[l]}}=\delta^{[l]} (a^ {[l-1] } )^T\end{array}$</td>
+</tr>
+<tr>
+<td style="text-align:center">参数更新</td>
+<td style="text-align:center"><script type="math/tex">\begin{array}{l}b^{[l]} \leftarrow b^{[l]}-\alpha \frac{\partial L}{\partial b^{[l]}} \\w^{[l]} \leftarrow w^{[l]}-\alpha \frac{\partial L}{\partial w^{[l]}}\end{array}</script></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="多样本输入公式表"><a href="#多样本输入公式表" class="headerlink" title="多样本输入公式表"></a>多样本输入公式表</h4><h5 id="成本函数"><a href="#成本函数" class="headerlink" title="成本函数"></a>成本函数</h5><p>多样本输入使用的成本函数与单样本不同。假设单样本的成本函数是交叉熵损失函数。</p>
+<p>$L(a, y)=-[y \cdot \log (a)+(1-y) \cdot \log (1-a)]$</p>
+<p>那么，对于m个样本输入，成本函数是每个样本的成本总和的平均值。</p>
+<p>$C(A,y)=-\frac{1}{m} \sum_{i=0}^{m}\left(y^{(i)} \cdot \log \left(a^{(i)}\right)+\left(1-y^{(i)}\right) \cdot \log \left(1-a^{(i)}\right)\right)$</p>
+<h5 id="误差"><a href="#误差" class="headerlink" title="误差"></a>误差</h5><p>单样本输入的每一层的误差是一个列向量</p>
+<script type="math/tex; mode=display">
+\delta^{[l]}=\left[\begin{array}{c}\delta_{1}^{[l]} \\ \delta_{2}^{[l]} \\ \vdots \\ \delta_{n}^{[l]}\end{array}\right]</script><p>而多样本输入的每一层的误差不再是一个列向量，变成一个m列的矩阵，每一列对应一个样本的向量。那么多样本的误差定义为：</p>
+<script type="math/tex; mode=display">
+dZ^{[l]}=\left[\begin{array}{c}\delta^{[l](1)} \delta^{[l](2)} \dots \delta^{[l](m)}\end{array}\right]=\left[\begin{array}{c}\delta_{1}^{[l](1)}&\delta_{1}^{[l](2)}&\dots&\delta_{1}^{[l](m)} \\ \delta_{2}^{[l](1)}&\delta_{2}^{[l](2)}&\dots&\delta_{2}^{[l](m)} \\ \vdots & \vdots & \ddots & \vdots \\ \delta_{n}^{[l](1)}&\delta_{n}^{[l](2)}&\dots&\delta_{n}^{[l](m)}  \end{array}\right]</script><p>$dZ^{[l]}$的维度是 $n×m$ ，$j$ 表示第 $l$ 层神经元的个数，$m$ 表示样本数量。</p>
+<h5 id="参数变换率"><a href="#参数变换率" class="headerlink" title="参数变换率"></a>参数变换率</h5><p>因为$dZ^{[l]}$的维度是 $n×m$ ，更新 $b^{[l]}$ 的时候需要对每行求平均值，再乘以$\frac{1}{m}$。</p>
+<p>$dZ^{[l]}$的维度是 $n×m$ ，$(A^{[l-1]} )^T $ 的维度是 $m×s$，($s$是第$l-1$层神经元个数)，矩阵相乘得到的维度是 $n×s$ ，与$w^{[l]}$ 本身的维度相同。因此更新 $w^{[l]}$ 时只需乘以 $\frac{1}{m}$ 求平均值。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">输出层误差</td>
+<td style="text-align:center">$d Z^{[L]}=\nabla_{A^ { [L] } } C \odot \sigma^{\prime}\left(Z^{[L]}\right)$</td>
+</tr>
+<tr>
+<td style="text-align:center">隐含层误差</td>
+<td style="text-align:center">$d Z^{[l]}=\left[w^{[l+1] T} d Z^{[l+1]}\right] \odot \sigma^{\prime}\left(Z^{[l)}\right]$</td>
+</tr>
+<tr>
+<td style="text-align:center">参数变化率</td>
+<td style="text-align:center">$d b^{[l]}=\frac{\partial C}{\partial b^{[l]}}=\frac{1}{m} Sum O f E a c h R o w\left(d Z^{[l]}\right) \\d w^{[l]}=\frac{\partial C}{\partial w^{[l]}}=\frac{1}{m} d Z^{[l]} ( A^{ [l-1] } )^T$</td>
+</tr>
+<tr>
+<td style="text-align:center">参数更新</td>
+<td style="text-align:center">$\begin{array}{l}b^{[l]} \leftarrow b^{[l]}-\alpha \frac{\partial C}{\partial b^{[l]}} \\w^{[l]} \leftarrow w^{[l]}-\alpha \frac{\partial C}{\partial w^{[l]}}\end{array}$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>参考资料</strong></p>
+<blockquote id="fn_1">
+<sup>1</sup>. <a target="_blank" rel="noopener" href="https://yuanxiaosc.github.io/2018/06/21/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95/">https://yuanxiaosc.github.io/2018/06/21/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95/</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+</article><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/Resource%20sharing/02%E8%8B%B1%E8%AF%AD%E9%9F%B3%E6%A0%87%E5%AD%A6%E4%B9%A0/"><img class="prev-cover" src="https://ooo.0x0.ooo/2024/04/14/OmYotG.jpg" onerror="onerror=null;src='/source/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">英语音标学习及单词拼读</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src="https://ooo.0x0.ooo/2024/01/02/OKuyvU.jpg" onerror="this.onerror=null;this.src='/source/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);"><b style="color:#fff">欢迎访问本站！<br>本站主要分享自己求学路上的一些心得！<br>本站依托于GitHub服务器，推荐科学上网浏览！</b></div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">Charm_Hu</h1><div class="author-info__desc">生活明朗, 万物可爱！</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/Hushuangjun" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/691881848?spm_id_from=333.1007.0.0" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content"><img src="https://api.hanximeng.com/ip_sign/"/></div></div><!-- 下列为源代码--><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#BP-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">1.</span> <span class="toc-text">$BP$神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.</span> <span class="toc-text">1.激活函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">常用的激活函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.</span> <span class="toc-text">2.神经网络结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E7%BA%A6%E5%AE%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">符号约定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">3.损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.1.</span> <span class="toc-text">回归问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.2.</span> <span class="toc-text">分类问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-number">1.4.</span> <span class="toc-text">4.反向传播</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3%E6%A2%AF%E5%BA%A6%E7%9F%A9%E9%98%B5"><span class="toc-number">1.4.1.</span> <span class="toc-text">求解梯度矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="toc-number">1.4.2.</span> <span class="toc-text">梯度下降法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC%EF%BC%88%E5%9B%9B%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%AD%89%E5%BC%8F%EF%BC%89"><span class="toc-number">1.4.3.</span> <span class="toc-text">反向传播公式推导（四个基础等式）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%89%E5%BC%8F%E4%B8%80-%E8%BE%93%E5%87%BA%E5%B1%82%E8%AF%AF%E5%B7%AE"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">等式一    输出层误差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%89%E5%BC%8F%E4%BA%8C-%E9%9A%90%E8%97%8F%E5%B1%82%E8%AF%AF%E5%B7%AE"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">等式二    隐藏层误差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%89%E5%BC%8F%E4%B8%89-%E5%8F%82%E6%95%B0%E5%8F%98%E5%8C%96%E7%8E%87"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">等式三  参数变化率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%89%E5%BC%8F%E5%9B%9B-%E5%8F%82%E6%95%B0%E6%9B%B4%E6%96%B0"><span class="toc-number">1.4.3.4.</span> <span class="toc-text">等式四 参数更新</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E5%9B%BE%E8%A7%A3"><span class="toc-number">1.4.4.</span> <span class="toc-text">反向传播图解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E5%85%AC%E5%BC%8F%E6%80%BB%E7%BB%93"><span class="toc-number">1.4.5.</span> <span class="toc-text">反向传播公式总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E6%A0%B7%E6%9C%AC%E8%BE%93%E5%85%A5%E5%85%AC%E5%BC%8F%E8%A1%A8"><span class="toc-number">1.4.5.1.</span> <span class="toc-text">单样本输入公式表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E6%A0%B7%E6%9C%AC%E8%BE%93%E5%85%A5%E5%85%AC%E5%BC%8F%E8%A1%A8"><span class="toc-number">1.4.5.2.</span> <span class="toc-text">多样本输入公式表</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%88%90%E6%9C%AC%E5%87%BD%E6%95%B0"><span class="toc-number">1.4.5.2.1.</span> <span class="toc-text">成本函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE"><span class="toc-number">1.4.5.2.2.</span> <span class="toc-text">误差</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E5%8F%98%E6%8D%A2%E7%8E%87"><span class="toc-number">1.4.5.2.3.</span> <span class="toc-text">参数变换率</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" title="BP神经网络"><img src="https://ooo.0x0.ooo/2024/04/14/OmYkrP.png" onerror="this.onerror=null;this.src='/source/img/404.jpg'" alt="BP神经网络"/></a><div class="content"><a class="title" href="/2024/Specific%20subject/07BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" title="BP神经网络">BP神经网络</a><time datetime="2024-04-13T16:00:00.000Z" title="发表于 2024-04-14 00:00:00">2024-04-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/Resource%20sharing/02%E8%8B%B1%E8%AF%AD%E9%9F%B3%E6%A0%87%E5%AD%A6%E4%B9%A0/" title="英语音标学习及单词拼读"><img src="https://ooo.0x0.ooo/2024/04/14/OmYotG.jpg" onerror="this.onerror=null;this.src='/source/img/404.jpg'" alt="英语音标学习及单词拼读"/></a><div class="content"><a class="title" href="/2024/Resource%20sharing/02%E8%8B%B1%E8%AF%AD%E9%9F%B3%E6%A0%87%E5%AD%A6%E4%B9%A0/" title="英语音标学习及单词拼读">英语音标学习及单词拼读</a><time datetime="2024-04-13T16:00:00.000Z" title="发表于 2024-04-14 00:00:00">2024-04-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/Useful%20tools/02%E7%A7%91%E7%A0%94%E7%BB%98%E5%9B%BE/" title="科研绘图"><img src="https://ooo.0x0.ooo/2024/04/14/OmYxQb.png" onerror="this.onerror=null;this.src='/source/img/404.jpg'" alt="科研绘图"/></a><div class="content"><a class="title" href="/2024/Useful%20tools/02%E7%A7%91%E7%A0%94%E7%BB%98%E5%9B%BE/" title="科研绘图">科研绘图</a><time datetime="2024-04-06T08:38:00.277Z" title="发表于 2024-04-06 16:38:00">2024-04-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/Specific%20subject/06Kriging%E6%A8%A1%E5%9E%8B%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/" title="Kriging 模型（新手福利，超详细！）"><img src="https://s2.loli.net/2024/03/17/uN246PmAaCot9nq.png" onerror="this.onerror=null;this.src='/source/img/404.jpg'" alt="Kriging 模型（新手福利，超详细！）"/></a><div class="content"><a class="title" href="/2024/Specific%20subject/06Kriging%E6%A8%A1%E5%9E%8B%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/" title="Kriging 模型（新手福利，超详细！）">Kriging 模型（新手福利，超详细！）</a><time datetime="2024-03-16T16:00:00.000Z" title="发表于 2024-03-17 00:00:00">2024-03-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/Useful%20tools/01%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E6%90%9C%E7%B4%A2%E6%8A%80%E6%9C%AF/" title="提高搜索效率的小技巧"><img src="https://ooo.0x0.ooo/2024/02/17/OyMIlc.jpg" onerror="this.onerror=null;this.src='/source/img/404.jpg'" alt="提高搜索效率的小技巧"/></a><div class="content"><a class="title" href="/2024/Useful%20tools/01%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E6%90%9C%E7%B4%A2%E6%8A%80%E6%9C%AF/" title="提高搜索效率的小技巧">提高搜索效率的小技巧</a><time datetime="2024-02-17T11:22:40.678Z" title="发表于 2024-02-17 19:22:40">2024-02-17</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2023 - 2024 By <a class="footer-bar-link" href="/" title="Charm_Hu" target="_blank">Charm_Hu</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">8</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.husj0711.top/" title="博客"><img class="back-menu-item-icon" src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=9246893035&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 0.88rem;">C<sup>1</sup></a><a href="/tags/Hexo/" style="font-size: 0.88rem;">Hexo<sup>1</sup></a><a href="/tags/Kriging%E6%A8%A1%E5%9E%8B/" style="font-size: 0.88rem;">Kriging模型<sup>1</sup></a><a href="/tags/%E4%B8%AD%E5%BF%83%E5%B7%AE%E5%88%86%E6%B3%95/" style="font-size: 0.88rem;">中心差分法<sup>1</sup></a><a href="/tags/%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8E%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/" style="font-size: 0.88rem;">力学基础与专业基础<sup>1</sup></a><a href="/tags/%E5%8D%95%E8%AF%8D%E6%8B%BC%E8%AF%BB/" style="font-size: 0.88rem;">单词拼读<sup>1</sup></a><a href="/tags/%E6%8C%AF%E5%9E%8B%E5%88%86%E8%A7%A3%E5%8F%8D%E5%BA%94%E8%B0%B1%E6%B3%95/" style="font-size: 0.88rem;">振型分解反应谱法<sup>1</sup></a><a href="/tags/%E6%A3%80%E7%B4%A2%E8%B5%84%E6%96%99/" style="font-size: 0.88rem;">检索资料<sup>1</sup></a><a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/" style="font-size: 0.88rem;">毕业论文<sup>1</sup></a><a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 0.88rem;">生活<sup>1</sup></a><a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" style="font-size: 0.88rem;">神经网络<sup>1</sup></a><a href="/tags/%E7%A7%91%E7%A0%94%E7%BB%98%E5%9B%BE/" style="font-size: 0.88rem;">科研绘图<sup>1</sup></a><a href="/tags/%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%9D%82%E8%B0%88/" style="font-size: 0.88rem;">结构设计杂谈<sup>1</sup></a><a href="/tags/%E9%9F%B3%E6%A0%87/" style="font-size: 0.88rem;">音标<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("07/24/2023 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2023 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Charm_Hu 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.cbd.int/mathjax@3.2.2/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initWaline = () => {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://comment.husj0711.top',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  const loadWaline = async () => {
+    if (typeof Waline === 'object') initWaline()
+    else {
+      await getCSS('https://cdn.cbd.int/@waline/client@2.15.5/dist/waline.css')
+      await getScript('https://cdn.cbd.int/@waline/client@2.15.5/dist/waline.js')
+      initWaline()
+    }
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = async () => {
+    try {
+      const res = await fetch('https://comment.husj0711.top/api/comment?type=recent&count=6', { method: 'GET' })
+      const result = await res.json()
+      const walineArray = result.data.map(e => {
+        return {
+          'content': changeContent(e.comment),
+          'avatar': e.avatar,
+          'nick': e.nick,
+          'url': e.url + '#' + e.objectId,
+          'date': e.time || e.insertedAt
+        }
+      })
+      saveToLocal.set('waline-newest-comments', JSON.stringify(walineArray), 5/(60*24))
+      generateHtml(walineArray)
+    } catch (err) {
+      console.error(err)
+      const $dom = document.querySelector('#card-newest-comments .aside-list')
+      $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+    }
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('waline-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
