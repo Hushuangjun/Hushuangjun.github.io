@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>傅里叶变换及其应用</title>
+      <link href="/2024/Specific%20subject/09%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/"/>
+      <url>/2024/Specific%20subject/09%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近写智能设计与建造的作业，偶然兴起想把地震动响应(时域信号)转换成频域信号，需要用到傅里叶变换，于是就去系统学了学，做了相关笔记(手稿)，后面有兴趣还会做一些简单的项目实战一下。<br>参考资料：</p><ol><li><a href="https://www.bilibili.com/video/BV1aW4y1y7Hs/?spm_id_from=333.788.top_right_bar_window_history.content.click&amp;vd_source=41769b252ab81d02e47e5775242eda15">李永乐讲傅里叶变换</a>: 只推荐前半部分，后半部分就在乱讲。</li><li><a href="https://www.bilibili.com/video/BV1Ps4y137WL/?spm_id_from=333.788.top_right_bar_window_history.content.click&amp;vd_source=41769b252ab81d02e47e5775242eda15">傅里叶变换通俗解释</a>: 对于三角函数系的正交表示提了一嘴，有利于我们记忆。</li><li><a href="https://kaizhao.net/blog/fourier">从傅里叶级数到傅里叶变换：详细的数学推导</a></li><li><a href="https://www.bilibili.com/video/BV1jt411U7Bp/?spm_id_from=333.1007.top_right_bar_window_history.content.click&amp;vd_source=41769b252ab81d02e47e5775242eda15">傅里叶变换推导</a>: 这个视频很好地弥补了李永乐老师讲的不足的地方。</li><li><a href="https://www.yvonshong.com/2016/04/09/fft/">本篇博客封面</a>：本篇博客封面引用了该文章里的图片，内容并未详细阅读。</li></ol><h1 id="理论推导"><a href="#理论推导" class="headerlink" title="理论推导"></a>理论推导</h1><div class="row">    <embed src="Fouriertransform.pdf" width="100%" height="550" type="application/pdf"></div><h1 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 傅里叶变换 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>弹塑性力学-张量分析</title>
       <link href="/2024/Specific%20subject/08%E5%BC%A0%E9%87%8F%E5%88%86%E6%9E%90%E5%9F%BA%E7%A1%80/"/>
       <url>/2024/Specific%20subject/08%E5%BC%A0%E9%87%8F%E5%88%86%E6%9E%90%E5%9F%BA%E7%A1%80/</url>
